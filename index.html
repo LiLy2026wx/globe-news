@@ -169,7 +169,7 @@
 
 <div id="status"><span class="dot"></span><span id="status-text">加载中…</span><span class="refresh" id="refresh-btn">刷新</span></div>
 
-<script src="https://unpkg.com/globe.gl@2.32.4"></script>
+<script src="vendor/globe.gl.min.js"></script>
 <script src="news-data.js"></script>
 <script>
   let world = null;
@@ -219,7 +219,7 @@
     .catch(() => updateStatus(null, false));
 
   // Load country GeoJSON in parallel
-  const geoReady = fetch('https://raw.githubusercontent.com/vasturiano/globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
+  const geoReady = fetch('assets/countries.geojson')
     .then(r => r.json());
 
   Promise.all([newsReady, geoReady])
@@ -289,9 +289,9 @@
 
   function initGlobe(countries) {
     world = Globe()(document.getElementById('globe'))
-      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
-      .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
-      .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
+      .globeImageUrl('assets/earth-night.jpg')
+      .bumpImageUrl('assets/earth-topology.png')
+      .backgroundImageUrl('assets/night-sky.png')
       .showAtmosphere(true)
       .atmosphereColor('#6a8aaf')
       .atmosphereAltitude(0.18)
