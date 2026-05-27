@@ -192,7 +192,7 @@
   });
 
   // Load real news (from server) — fall back to inline NEWS_DATA if server hasn't generated yet
-  const newsReady = fetch('/news-data.json', { cache: 'no-store' })
+  const newsReady = fetch('news-data.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => r.ok ? r.json() : null)
     .then(json => {
       if (json && typeof json === 'object') {
@@ -238,7 +238,7 @@
   // Poll for fresh data if first load missed it
   setInterval(() => {
     if (window._isLive) return;
-    fetch('/news-data.json', { cache: 'no-store' })
+    fetch('news-data.json?t=' + Date.now(), { cache: 'no-store' })
       .then(r => r.ok ? r.json() : null)
       .then(json => {
         if (json && typeof json === 'object') {
@@ -255,7 +255,7 @@
 
   document.getElementById('refresh-btn').addEventListener('click', () => {
     document.getElementById('status-text').textContent = '正在刷新…';
-    fetch('/news-data.json', { cache: 'no-store' })
+    fetch('news-data.json?t=' + Date.now(), { cache: 'no-store' })
       .then(r => r.ok ? r.json() : null)
       .then(json => {
         if (!json) {
