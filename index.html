@@ -26,7 +26,7 @@
 
   #panel {
     position: fixed; top: 0; right: 0;
-    width: 440px; height: 100vh;
+    width: min(440px, 88vw); height: 100vh;
     background: var(--panel-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -37,6 +37,16 @@
     transition: transform 0.3s ease;
   }
   #panel.collapsed { transform: translateX(100%); }
+
+  @media (max-width: 768px) {
+    #panel { padding: 20px 20px 50px; }
+    #toggle {
+      background: rgba(201, 169, 110, 0.18) !important;
+      border-color: rgba(201, 169, 110, 0.35) !important;
+      padding: 10px 16px;
+      font-size: 12px;
+    }
+  }
 
   .brand {
     font-size: 12px; letter-spacing: 4px; color: var(--gold);
@@ -200,6 +210,12 @@
     document.getElementById('toggle').textContent =
       panel.classList.contains('collapsed') ? '显示面板' : '隐藏面板';
   });
+
+  // On mobile, default to collapsed so the globe is visible first
+  if (window.innerWidth <= 768) {
+    document.getElementById('panel').classList.add('collapsed');
+    document.getElementById('toggle').textContent = '显示面板';
+  }
 
   // Load real news (from server) — fall back to inline NEWS_DATA if server hasn't generated yet
   const newsReady = fetch('news-data.json?t=' + Date.now(), { cache: 'no-store' })
