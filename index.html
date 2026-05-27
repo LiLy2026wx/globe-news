@@ -174,6 +174,7 @@
 <script>
   let world = null;
   let selectedFeat = null;
+  let allCountries = null;
 
   const CATEGORIES = [
     ['政治', 'politics'],
@@ -182,6 +183,15 @@
     ['科技', 'technology'],
     ['航空', 'aviation'],
   ];
+
+  // Bar color by dominant news category (low-saturation, brand-aligned palette)
+  const CATEGORY_COLORS = {
+    politics:   'rgba(212, 137,  78, 0.88)',  // 暖铁锅
+    military:   'rgba(140, 148, 158, 0.88)',  // 暗银
+    economy:    'rgba(201, 169, 110, 0.88)',  // 品牌金棕
+    technology: 'rgba(106, 154, 178, 0.88)',  // 冷青
+    aviation:   'rgba(130, 175, 165, 0.88)',  // 薄荷
+  };
 
   // Toggle panel
   document.getElementById('toggle').addEventListener('click', () => {
@@ -213,7 +223,10 @@
     .then(r => r.json());
 
   Promise.all([newsReady, geoReady])
-    .then(([_, countries]) => initGlobe(countries))
+    .then(([_, countries]) => {
+      allCountries = countries;
+      initGlobe(countries);
+    })
     .catch(err => {
       document.getElementById('region').innerHTML =
         `<span class="iso">— 网络错误 —</span>无法加载地球数据<span class="hint">${err.message}</span>`;
@@ -247,6 +260,7 @@
             NEWS_DATA[k] = json[k];
           }
           updateStatus(json._generated, true);
+          refreshBars();
           if (selectedFeat) showNews(selectedFeat);
         }
       })
@@ -267,6 +281,7 @@
           NEWS_DATA[k] = json[k];
         }
         updateStatus(json._generated, true);
+        refreshBars();
         if (selectedFeat) showNews(selectedFeat);
       })
       .catch(() => updateStatus(null, false));
@@ -304,10 +319,67 @@
         // Smooth camera move to clicked country
         const [lng, lat] = polygonCenter(feat);
         world.pointOfView({ lat, lng, altitude: 1.8 }, 1000);
-      });
+      })
+      // News-density bars: height = total news count, color = dominant category
+      .pointsData(buildBars(countries))
+      .pointLat('lat')
+      .pointLng('lng')
+      .pointAltitude('altitude')
+      .pointRadius(0.32)
+      .pointColor('color')
+      .pointResolution(8)
+      .pointsMerge(false)
+      .pointLabel(d => `
+        <div style="background:rgba(5,8,16,0.92);padding:6px 10px;border-radius:2px;font-size:12px;border:1px solid rgba(201,169,110,0.3);color:#e8e6df;">
+          <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.country}</div>
+          ${d.total} 条 · 主导：${d.dominantLabel}
+        </div>
+      `);
 
     // Initial view
     world.pointOfView({ lat: 30, lng: 110, altitude: 2.5 }, 0);
+  }
+
+  function buildBars(countries) {
+    if (!countries) return [];
+    return countries.features
+      .map(f => {
+        const props = f.properties;
+        const name = props.ADMIN || props.NAME;
+        const iso = props.ISO_A2;
+        const data = NEWS_DATA[name] || NEWS_DATA[iso];
+        if (!data) return null;
+
+        let total = 0;
+        let dominantKey = null, dominantLabel = '', dominantCount = 0;
+        for (const [label, key] of CATEGORIES) {
+          const c = (data[key] || []).length;
+          total += c;
+          if (c > dominantCount) {
+            dominantCount = c;
+            dominantKey = key;
+            dominantLabel = label;
+          }
+        }
+        if (total === 0) return null;
+
+        const [lng, lat] = polygonCenter(f);
+        return {
+          lat, lng, total,
+          country: name,
+          dominantLabel,
+          color: CATEGORY_COLORS[dominantKey] || CATEGORY_COLORS.economy,
+          // Altitude: ~0.025 for 1 item, capped at 0.18 for very busy countries
+          altitude: Math.min(0.015 + total * 0.012, 0.18),
+        };
+      })
+      .filter(Boolean);
+  }
+
+  function refreshBars() {
+    if (world && allCountries) {
+      world.pointsData(buildBars(allCountries));
+    }
   }
 
   function hasNews(feat) {
