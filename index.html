@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻地球仪 · MVP</title>
+<style>
+  :root {
+    --bg: #050810;
+    --panel-bg: rgba(10, 14, 22, 0.88);
+    --gold: #c9a96e;
+    --text: #e8e6df;
+    --text-dim: #8a8780;
+    --border: rgba(255, 255, 255, 0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+  }
+  #globe { position: fixed; inset: 0; }
+
+  #panel {
+    position: fixed; top: 0; right: 0;
+    width: 440px; height: 100vh;
+    background: var(--panel-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-left: 1px solid var(--border);
+    padding: 28px 28px 60px;
+    overflow-y: auto;
+    z-index: 10;
+    transition: transform 0.3s ease;
+  }
+  #panel.collapsed { transform: translateX(100%); }
+
+  .brand {
+    font-size: 12px; letter-spacing: 4px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 4px;
+  }
+  h1 {
+    font-size: 20px; margin: 0 0 6px; font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .sub {
+    font-size: 11px; color: var(--text-dim);
+    margin-bottom: 28px; letter-spacing: 0.5px;
+  }
+
+  #region {
+    font-size: 26px; font-weight: 300;
+    margin: 0 0 20px; color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+  }
+  #region .iso {
+    font-size: 11px; color: var(--gold);
+    letter-spacing: 3px; display: block;
+    margin-bottom: 6px;
+  }
+  #region .hint {
+    font-size: 11px; color: var(--text-dim);
+    display: block; margin-top: 8px;
+    font-weight: 400; letter-spacing: 0.5px;
+  }
+
+  .cat { margin: 0 0 22px; }
+  .cat h2 {
+    font-size: 11px; color: var(--gold);
+    margin: 0 0 10px; letter-spacing: 3px;
+    font-weight: 500;
+  }
+  .cat h2 .count {
+    color: var(--text-dim); margin-left: 8px;
+    font-weight: 400;
+  }
+  .news-item {
+    font-size: 13px; line-height: 1.65;
+    margin-bottom: 10px; color: #cfccc4;
+    padding: 8px 0 8px 14px;
+    border-left: 1px solid #2a2a2a;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: default;
+  }
+  .news-item:hover {
+    border-left-color: var(--gold);
+    color: var(--text);
+  }
+  .news-item .time {
+    font-size: 10px; color: var(--text-dim);
+    display: block; margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+  .empty {
+    color: #4a4a4a; font-size: 12px;
+    font-style: italic; padding: 4px 0 4px 14px;
+  }
+
+  #toggle {
+    position: fixed; top: 16px; right: 16px;
+    z-index: 20;
+    background: rgba(10, 14, 22, 0.7);
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 2px;
+    backdrop-filter: blur(8px);
+  }
+  #toggle:hover { background: rgba(201, 169, 110, 0.1); }
+
+  #status {
+    position: fixed; bottom: 16px; left: 16px;
+    z-index: 20;
+    font-size: 10px; color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+  #status .dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--gold); border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 2s infinite;
+  }
+  #status.live .dot { background: #4ade80; }
+  #status .refresh {
+    margin-left: 14px; color: var(--gold); cursor: pointer;
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  #status .refresh:hover { color: #fff; }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  /* Scrollbar */
+  #panel::-webkit-scrollbar { width: 4px; }
+  #panel::-webkit-scrollbar-track { background: transparent; }
+  #panel::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, 0.2);
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div id="globe"></div>
+
+<button id="toggle">隐藏面板</button>
+
+<div id="panel">
+  <div class="brand">DAILY GLOBE</div>
+  <h1>每日新闻地球仪</h1>
+  <div class="sub">点击国家查看新闻 · 重点国家可下钻省/州</div>
+
+  <div id="region">
+    <span class="iso">— 等待选择 —</span>
+    请点击地球上任意国家
+    <span class="hint">鼠标左键拖动旋转 · 滚轮缩放</span>
+  </div>
+
+  <div id="news"></div>
+</div>
+
+<div id="status"><span class="dot"></span><span id="status-text">加载中…</span><span class="refresh" id="refresh-btn">刷新</span></div>
+
+<script src="https://unpkg.com/globe.gl@2.32.4"></script>
+<script src="news-data.js"></script>
+<script>
+  let world = null;
+  let selectedFeat = null;
+
+  const CATEGORIES = [
+    ['政治', 'politics'],
+    ['军事', 'military'],
+    ['经济', 'economy'],
+    ['科技', 'technology'],
+    ['航空', 'aviation'],
+  ];
+
+  // Toggle panel
+  document.getElementById('toggle').addEventListener('click', () => {
+    const panel = document.getElementById('panel');
+    panel.classList.toggle('collapsed');
+    document.getElementById('toggle').textContent =
+      panel.classList.contains('collapsed') ? '显示面板' : '隐藏面板';
+  });
+
+  // Load real news (from server) — fall back to inline NEWS_DATA if server hasn't generated yet
+  const newsReady = fetch('/news-data.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : null)
+    .then(json => {
+      if (json && typeof json === 'object') {
+        // Overlay server data on top of any inline fallback
+        for (const k of Object.keys(json)) {
+          if (k.startsWith('_')) continue;
+          NEWS_DATA[k] = json[k];
+        }
+        updateStatus(json._generated, true);
+      } else {
+        updateStatus(null, false);
+      }
+    })
+    .catch(() => updateStatus(null, false));
+
+  // Load country GeoJSON in parallel
+  const geoReady = fetch('https://raw.githubusercontent.com/vasturiano/globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
+    .then(r => r.json());
+
+  Promise.all([newsReady, geoReady])
+    .then(([_, countries]) => initGlobe(countries))
+    .catch(err => {
+      document.getElementById('region').innerHTML =
+        `<span class="iso">— 网络错误 —</span>无法加载地球数据<span class="hint">${err.message}</span>`;
+    });
+
+  function updateStatus(generatedIso, live) {
+    const el = document.getElementById('status');
+    const txt = document.getElementById('status-text');
+    if (live && generatedIso) {
+      const t = new Date(generatedIso);
+      const hhmm = `${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}`;
+      txt.textContent = `今日数据 · 更新于 ${hhmm}`;
+      el.classList.add('live');
+      window._isLive = true;
+    } else {
+      txt.textContent = '静态演示数据（服务端首次抓取中…）';
+      el.classList.remove('live');
+      window._isLive = false;
+    }
+  }
+
+  // Poll for fresh data if first load missed it
+  setInterval(() => {
+    if (window._isLive) return;
+    fetch('/news-data.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null)
+      .then(json => {
+        if (json && typeof json === 'object') {
+          for (const k of Object.keys(json)) {
+            if (k.startsWith('_')) continue;
+            NEWS_DATA[k] = json[k];
+          }
+          updateStatus(json._generated, true);
+          if (selectedFeat) showNews(selectedFeat);
+        }
+      })
+      .catch(() => {});
+  }, 20000);
+
+  document.getElementById('refresh-btn').addEventListener('click', () => {
+    document.getElementById('status-text').textContent = '正在刷新…';
+    fetch('/news-data.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null)
+      .then(json => {
+        if (!json) {
+          updateStatus(null, false);
+          return;
+        }
+        for (const k of Object.keys(json)) {
+          if (k.startsWith('_')) continue;
+          NEWS_DATA[k] = json[k];
+        }
+        updateStatus(json._generated, true);
+        if (selectedFeat) showNews(selectedFeat);
+      })
+      .catch(() => updateStatus(null, false));
+  });
+
+  function initGlobe(countries) {
+    world = Globe()(document.getElementById('globe'))
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
+      .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
+      .showAtmosphere(true)
+      .atmosphereColor('#6a8aaf')
+      .atmosphereAltitude(0.18)
+      .polygonsData(countries.features.filter(f => f.properties.ISO_A2 !== 'AQ'))
+      .polygonAltitude(f => f === selectedFeat ? 0.06 : 0.006)
+      .polygonCapColor(f => f === selectedFeat
+        ? 'rgba(201, 169, 110, 0.55)'
+        : (hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)'))
+      .polygonSideColor(() => 'rgba(201, 169, 110, 0.08)')
+      .polygonStrokeColor(() => 'rgba(255, 255, 255, 0.18)')
+      .polygonLabel(({properties: d}) => `
+        <div style="background:rgba(5,8,16,0.92);padding:6px 10px;border-radius:2px;font-size:12px;border:1px solid rgba(201,169,110,0.3);color:#e8e6df;">
+          <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.ISO_A2 || ''}</div>
+          ${d.ADMIN || d.NAME || ''}
+        </div>
+      `)
+      .onPolygonClick(feat => {
+        selectedFeat = feat;
+        world.polygonAltitude(f => f === selectedFeat ? 0.06 : 0.006)
+             .polygonCapColor(f => f === selectedFeat
+               ? 'rgba(201, 169, 110, 0.55)'
+               : (hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)'));
+        showNews(feat);
+
+        // Smooth camera move to clicked country
+        const [lng, lat] = polygonCenter(feat);
+        world.pointOfView({ lat, lng, altitude: 1.8 }, 1000);
+      });
+
+    // Initial view
+    world.pointOfView({ lat: 30, lng: 110, altitude: 2.5 }, 0);
+  }
+
+  function hasNews(feat) {
+    const name = feat.properties.ADMIN || feat.properties.NAME;
+    const iso = feat.properties.ISO_A2;
+    return Boolean(NEWS_DATA[name] || NEWS_DATA[iso]);
+  }
+
+  function polygonCenter(feat) {
+    const coords = feat.geometry.coordinates;
+    let lngs = [], lats = [];
+    const walk = arr => {
+      if (typeof arr[0] === 'number') {
+        lngs.push(arr[0]); lats.push(arr[1]);
+      } else { arr.forEach(walk); }
+    };
+    walk(coords);
+    return [
+      lngs.reduce((a,b)=>a+b,0)/lngs.length,
+      lats.reduce((a,b)=>a+b,0)/lats.length
+    ];
+  }
+
+  function showNews(feat) {
+    const props = feat.properties;
+    const name = props.ADMIN || props.NAME;
+    const iso = props.ISO_A2;
+    const data = NEWS_DATA[name] || NEWS_DATA[iso];
+
+    const region = document.getElementById('region');
+    const news = document.getElementById('news');
+
+    if (!data) {
+      region.innerHTML = `
+        <span class="iso">${iso || '—'}</span>
+        ${name}
+        <span class="hint">该地区暂未收录新闻（MVP 演示，仅覆盖重点国家）</span>
+      `;
+      news.innerHTML = `
+        <div class="empty">
+          正式版接入 RSS 后将覆盖全球。<br>
+          演示阶段可点击：中国、美国、俄罗斯、日本、德国、英国、法国、印度、韩国、乌克兰、以色列。
+        </div>
+      `;
+      return;
+    }
+
+    region.innerHTML = `
+      <span class="iso">${iso || '—'}</span>
+      ${name}
+      <span class="hint">${data._meta || '今日要闻 · 五大类'}</span>
+    `;
+
+    news.innerHTML = CATEGORIES.map(([label, key]) => {
+      const items = data[key] || [];
+      return `<div class="cat">
+        <h2>${label}<span class="count">${items.length ? `(${items.length})` : ''}</span></h2>
+        ${items.length === 0
+          ? '<div class="empty">暂无</div>'
+          : items.map(item => `
+              <div class="news-item">
+                ${item.title}
+                <span class="time">${item.time}${item.source ? ' · ' + item.source : ''}</span>
+              </div>
+            `).join('')
+        }
+      </div>`;
+    }).join('');
+  }
+</script>
+</body>
+</html>

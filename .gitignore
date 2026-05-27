@@ -1,0 +1,19 @@
+# Secrets — never commit
+config.json
+
+# Runtime / local-only artifacts
+server.log
+server.log.*
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

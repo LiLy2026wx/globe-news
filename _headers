@@ -1,0 +1,13 @@
+# Cloudflare Pages — per-path response headers.
+# Format: pattern, then indented "Key: Value" lines.
+
+# News JSON updates daily; never cache so users always get fresh data.
+/news-data.json
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
+# Static assets can be cached briefly.
+/*.html
+  Cache-Control: public, max-age=300
+/*.js
+  Cache-Control: public, max-age=3600
