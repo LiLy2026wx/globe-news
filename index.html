@@ -325,9 +325,9 @@
       .pointLat('lat')
       .pointLng('lng')
       .pointAltitude('altitude')
-      .pointRadius(0.32)
+      .pointRadius(0.5)
       .pointColor('color')
-      .pointResolution(8)
+      .pointResolution(12)
       .pointsMerge(false)
       .pointLabel(d => `
         <div style="background:rgba(5,8,16,0.92);padding:6px 10px;border-radius:2px;font-size:12px;border:1px solid rgba(201,169,110,0.3);color:#e8e6df;">
@@ -340,6 +340,12 @@
     world.pointOfView({ lat: 30, lng: 110, altitude: 2.5 }, 0);
   }
 
+  function hashSeed(s) {
+    let h = 2166136261 >>> 0;
+    for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619) >>> 0;
+    return h;
+  }
+
   function buildBars(countries) {
     if (!countries) return [];
     return countries.features
@@ -350,18 +356,24 @@
         const data = NEWS_DATA[name] || NEWS_DATA[iso];
         if (!data) return null;
 
+        const counts = {};
         let total = 0;
-        let dominantKey = null, dominantLabel = '', dominantCount = 0;
-        for (const [label, key] of CATEGORIES) {
+        let maxCount = 0;
+        for (const [, key] of CATEGORIES) {
           const c = (data[key] || []).length;
+          counts[key] = c;
           total += c;
-          if (c > dominantCount) {
-            dominantCount = c;
-            dominantKey = key;
-            dominantLabel = label;
-          }
+          if (c > maxCount) maxCount = c;
         }
         if (total === 0) return null;
+
+        // Tied categories at the max → pick deterministically by ISO hash so each country gets a stable, distinct color
+        const tiedKeys = CATEGORIES.map(([, k]) => k).filter(k => counts[k] === maxCount);
+        const seed = iso || name || '';
+        const dominantKey = tiedKeys.length === 1
+          ? tiedKeys[0]
+          : tiedKeys[hashSeed(seed) % tiedKeys.length];
+        const dominantLabel = CATEGORIES.find(([, k]) => k === dominantKey)[0];
 
         const [lng, lat] = polygonCenter(f);
         return {
@@ -369,8 +381,8 @@
           country: name,
           dominantLabel,
           color: CATEGORY_COLORS[dominantKey] || CATEGORY_COLORS.economy,
-          // Altitude: ~0.025 for 1 item, capped at 0.18 for very busy countries
-          altitude: Math.min(0.015 + total * 0.012, 0.18),
+          // Short, stocky bars — feels like a wax seal rather than a porcupine spine
+          altitude: Math.min(0.006 + total * 0.0022, 0.055),
         };
       })
       .filter(Boolean);
