@@ -140,6 +140,9 @@ C:\Users\zou18\globe-news\
 - 域名迁移任务**作废**（见第四节·2、第九节归档）
 - `daily.yml` 精简为纯抓取+提交，cron 扩到 5 档错峰（07:31/07:53/08:17/08:41/09:13 BJT）
 - 本地手动跑 fetcher.py 把 05-29 数据推上线（修补 schedule 首日没自动跑）
+- **修两个内容质量坑**（commit 71f419e）：
+  1. 新闻点不进去 → `index.html` 原来把标题渲染成纯文本 `<div>`，没用 `item.url`。改成 `<a target="_blank" rel="noopener">` 可点开原文（CSS 加 display:block/cursor:pointer）
+  2. 新闻大多几天前 → Google News 搜索默认按相关性排序混入旧闻。`fetcher.py` 查询加 `when:2d` 限近 2 天（`gnews_rss` 用 safe=":" 保冒号）。重抓后 671 条全部 ≤1天前，零旧日期
 
 ### 🔭 唯一待观察项：schedule 是否真能自动触发
 - **背景**：GitHub Actions schedule 在本仓库历史触发次数 = **0**（前几天数据全是手动 Run 出来的）。免费公共仓库 schedule 高延迟/会丢首跑。
