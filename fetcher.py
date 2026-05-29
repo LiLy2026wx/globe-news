@@ -28,6 +28,9 @@ OUTPUT_FILE = os.path.join(PROJECT_DIR, 'news-data.json')
 
 MAX_ITEMS_PER_CELL = 5
 REQUEST_DELAY_SECONDS = 0.4
+# Google News 搜索默认按相关性排序，会混入几天/几周前的旧闻。
+# 用 when: 操作符限定近 N 天，偏向新鲜内容。
+RECENCY_WINDOW = '2d'
 
 # (geojson ADMIN key, Chinese display name, ISO_A2)
 COUNTRIES = [
@@ -79,7 +82,8 @@ def log(msg):
 
 
 def gnews_rss(query: str) -> str:
-    return f'https://news.google.com/rss/search?q={quote(query)}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'
+    # safe=':' 保留 when:2d 里的冒号不被编码成 %3A
+    return f'https://news.google.com/rss/search?q={quote(query, safe=":")}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'
 
 
 def humanize_time(published_struct):
@@ -113,7 +117,7 @@ def extract_source(entry) -> str:
 
 
 def fetch_cell(country_zh: str, category_query: str):
-    query = f'{country_zh} {category_query}'
+    query = f'{country_zh} {category_query} when:{RECENCY_WINDOW}'
     try:
         feed = feedparser.parse(gnews_rss(query))
     except Exception as e:

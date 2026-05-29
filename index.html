@@ -89,12 +89,13 @@
     font-weight: 400;
   }
   .news-item {
+    display: block; text-decoration: none;
     font-size: 13px; line-height: 1.65;
     margin-bottom: 10px; color: #cfccc4;
     padding: 8px 0 8px 14px;
     border-left: 1px solid #2a2a2a;
     transition: border-color 0.2s, color 0.2s;
-    cursor: default;
+    cursor: pointer;
   }
   .news-item:hover {
     border-left-color: var(--gold);
@@ -467,12 +468,12 @@
         <h2>${label}<span class="count">${items.length ? `(${items.length})` : ''}</span></h2>
         ${items.length === 0
           ? '<div class="empty">暂无</div>'
-          : items.map(item => `
-              <div class="news-item">
-                ${item.title}
-                <span class="time">${item.time}${item.source ? ' · ' + item.source : ''}</span>
-              </div>
-            `).join('')
+          : items.map(item => {
+              const inner = `${item.title}<span class="time">${item.time}${item.source ? ' · ' + item.source : ''}</span>`;
+              return item.url
+                ? `<a class="news-item" href="${item.url}" target="_blank" rel="noopener">${inner}</a>`
+                : `<div class="news-item">${inner}</div>`;
+            }).join('')
         }
       </div>`;
     }).join('');
