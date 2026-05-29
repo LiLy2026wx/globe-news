@@ -1,18 +1,17 @@
-name: Daily News Refresh & Push
+name: Daily News Refresh
+
+# 纯抓取+提交。前端走 CF Pages 网页访问，微信推送已下线（2026-05-29）。
+# 多档错峰冗余 cron，规避 GitHub 免费公共仓库 schedule 的高跳过率；
+# 任一时段命中即可，commit-if-changed 天然幂等（数据没变就不提交、不部署）。
 
 on:
   schedule:
-    # 三个错峰冗余时段，规避 UTC 整点高峰跳过率。
-    # 任一时段命中即推送；后续时段读 .last-push-date 短路。
-    - cron: '47 23 * * *'   # BJT 07:47
-    - cron: '23 0 * * *'    # BJT 08:23
-    - cron: '47 0 * * *'    # BJT 08:47
-  workflow_dispatch:
-    inputs:
-      force_push:
-        description: '手动触发时是否也发微信推送（默认只刷数据不推送）'
-        type: boolean
-        default: false
+    - cron: '31 23 * * *'   # BJT 07:31
+    - cron: '53 23 * * *'   # BJT 07:53
+    - cron: '17 0 * * *'    # BJT 08:17
+    - cron: '41 0 * * *'    # BJT 08:41
+    - cron: '13 1 * * *'    # BJT 09:13
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -60,35 +59,3 @@ jobs:
             git commit -m "chore(data): refresh news $(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M%z)"
             git push
           fi
-
-      - name: Check if already pushed today (BJT)
-        id: idempotency
-        run: |
-          today=$(TZ='Asia/Shanghai' date +%Y-%m-%d)
-          want_push="${{ github.event_name == 'schedule' || inputs.force_push == true }}"
-          if [ "$want_push" != "true" ]; then
-            echo "Manual run without force_push → skipping WeChat."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          elif [ -f .last-push-date ] && [ "$(cat .last-push-date)" = "$today" ]; then
-            echo "Already pushed today ($today) — earlier cron slot won. Skipping."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Will push for $today."
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "today=$today" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Push to WeChat (Server酱)
-        if: steps.idempotency.outputs.skip == 'false'
-        env:
-          SCT_SENDKEY: ${{ secrets.SCT_SENDKEY }}
-          SITE_URL: ${{ vars.SITE_URL }}
-        run: python push.py
-
-      - name: Commit push marker
-        if: steps.idempotency.outputs.skip == 'false'
-        run: |
-          echo "${{ steps.idempotency.outputs.today }}" > .last-push-date
-          git add .last-push-date
-          git commit -m "chore: pushed for ${{ steps.idempotency.outputs.today }}"
-          git push

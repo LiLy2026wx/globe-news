@@ -1,315 +1,236 @@
 # 每日新闻地球仪 · 项目交接文档
 
-> **状态截止**：2026-05-26 晚
-> **当前阶段**：上云改造（代码侧已完成，未与 GitHub / Cloudflare 对接）
-> **下次继续**：把代码推到 GitHub → 在 Cloudflare Pages 部署 → 配 Secrets → 触发 workflow 验证 → 关本地 PC 服务
-> **项目目录**：`C:\Users\zou18\globe-news\`
+> **状态截止**：2026-05-29
+> **当前阶段**：**生产稳定**（cron + 推送正常）。但**域名迁移路线作废**：is-a.dev PR #39517 已被拒绝关闭（2026-05-28T21:36:33Z，理由 "not dev related"——根级子域名须与软件开发相关，本项目不符）。`globe-news.is-a.dev` 未归属我们（访问 302 跳 is-a.dev 落地页）。
+> **下次继续**：重选一个**不在微信黑名单**的域名。第五节旧 3 步收官流程已失效，待定新路线（候选：买便宜真实域名 / eu.org / 其他）。
 
 ---
 
-## 0. 今天（2026-05-26）做了什么
+## 一、今日（2026-05-28）做了什么
 
-回答了昨日交接文档里的三个待决问题：
+### 早上发现的问题 🚨
+2026-05-27 晚配好的链路，**今早 08:00 没自动推送**。诊断：UTC `00:00` 整点 cron 在 GitHub Actions free tier public repo 上**静默跳过率高**（高峰期已知问题），不是延迟，是直接跳。
 
-| 问题 | 答 |
-|---|---|
-| Q1 GitHub 账号 | **有账号，但不太用 git** → 走 GitHub + Cloudflare 路线，需手把手过命令 |
-| Q2 域名 | **用 Cloudflare 免费二级域名长期使用**（`xxx.pages.dev`），不绑自定义域名 |
-| Q3 本地 PC 服务 | **关掉**，云上一套就够（云端跑通后卸载计划任务） |
+### 当日补救：本地手动补发微信
+- 在公司电脑 PowerShell 跑：
+  ```powershell
+  $env:PYTHONUTF8="1"
+  $env:SCT_SENDKEY="SCT355463..."   # 当时还是旧 KEY，已重置
+  $env:SITE_URL="https://globe-news-do4.pages.dev"
+  python push.py
+  ```
+- Server酱 返回 OK，微信成功收到 05/28 推送
 
-随后完成了**代码侧的上云改造**：把抓取逻辑从 `server.py` 拆出来，加好 GitHub Actions workflow、Cloudflare Pages 缓存头、`.gitignore` 等周边文件，所有云端要用的东西都准备好了，**只差正式推上去**。
+### 治本工程：3 档错峰 cron + 幂等标记
+- `.github/workflows/daily.yml` 重写：
+  - cron 从 `0 0 * * *` 单点改为 3 个**非整点**时段：
+    - `47 23 * * *` (BJT **07:47**)
+    - `23 0 * * *`  (BJT **08:23**)
+    - `47 0 * * *`  (BJT **08:47**)
+  - 加 `.last-push-date` 仓库内标记文件，push 后由 Actions commit；后续时段读到当日已推则 skip
+  - 加 `workflow_dispatch.inputs.force_push` 输入开关，UI 手动触发可勾选强制推送
+- commit 已 push：`927faf6 fix(actions): redundant off-peak cron + idempotent push`
 
----
+### SENDKEY 重置
+- 旧 KEY `SCT355463TooRpSoNGTRofy5stDiKar8lk` 在 2026-05-27 聊天里**泄漏过** → 重置
+- 在 Server酱·Turbo 公众号生成新 KEY → 粘到 GitHub Repository Secret `SCT_SENDKEY`
+- 用 workflow_dispatch + `force_push=true` 验证，微信成功收到第二条推送 ✅
 
-## 一、项目目标（未变）
+### 发现新问题：微信打不开链接 🚨
+- 推送收到，但微信内点链接报 `ERR_NAME_NOT_RESOLVED`
+- 排查：
+  - 电脑直连 → ✅ 能打开
+  - 手机系统浏览器（电信 4G + WiFi 都试过）→ ✅ 能打开
+  - 手机微信内置浏览器 → ❌ 一直报错
+- **根因**：微信 X5 内核**黑名单**拦截 `*.pages.dev` / `*.vercel.app` / `*.netlify.app` / `*.github.io`，腾讯故意的，伪装成 DNS 错误
+- DNS / 代理 / URL 层面**无解**，唯一方案：换非黑名单域名
 
-每天定时把全球新闻以可视化方式推到用户手机：
-
-- 网页端展示**可拖动的 3D 地球仪**
-- **点击国家，凸显该国，右侧面板按固定顺序显示新闻**：政治 → 军事 → 经济 → 科技 → 航空
-- 地理精度：**全球到国家**，重点国家（美/俄/欧/日）后续做到省/州
-- **每天早 8:00（北京时间）自动推送链接到用户微信**
-- 用户在手机/平板浏览器打开链接即可使用
-
----
-
-## 二、目标架构（上云后）
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  GitHub（仓库 + Actions）                                      │
-│                                                                 │
-│  ┌──────────────────────────────────────────────────────┐    │
-│  │  .github/workflows/daily.yml                          │    │
-│  │  ├─ cron: 0 0 * * *  (UTC 0:00 = 北京 08:00)         │    │
-│  │  ├─ workflow_dispatch（手动触发按钮）                  │    │
-│  │  ├─ 跑 fetcher.py → 生成 news-data.json               │    │
-│  │  ├─ git commit + push（数据有变化才提交）              │    │
-│  │  └─ 跑 push.py（用 SCT_SENDKEY + SITE_URL 推微信）     │    │
-│  └──────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────────┘
-                │                            │
-                │ Webhook 触发部署            │ Server酱 API
-                ▼                            ▼
-       ┌──────────────────┐         ┌──────────────────┐
-       │ Cloudflare Pages │         │ 用户微信         │
-       │ xxx.pages.dev    │ ◀── 链接 ── 收到日推链接 │
-       │ 直接吐静态站点   │         │                  │
-       └──────────────────┘         └──────────────────┘
-                ▲
-                │ 手机/平板浏览器
-                │ （随时随地，不依赖家中 PC）
-                ▼
-       ┌──────────────────┐
-       │ 用户手机/平板    │
-       │ 打开地球仪       │
-       └──────────────────┘
-```
-
-**今天与昨天的核心差别**：本地 PC 完全退出新闻链路。开关机不再影响服务可用性。
+### 申请免费子域名（C 路线）
+- 决策对比 4 个服务：is-a.dev（几天）/ js.org（可能被拒，非 JS 项目）/ eu.org（1-3 个月）/ us.kg
+- 选 **is-a.dev**：审核最快、最宽松
+- 目标域名：`globe-news.is-a.dev`
+- PR #39517 已提交：https://github.com/is-a-dev/register/pull/39517
+- JSON 内容：
+  ```json
+  {
+    "owner": {
+      "username": "LiLy2026wx",
+      "email": "ripplewabi@rippleclio.com"
+    },
+    "records": {
+      "CNAME": "globe-news-do4.pages.dev"
+    }
+  }
+  ```
+- 状态：bot 已欢迎评论无报错；CI 跑校验中；等人工审核（几小时-3 天）
 
 ---
 
-## 三、文件清单（最新）
+## 二、文件清单（2026-05-28 晚状态）
 
 ```
 C:\Users\zou18\globe-news\
-├── .github\
-│   └── workflows\
-│       └── daily.yml       ★ 新增：Actions 每日 cron + 手动触发
-├── .gitignore              ★ 新增：屏蔽 config.json / 日志 / __pycache__
-├── _headers                ★ 新增：Cloudflare Pages 缓存策略（news-data.json 不缓存）
-├── fetcher.py              ★ 新增：纯抓取逻辑（从 server.py 拆出）
-├── requirements.txt        ★ 新增：feedparser
-├── server.py               ✎ 改：删掉抓取逻辑，改为 import fetcher
-├── push.py                 ✎ 改：链接读 SITE_URL 环境变量，回退到 LAN IP（本地仍可跑）
-├── index.html              （未动；明天小调一下刷新按钮文案 + /refresh 优雅降级）
-├── news-data.js            （静态 fallback，保留）
-├── news-data.json          （Actions 会自动覆盖更新）
-├── server.log              （本地运行才会生成；.gitignore 已排除）
-├── setup_schedule.ps1      （明天云端跑通后用 -Unregister 卸掉本地任务）
-└── HANDOFF.md              本文件
-```
-
-### 各文件职责详解（仅讲新增/变更的）
-
-#### `fetcher.py`（新）
-- 把 `COUNTRIES`、`CATEGORIES`、`gnews_rss()`、`fetch_cell()`、`fetch_all()` 从 server.py 搬过来
-- **不开 HTTP，不开线程**，直接 `python fetcher.py` 就跑一次抓取并写 `news-data.json`
-- GitHub Actions 用这个；本地 `server.py` 通过 import 复用
-
-#### `server.py`（改）
-- 删掉所有抓取常量和函数，改为 `from fetcher import COUNTRIES, CATEGORIES, fetch_all`
-- 行数从 ~245 砍到 ~110
-- 行为保持不变：仍然绑 `0.0.0.0:8765`，仍然每 6h 后台刷新，仍然 `/refresh` 手动触发
-- **上云后该文件将不再被启动**（明天卸载计划任务后彻底闲置）
-
-#### `push.py`（改）
-- 新逻辑：`SITE_URL` 环境变量优先
-  - 有 → 用它当链接（云端跑时由 Actions 注入 `vars.SITE_URL`）
-  - 无 → 回退到 `http://{LAN_IP}:8765/`（本地直接跑时仍能工作）
-- 文案条件分支：云端写"随时随地打开（无需家中 PC 开机）"；本地写"链接仅在家中 WiFi 可访问"
-
-#### `.github/workflows/daily.yml`（新）
-- 触发：`cron: '0 0 * * *'`（UTC 0:00 = 北京 08:00）+ `workflow_dispatch`（手动按钮）
-- 步骤：checkout → setup-python 3.11 → pip install → 跑 fetcher.py → 数据有变化才 commit & push → 跑 push.py 推微信
-- 微信推送只在 `schedule` 事件发生时跑（手动触发不会扰民）
-- 用 `permissions: contents: write` 让 `GITHUB_TOKEN` 能把数据 commit 回仓库
-- `concurrency: daily-news` 防止并发重复
-
-#### `_headers`（新）
-- Cloudflare Pages 专用静态规则文件
-- `news-data.json` → `Cache-Control: no-store`（保证用户每次都拿最新）
-- 其它静态资源短缓存
-
-#### `requirements.txt`（新）
-- 只有 `feedparser>=6.0.10`
-
-#### `.gitignore`（新）
-- `config.json`（含微信 SENDKEY，**绝不能提交**）
-- `server.log*`、`*.tmp`、`__pycache__/`、`.vscode/` 等
-
----
-
-## 四、明天开工的第一件事：上云三步走
-
-### 步骤 A：创建 GitHub 仓库（用户操作 · 浏览器）
-
-1. 打开 https://github.com/new
-2. 仓库名：`globe-news`（或任意名）
-3. 选 **Public**（重要：公开仓库才能享 Actions 免费无限分钟数；本仓库不含密钥）
-4. **不要勾选** "Add a README"、"Add .gitignore"、"Add license"（避免初始化冲突，我们本地已有文件）
-5. 点 **Create repository**
-6. 复制下一步要用的仓库 URL（形如 `https://github.com/你的用户名/globe-news.git`）
-
-### 步骤 B：本地推送代码（Claude 带着用户敲命令）
-
-Claude 明天会按顺序帮用户在 PowerShell 里跑：
-
-```powershell
-cd C:\Users\zou18\globe-news
-
-# 先检查 git 装了没
-git --version
-
-# 初始化 + 第一次提交
-git init
-git branch -M main
-git add .
-git status        # 检查 config.json 等不该提交的有没有被忽略
-git commit -m "Initial commit: cloud-ready globe news"
-
-# 接远端
-git remote add origin https://github.com/<你的用户名>/globe-news.git
-git push -u origin main
-```
-
-**风险检查**：
-- 如果未装 git → 引导装 Git for Windows
-- 如果 `git status` 看到 `config.json` 在 staged 里 → 立刻 `git rm --cached config.json` 后重新 commit
-- 如果 push 时要登录 → 用 GitHub Desktop 或个人 Token（user 不熟 git，可能要走 GUI）
-
-### 步骤 C：Cloudflare Pages 部署（用户操作 · 浏览器）
-
-1. 注册 / 登录 https://dash.cloudflare.com/
-2. 左栏 **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
-3. 授权 Cloudflare 读你的 GitHub → 选 `globe-news` 仓库
-4. 部署设置：
-   - **Project name**：自填（这就是 `xxx.pages.dev` 里的 `xxx`，唯一）
-   - **Production branch**：`main`
-   - **Framework preset**：`None`
-   - **Build command**：留空
-   - **Build output directory**：`/`（根目录）
-5. 点 **Save and Deploy**
-6. 等 1-2 分钟，记下你的 `xxx.pages.dev` 域名
-
-### 步骤 D：配 GitHub Actions Secrets + Variables（用户操作 · 浏览器）
-
-去仓库页 → **Settings** → **Secrets and variables** → **Actions**
-
-- 在 **Secrets** 标签页 → **New repository secret**：
-  - Name: `SCT_SENDKEY`
-  - Value: 你的 Server酱 SENDKEY（`SCT...` 开头）
-
-- 切到 **Variables** 标签页 → **New repository variable**：
-  - Name: `SITE_URL`
-  - Value: `https://xxx.pages.dev`（用刚刚 CF 给的域名，**末尾不要带 /**）
-
-### 步骤 E：手动触发验证（用户操作 · 浏览器）
-
-仓库页 → **Actions** → 选 **Daily News Refresh & Push** → 右侧 **Run workflow** → **Run workflow**
-
-预期看到：
-1. ✅ fetcher 跑完（~60-80 秒）
-2. ✅ 自动 commit 一次 `news-data.json` 更新
-3. ⏸️ 跳过 push.py（手动触发 = `schedule` 条件不满足，符合预期；不要在测试时打扰微信）
-4. Cloudflare Pages 检测到 push，自动重新部署（在 CF 仪表板能看到）
-
-部署完后用手机打开 `https://xxx.pages.dev/`，确认地球仪能转、点国家有新闻。
-
-### 步骤 F：第二天 08:00 自然触发推送
-
-不用做事，自然等。08:00 微信应收到日推。
-
-### 步骤 G：关闭本地 PC 服务（云端验证通过后）
-
-```powershell
-cd C:\Users\zou18\globe-news
-.\setup_schedule.ps1 -Unregister
-```
-
-确认两条任务都被删：
-
-```powershell
-Get-ScheduledTask -TaskName GlobeNews-* -ErrorAction SilentlyContinue
+├── .github\workflows\daily.yml       3 档错峰 cron + 幂等标记 + force_push 开关 [今日更新]
+├── .gitignore                          屏蔽 config.json / server.log / __pycache__
+├── _headers                            CF Pages 缓存策略（news-data.json no-store）
+├── assets\                             同域托管的外部资源
+│   ├── countries.geojson               488 KB
+│   ├── earth-night.jpg                 715 KB
+│   ├── earth-topology.png              378 KB
+│   └── night-sky.png                   904 KB
+├── vendor\globe.gl.min.js              globe.gl 2.32.4 同域托管 (1 MB)
+├── fetcher.py                          GitHub Actions 跑的纯抓取
+├── server.py                           本地开发用，云端不启动
+├── push.py                             调 Server酱（保持纯发送，幂等逻辑在 yml 里）
+├── index.html                          前端主页
+├── news-data.js                        静态 fallback 数据
+├── news-data.json                      实时数据，Actions 每天更新
+├── requirements.txt                    feedparser
+├── setup_schedule.ps1                  本地 Windows 计划任务（已不用）
+├── .last-push-date                     [新增] 由 Actions 维护的幂等标记
+└── HANDOFF.md                          本文件
 ```
 
 ---
 
-## 五、剩余的小代码改动（明天再做）
+## 三、GitHub 配置（2026-05-28 状态）
 
-只剩 `index.html` 的两处小调整（**5 分钟工作量**）：
+### Secrets（Settings → Secrets and variables → Actions）
+- `SCT_SENDKEY` = **已不再被 workflow 使用**（2026-05-29 微信推送下线后变孤儿；可留可删）
+- `GITHUB_TOKEN` = Actions 自动注入，用于 commit 回仓
 
-1. **刷新按钮**：在云上 `/refresh` 不存在（CF Pages 没有 server.py），现在的代码会请求 `/refresh` 然后等 15 秒。改成直接重拉 `news-data.json`，不浪费等待。
-2. **底部状态文案**：从"实时数据 · 更新于 HH:MM"调整为"今日数据 · 更新于 HH:MM"（云端每天一次，叫"实时"不严谨）。
-
-不改也能跑通，纯优化体验。
+### Variables
+- `SITE_URL` = `https://globe-news-do4.pages.dev`（**已不再被 workflow 使用**——push.py 才用它，现在 workflow 不跑 push.py 了；保留无害）
 
 ---
 
-## 六、运维命令速查（云端版）
+## 四、关键架构决策记录
+
+1. **平台**：GitHub Actions（cron + 推送）+ Cloudflare Pages（静态前端）
+2. **域名（已定稿，不再迁移）**：
+   - 生产域名：`globe-news-do4.pages.dev`（系统浏览器/电脑正常）
+   - 2026-05-29 决策：**放弃换域名**。用户只用浏览器访问网页、不需要微信推送，而 pages.dev 在系统浏览器本就正常——微信黑名单问题对网页访问无影响。
+   - is-a.dev 路线已死：PR #39517 被拒（"not dev related"），见第九节归档。
+3. **资源同域**：所有外部 CDN 下到仓库内同域加载（避免国内访问 unpkg/raw 不稳）
+4. **本机角色**：仅作开发机，**不参与生产链路**；关机不影响推送
+5. **cron 策略（2026-05-28 调整）**：
+   - 单一整点 cron 在 GH Actions free tier 跳过率高
+   - 改用 3 档错峰冗余，幂等标记防重复
+6. **微信推送已下线（2026-05-29）**：
+   - 用户确认不需要每天推微信，直接浏览器开网页看每日地球仪即可
+   - `daily.yml` 已精简为**纯抓取+提交**：去掉 push 步骤、幂等标记、SCT_SENDKEY/force_push
+   - `push.py` / `.last-push-date` 文件保留在仓库（不再被 workflow 调用，留作手动备用，无害）
+   - 链路变为：cron → fetcher.py 抓 → commit news-data.json → CF Pages 自动部署 → 浏览器访问
+7. **公司电脑特殊性**：
+   - 全局 git 配置是同事 `gaoguangzhi82-oss`，仓库设了 local `LiLy2026wx`
+   - 每次 push 后必须 `cmdkey /delete:LegacyGeneric:target=git:https://github.com`
+   - **git push 必须设代理**：`$env:HTTP_PROXY="http://127.0.0.1:7890"` + `$env:HTTPS_PROXY="..."`，Clash Verge 监听 7890
+   - 浏览器 OAuth 务必先确认 github.com 登的是 LiLy2026wx
+8. **微信内置浏览器限制（2026-05-28 发现，仅历史参考）**：
+   - WeChat X5 内核黑名单拦截所有"免费海外静态托管二级域名"
+   - 表现：`ERR_NAME_NOT_RESOLVED`（伪装成 DNS 错误）
+   - 系统浏览器无限制
+   - **现已不影响本项目**：微信推送下线，纯网页访问走系统浏览器
+
+---
+
+## 五、🌅 接下来要做的事
+
+### ✅ 2026-05-29 已完成
+- 域名迁移任务**作废**（见第四节·2、第九节归档）
+- `daily.yml` 精简为纯抓取+提交，cron 扩到 5 档错峰（07:31/07:53/08:17/08:41/09:13 BJT）
+- 本地手动跑 fetcher.py 把 05-29 数据推上线（修补 schedule 首日没自动跑）
+
+### 🔭 唯一待观察项：schedule 是否真能自动触发
+- **背景**：GitHub Actions schedule 在本仓库历史触发次数 = **0**（前几天数据全是手动 Run 出来的）。免费公共仓库 schedule 高延迟/会丢首跑。
+- **怎么验**：明天（05-30）早上 9:30 BJT 后查
+  ```powershell
+  # 浏览器：https://github.com/LiLy2026wx/globe-news/actions
+  # 或 API：看有没有 event=schedule 的成功 run
+  ```
+  也可直接看网页 news-data.json 的 `_generated` 是不是 05-30。
+- **若仍不触发**（连续两天 0 schedule run）→ 升级为外部触发兜底（任选其一）：
+  1. 免费外部 cron（cron-job.org）定时打 GitHub API `workflow_dispatch`（需一个 fine-grained PAT，scope: actions:write）
+  2. 本机 Windows 计划任务每早跑 `fetcher.py` + push（见 setup_schedule.ps1，但要求开机）
+  3. Cloudflare Worker Cron Trigger（最可靠，但 fetcher 是 Python 需重写为 JS，工作量大）
+- **手动应急刷新**（任何时候数据旧了）：
+  ```powershell
+  cd C:\Users\zou18\globe-news
+  $env:PYTHONUTF8="1"; $env:HTTP_PROXY="http://127.0.0.1:7890"; $env:HTTPS_PROXY="http://127.0.0.1:7890"
+  python fetcher.py
+  git add news-data.json; git commit -m "chore(data): manual refresh"; git push
+  cmdkey /delete:LegacyGeneric:target=git:https://github.com
+  ```
+  或浏览器 Actions → Daily News Refresh → Run workflow（无需任何输入）
+
+---
+
+## 六、未来路线图（不紧急，看心情做）
+
+### 🎨 视觉/功能
+1. 改 fetcher.py 让光柱真有高低差（当前等高）
+2. 省/州下钻（美 50 州 / 俄联邦主体 / 日本都道府县）
+3. SEO 垃圾源过滤（黑名单 + 标题去重）
+4. 多语言（中/英切换，hl=en-US）
+5. 历史时间轴（利用 git history 看"昨天的新闻"）
+6. PWA（manifest + service worker，加到主屏）
+
+### 🛠️ 工程/运维
+1. 生成 fine-grained PAT 代替本机 OAuth（免除每次 push 凭据仪式）
+2. 升级 GitHub Actions 版本（消除 Node 20 deprecated 警告）
+3. 加 fallback 抓取源（BBC/Reuters/DW 直接 RSS）
+
+---
+
+## 七、常用运维命令速查
 
 ```powershell
-# 看 Actions 状态
-# 浏览器：https://github.com/<用户名>/globe-news/actions
+# === 看 Actions 状态 ===
+# 浏览器：https://github.com/LiLy2026wx/globe-news/actions
 
-# 手动触发一次（不会推微信）
-# 浏览器：Actions → Daily News Refresh & Push → Run workflow
+# === 看 is-a.dev PR 状态 ===
+# 浏览器：https://github.com/is-a-dev/register/pull/39517
 
-# 本地预览最新代码（不依赖云）
+# === 手动触发一次完整 Actions 跑 + 强制推送 ===
+# 浏览器：Actions → Daily News Refresh & Push → Run workflow → 勾 force_push → Run
+
+# === 本地手动跑一次抓取（验证 fetcher.py，不发微信）===
 cd C:\Users\zou18\globe-news
 $env:PYTHONUTF8="1"
-python server.py
-# 然后访问 http://localhost:8765/
-
-# 本地手动跑一次抓取（验证 fetcher.py）
 python fetcher.py
 
-# 本地手动测一次推送（会真发微信！）
-$env:SCT_SENDKEY="SCT你的Key"
-$env:SITE_URL="https://xxx.pages.dev"
+# === 本地手动测一次推送（会真发微信！）===
+$env:SCT_SENDKEY="SCT你的新KEY"      # ⚠️ 用 2026-05-28 重置后的新值
+$env:SITE_URL="https://globe-news-do4.pages.dev"
 python push.py
+
+# === push 代码到 GitHub（公司电脑仪式）===
+# 步骤 0：浏览器先确认 github.com 登的是 LiLy2026wx 而非同事 gaoguangzhi82-oss
+$env:HTTP_PROXY="http://127.0.0.1:7890"
+$env:HTTPS_PROXY="http://127.0.0.1:7890"
+cd C:\Users\zou18\globe-news
+git push
+cmdkey /delete:LegacyGeneric:target=git:https://github.com
 ```
 
 ---
 
-## 七、决策记录（累计）
-
-- **新闻源**：免费 Google News RSS
-- **地理精度**：全球到国家，重点国家后续扩
-- **部署**：~~本地 Windows~~ → **GitHub Actions + Cloudflare Pages**（今天定）
-- **推送渠道**：Server酱（微信公众号）
-- **推送时间**：每天一次 · 08:00 北京时间
-- **推送内容**：只推链接（不附摘要）
-- **GitHub 路径**：用户有账号 + 不熟 git → 由 Claude 手把手过命令
-- **域名**：长期用 CF 免费的 `xxx.pages.dev`
-- **本地服务**：云端跑通后关掉（用 `setup_schedule.ps1 -Unregister`）
-
----
-
-## 八、风险与注意事项
-
-- **`config.json` 已加入 .gitignore**，但第一次 `git status` 之前必须二次确认它没被提交
-- **Server酱免费版 5 条/天**，远超我们 1 条/天的用量
-- **Cloudflare Pages 免费版**：500 builds/月、无限带宽、无构建分钟数限制
-- **GitHub Actions 免费版**：公开仓库无限分钟，私有仓库 2000 分钟/月。我们走公开仓库
-- **Google News RSS 是非官方接口**，存在被封风险；建议后续加 BBC/Reuters/DW 直接 RSS 作 fallback
-- **cron 偏移**：GitHub Actions cron 实际执行时间可能延迟几分钟到十几分钟（共享资源排队），不影响"早上"这个语义
-- **跨日时区**：`cron: '0 0 * * *'` 是 UTC，对应北京 08:00。如果需要严格 08:00 准时，CF Workers 的 Cron Triggers 比 GitHub Actions 准（但当前没必要）
-
----
-
-## 九、下一阶段路线图（云上稳定后再说）
-
-1. **省/州下钻**：美 50 州、俄联邦主体、日本都道府县，二次点击进入
-2. **新闻热度气柱**：球面 3D bar 表达每国新闻数量
-3. **SEO 垃圾源过滤**：黑名单 + 标题去重
-4. **多语言切换**：英文版查询同源（`hl=en-US`），右上角切换
-5. **历史时间轴**：利用 git history 实现"昨天的新闻"回看
-6. **PWA**：加 manifest + service worker，手机可"添加到主屏幕"像 App 一样
-
----
-
-## 十、明日开工 TL;DR
+## 八、下次开工 TL;DR
 
 ```
-1. index.html 收尾微调（5 分钟）
-2. 用户在 github.com/new 建 globe-news 公开仓库（2 分钟）
-3. 在 PowerShell 跑 git init / commit / push（Claude 带着敲，5 分钟）
-4. 用户在 Cloudflare Pages 连仓库部署（5 分钟）
-5. 用户在 GitHub 仓库 Settings 加 SCT_SENDKEY (Secret) 和 SITE_URL (Variable)（3 分钟）
-6. Actions 手动触发验证 → 手机打开 pages.dev 域名（5 分钟）
-7. 等明天 08:00 自然推送验证 → 收到则关本地 PC 服务（次日）
+1. 浏览器开 https://globe-news-do4.pages.dev/ 看地球仪是否最新
+2. 看 news-data.json 的 _generated 是不是当天 → 判断 schedule 自动跑了没
+3. 若 schedule 连续两天 0 触发 → 上外部触发兜底（第五节·🔭·1）
+4. 数据旧了随时手动应急刷新（第五节末尾命令）
 ```
 
-**完。明天见。**
+**完。** 2026-05-29：域名任务作废，微信推送下线，链路精简为「cron→抓取→提交→CF Pages→浏览器」。当前数据已手动刷到 05-29，待观察 schedule 明早能否自动跑。
+
+---
+
+## 九、归档：已死的 is-a.dev 路线（2026-05-29）
+
+- PR #39517 状态：**closed, not merged**（2026-05-28T21:36:33Z）
+- 拒绝理由：维护者 @dragsbruh "reason: not dev related"——is-a.dev 根级子域名必须软件开发相关，儿童时事地球仪不符
+- `globe-news.is-a.dev` 不归属我们：访问 302 跳转 `https://is-a.dev/?d=globe-news`（未注册子域落地页）
+- 教训：is-a.dev 只收开发相关项目；非开发项目要"微信可打开域名"得买真实域名或走 eu.org 等
