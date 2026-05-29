@@ -1,76 +1,44 @@
 # 每日新闻地球仪 · 项目交接文档
 
 > **状态截止**：2026-05-29
-> **当前阶段**：**生产稳定**（cron + 推送正常）。但**域名迁移路线作废**：is-a.dev PR #39517 已被拒绝关闭（2026-05-28T21:36:33Z，理由 "not dev related"——根级子域名须与软件开发相关，本项目不符）。`globe-news.is-a.dev` 未归属我们（访问 302 跳 is-a.dev 落地页）。
-> **下次继续**：重选一个**不在微信黑名单**的域名。第五节旧 3 步收官流程已失效，待定新路线（候选：买便宜真实域名 / eu.org / 其他）。
+> **当前阶段**：**生产稳定，纯网页访问**。微信推送已下线、域名迁移作废（用户只用浏览器看网页，pages.dev 在系统浏览器本就正常）。新闻已可点开原文 + 限定近 2 天。
+> **下次继续**：明早（05-30 09:45 BJT）看定时 routine 报告——GitHub Actions schedule 是否终于自动触发（历史 0 次）；若仍 0 触发则上外部兜底触发（第五节·🔭）。
 
 ---
 
-## 一、今日（2026-05-28）做了什么
+## 一、今日（2026-05-29）做了什么
 
-### 早上发现的问题 🚨
-2026-05-27 晚配好的链路，**今早 08:00 没自动推送**。诊断：UTC `00:00` 整点 cron 在 GitHub Actions free tier public repo 上**静默跳过率高**（高峰期已知问题），不是延迟，是直接跳。
+### 1. 核实：is-a.dev 域名路线已死 🪦
+- 用权威方式（GitHub API + 实际访问）确认 PR #39517 = **closed, not merged**（2026-05-28T21:36:33Z）
+- 拒绝理由 "reason: not dev related"——is-a.dev 根级子域名必须软件开发相关，儿童时事项目不符
+- `globe-news.is-a.dev` 访问 302 跳 `https://is-a.dev/?d=globe-news`（未注册落地页），从未归属我们
+- 详见第九节归档
 
-### 当日补救：本地手动补发微信
-- 在公司电脑 PowerShell 跑：
-  ```powershell
-  $env:PYTHONUTF8="1"
-  $env:SCT_SENDKEY="SCT355463..."   # 当时还是旧 KEY，已重置
-  $env:SITE_URL="https://globe-news-do4.pages.dev"
-  python push.py
-  ```
-- Server酱 返回 OK，微信成功收到 05/28 推送
+### 2. 关键决策：微信推送下线 + 放弃换域名
+- 用户明确**不需要微信推送**，直接浏览器开网页看每日地球仪即可
+- 微信 X5 黑名单只拦微信内置浏览器，对系统浏览器/电脑访问无影响 → **不必换域名**
+- `daily.yml` 精简为**纯抓取+提交**（commit `5ba899b`）：删 push 步骤/幂等标记/SCT_SENDKEY/force_push；cron 扩到 5 档错峰（07:31/07:53/08:17/08:41/09:13 BJT）
 
-### 治本工程：3 档错峰 cron + 幂等标记
-- `.github/workflows/daily.yml` 重写：
-  - cron 从 `0 0 * * *` 单点改为 3 个**非整点**时段：
-    - `47 23 * * *` (BJT **07:47**)
-    - `23 0 * * *`  (BJT **08:23**)
-    - `47 0 * * *`  (BJT **08:47**)
-  - 加 `.last-push-date` 仓库内标记文件，push 后由 Actions commit；后续时段读到当日已推则 skip
-  - 加 `workflow_dispatch.inputs.force_push` 输入开关，UI 手动触发可勾选强制推送
-- commit 已 push：`927faf6 fix(actions): redundant off-peak cron + idempotent push`
+### 3. 发现真隐患：schedule 从未自动触发
+- 查 GitHub API：`event=schedule` 历史运行 = **0 次**，前两天数据全靠手动 Run
+- 本地手动跑 fetcher.py 把 05-29 数据推上线兜底
+- 排定一次性 routine：**05-30 09:45 BJT** 自动检查 schedule 有没有终于跑起来（见第五节·🔭）
 
-### SENDKEY 重置
-- 旧 KEY `SCT355463TooRpSoNGTRofy5stDiKar8lk` 在 2026-05-27 聊天里**泄漏过** → 重置
-- 在 Server酱·Turbo 公众号生成新 KEY → 粘到 GitHub Repository Secret `SCT_SENDKEY`
-- 用 workflow_dispatch + `force_push=true` 验证，微信成功收到第二条推送 ✅
+### 4. 修两个内容质量坑（commit `71f419e`）
+- **点不进去** → `index.html` 原把标题渲染成纯文本 `<div>`、没用 `item.url`。改成 `<a href target="_blank" rel="noopener">` 可点开原文（CSS 加 `display:block; cursor:pointer`）
+- **大多几天前** → Google News 搜索默认按相关性排序混入旧闻。`fetcher.py` 查询加 `when:2d` 限近 2 天（`gnews_rss` 用 `safe=":"` 保冒号不被编码）。重抓后 671 条全部 ≤1天前、零旧日期
+- 线上已验证：`_generated=2026-05-29T10:14`，根页面含链接渲染代码
 
-### 发现新问题：微信打不开链接 🚨
-- 推送收到，但微信内点链接报 `ERR_NAME_NOT_RESOLVED`
-- 排查：
-  - 电脑直连 → ✅ 能打开
-  - 手机系统浏览器（电信 4G + WiFi 都试过）→ ✅ 能打开
-  - 手机微信内置浏览器 → ❌ 一直报错
-- **根因**：微信 X5 内核**黑名单**拦截 `*.pages.dev` / `*.vercel.app` / `*.netlify.app` / `*.github.io`，腾讯故意的，伪装成 DNS 错误
-- DNS / 代理 / URL 层面**无解**，唯一方案：换非黑名单域名
-
-### 申请免费子域名（C 路线）
-- 决策对比 4 个服务：is-a.dev（几天）/ js.org（可能被拒，非 JS 项目）/ eu.org（1-3 个月）/ us.kg
-- 选 **is-a.dev**：审核最快、最宽松
-- 目标域名：`globe-news.is-a.dev`
-- PR #39517 已提交：https://github.com/is-a-dev/register/pull/39517
-- JSON 内容：
-  ```json
-  {
-    "owner": {
-      "username": "LiLy2026wx",
-      "email": "ripplewabi@rippleclio.com"
-    },
-    "records": {
-      "CNAME": "globe-news-do4.pages.dev"
-    }
-  }
-  ```
-- 状态：bot 已欢迎评论无报错；CI 跑校验中；等人工审核（几小时-3 天）
+### 5. 今日 commit
+`5ba899b` 精简workflow → `71f419e` 链接+新鲜度 → `40f1c36` HANDOFF → 本次再补 docs
 
 ---
 
-## 二、文件清单（2026-05-28 晚状态）
+## 二、文件清单（2026-05-29 状态）
 
 ```
 C:\Users\zou18\globe-news\
-├── .github\workflows\daily.yml       3 档错峰 cron + 幂等标记 + force_push 开关 [今日更新]
+├── .github\workflows\daily.yml       纯抓取+提交，5 档错峰 cron（微信/幂等已删）[今日精简]
 ├── .gitignore                          屏蔽 config.json / server.log / __pycache__
 ├── _headers                            CF Pages 缓存策略（news-data.json no-store）
 ├── assets\                             同域托管的外部资源
@@ -79,15 +47,15 @@ C:\Users\zou18\globe-news\
 │   ├── earth-topology.png              378 KB
 │   └── night-sky.png                   904 KB
 ├── vendor\globe.gl.min.js              globe.gl 2.32.4 同域托管 (1 MB)
-├── fetcher.py                          GitHub Actions 跑的纯抓取
+├── fetcher.py                          纯抓取（Actions 跑）；查询带 when:2d 近期过滤 [今日改]
 ├── server.py                           本地开发用，云端不启动
-├── push.py                             调 Server酱（保持纯发送，幂等逻辑在 yml 里）
-├── index.html                          前端主页
+├── push.py                             [孤儿] 调 Server酱；workflow 已不调用，留作手动备用
+├── index.html                          前端主页；新闻项现为可点击 <a> 链接 [今日改]
 ├── news-data.js                        静态 fallback 数据
 ├── news-data.json                      实时数据，Actions 每天更新
 ├── requirements.txt                    feedparser
 ├── setup_schedule.ps1                  本地 Windows 计划任务（已不用）
-├── .last-push-date                     [新增] 由 Actions 维护的幂等标记
+├── .last-push-date                     [孤儿] 旧幂等标记；精简后不再读写，可删
 └── HANDOFF.md                          本文件
 ```
 
