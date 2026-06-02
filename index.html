@@ -349,7 +349,7 @@
       .pointLabel(d => `
         <div style="background:rgba(5,8,16,0.92);padding:6px 10px;border-radius:2px;font-size:12px;border:1px solid rgba(201,169,110,0.3);color:#e8e6df;">
           <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.country}</div>
-          ${d.total} 条 · 主导：${d.dominantLabel}
+          热度 ${d.intensity} · 主导：${d.dominantLabel}
         </div>
       `);
 
@@ -373,16 +373,19 @@
         const data = NEWS_DATA[name] || NEWS_DATA[iso];
         if (!data) return null;
 
+        // "热度" = 近2天该国各类的原始命中数（区分度远高于留下的5条）。
+        // 没有 _intensity（静态 fallback 数据）时退回按留下的条数算。
+        const intensity = data._intensity;
         const counts = {};
-        let total = 0;
+        let hot = 0;        // 总热度 → 决定光柱高度
         let maxCount = 0;
         for (const [, key] of CATEGORIES) {
-          const c = (data[key] || []).length;
+          const c = intensity ? (intensity[key] || 0) : (data[key] || []).length;
           counts[key] = c;
-          total += c;
+          hot += c;
           if (c > maxCount) maxCount = c;
         }
-        if (total === 0) return null;
+        if (hot === 0) return null;
 
         // Tied categories at the max → pick deterministically by ISO hash so each country gets a stable, distinct color
         const tiedKeys = CATEGORIES.map(([, k]) => k).filter(k => counts[k] === maxCount);
@@ -392,14 +395,21 @@
           : tiedKeys[hashSeed(seed) % tiedKeys.length];
         const dominantLabel = CATEGORIES.find(([, k]) => k === dominantKey)[0];
 
+        // 面板里展示的"条数" = 实际留下的新闻数
+        const itemCount = CATEGORIES.reduce((n, [, k]) => n + (data[k] || []).length, 0);
+
         const [lng, lat] = polygonCenter(f);
+        // 对数缩放：大新闻国（中/美）不会把小国压成一片平地，又拉开可见高低差
+        // （实测当日热度 40–337，映射到约 0.018–0.077；floor/cap 兜住其它日子的离群值）
+        const a = Math.log1p(hot) * 0.028 - 0.086;
         return {
-          lat, lng, total,
+          lat, lng,
+          total: itemCount,
+          intensity: hot,
           country: name,
           dominantLabel,
           color: CATEGORY_COLORS[dominantKey] || CATEGORY_COLORS.economy,
-          // Short, stocky bars — feels like a wax seal rather than a porcupine spine
-          altitude: Math.min(0.006 + total * 0.0022, 0.055),
+          altitude: Math.max(0.008, Math.min(a, 0.085)),
         };
       })
       .filter(Boolean);

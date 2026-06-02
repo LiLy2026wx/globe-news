@@ -208,12 +208,18 @@ def extract_source(entry) -> str:
 
 
 def fetch_cell(country_zh: str, category_query: str):
+    """返回 (展示用的前 N 条, 该查询近 2 天命中的原始总条数)。
+
+    原始总条数 = 该国该类的"热度"信号（远比留下的 5 条更能区分大小国），
+    用来驱动地球上光柱的高低。
+    """
     query = f'{country_zh} {category_query} when:{RECENCY_WINDOW}'
     try:
         feed = feedparser.parse(gnews_rss(query))
     except Exception as e:
         log(f'parse failed "{query}": {e}')
-        return []
+        return [], 0
+    raw_count = len(feed.entries)
     items = []
     for entry in feed.entries[:MAX_ITEMS_PER_CELL]:
         title = (entry.get('title') or '').strip()
@@ -228,7 +234,7 @@ def fetch_cell(country_zh: str, category_query: str):
             'source': source,
             'url': entry.get('link', ''),
         })
-    return items
+    return items, raw_count
 
 
 def fetch_all():
@@ -242,13 +248,16 @@ def fetch_all():
     for country_key, country_zh, iso in COUNTRIES:
         cell = {'_meta': f'{started.strftime("%Y-%m-%d %H:%M")} · 自动抓取'}
         cell_total = 0
+        intensity = {}  # 按类别的近2天原始命中数；驱动光柱高度(总和)+颜色(主导类)
         for cat_key, _, cat_query in CATEGORIES:
-            items = fetch_cell(country_zh, cat_query)
+            items, raw_count = fetch_cell(country_zh, cat_query)
             cell[cat_key] = items
             all_items.extend(items)
             cell_total += len(items)
+            intensity[cat_key] = raw_count
             time.sleep(REQUEST_DELAY_SECONDS)
-        log(f'  {country_zh} {iso}: {cell_total} items')
+        cell['_intensity'] = intensity
+        log(f'  {country_zh} {iso}: {cell_total} items (intensity {sum(intensity.values())})')
         data[country_key] = cell
 
     resolve_all_urls(all_items)
