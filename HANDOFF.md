@@ -57,10 +57,11 @@
 1. **点下钻就卡死** → DataV 省界全精度（34省2.5万顶点 vs 全部177国才1万），三角化+挤出+过渡动画把手机卡死。修：Douglas-Peucker 简化到 5887 点/140KB（commit `aa2e2ce`）+ `polygonsTransitionDuration(0)` 关过渡动画。省界文件加 `?v=2` 绕缓存（`9271cef`）。
 2. **镜头糊满屏** → 下钻镜头高度 1.1/0.6 太近。改 1.7（总览）/1.2（点省）（`04ec283`）。
 3. **整个中国一坨实心金色** → 每省半透明金色填充(0.12)叠在被照亮地表上糊成一片。修：省级面**不填充**(`capColor()` 在 cn 视图返回透明)，靠白描边+金光柱区分（`d5a435e`）。
+4. **点大省(新疆/西藏)又糊成金色** → 选中的省仍填 0.55 金色 + 镜头拉近 → 大省糊满屏。修：cn 视图选中省也不填充，改用**亮金描边**(`strokeColor()`)高亮；点省镜头 1.2→1.5（`7dac457`）。Playwright 点新疆/西藏验证通过。
 - **验证法（重要）**：本机有 Playwright（全局，在 `@playwright/mcp/node_modules` 下）。无头浏览器开 `chrome` channel + `--no-proxy-server`（Clash 会拦 localhost）+ swiftshader 软件 WebGL，可截图肉眼查渲染 bug。注意 `world/viewMode/cnGeo` 是脚本作用域、不在 window 上；但 `enterCNDrill/selectProvince` 等函数声明是全局可调。
 
 ### 9. 今日 commit
-`99e9f65` 抗竞争推送 → `6e95268` HANDOFF → `fb7a555` 时区+链接解码 → `1a5e46f` 光柱热度 → `f5a3982` 中国省级下钻 → `aa2e2ce`/`9271cef` 修卡死 → `04ec283` 修镜头 → `d5a435e` 修金色糊屏
+`99e9f65` 抗竞争推送 → `6e95268` HANDOFF → `fb7a555` 时区+链接解码 → `1a5e46f` 光柱热度 → `f5a3982` 中国省级下钻 → `aa2e2ce`/`9271cef` 修卡死 → `04ec283` 修镜头 → `d5a435e` 修金色糊屏 → `7dac457` 修大省选中糊屏
 
 ---
 
