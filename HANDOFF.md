@@ -2,7 +2,7 @@
 
 > **状态截止**：2026-06-02
 > **当前阶段**：**生产稳定，全自动**。GitHub Actions schedule 已确认能自动触发（每日自动抓取+提交），冗余 cron 撞 push 的 non-fast-forward 竞争已修复。纯网页访问，微信推送已下线、域名迁移作废。
-> **下次继续**：① 手机验证新闻点击能正常打开文章（已修 Google 链接黑屏跳回）② 观察 06-03 起 "Run failed" 邮件是否停。⚠️ Google News 解码走非公开 `batchexecute` 接口，未来若 Google 改版可能批量回退到百度搜索——届时点击仍可用（落搜索页），但需更新 `fetcher.py::resolve_gnews_url`。其余皆不紧急（第六节）。
+> **下次继续**：① 手机验证：新闻点击能打开文章 + 光柱有高低差 + 点中国→下钻省份→点省看新闻→返回全球。② 观察 06-03 起 "Run failed" 邮件是否停。可选下一步：把省级下钻扩展到美/俄/日（管道已通用化，见第一节·8）。⚠️ Google News 解码走非公开 `batchexecute` 接口，若 Google 改版会批量回退百度搜索（点击仍可用），届时更新 `fetcher.py::resolve_gnews_url`。
 
 ---
 
@@ -39,8 +39,22 @@
   - 新增依赖 `requests`（已写入 requirements.txt）
 - 已本地全量跑一遍把修好的数据推上线（`_generated=2026-06-02T10:30+08:00`），不用等明早 cron
 
-### 7. 今日 commit
-`99e9f65` 抗竞争推送 → `6e95268` HANDOFF → `fb7a555` 时区+链接解码（含全量新数据）
+### 7. 推进路线图：光柱高低差（commit `1a5e46f`）
+- 原因：光柱高度本来就按"留下的条数"算，但每国最多 5条×5类=25 条、活跃国全顶到上限 → 看着等高
+- 改用**热度**：`fetcher` 给每国存按类别的 `_intensity`（近2天该查询原始命中数，如中国 337 / 波兰 40）
+- 前端：高度=对数缩放后的总热度；颜色=热度最高的类别（伊朗/以色列/美/俄→军事，中国→经济，韩国→航空），不再 hash 随机
+- 悬停光柱显示"热度 X · 主导：类别"
+
+### 8. 推进路线图：中国省级下钻（commit `f5a3982`）
+- 交互：点中国（全球视图）→ 面板出现"下钻到省份 →" → 拉近到 34 省、显示各省热度光柱 → 点省看该省综合前 8 条 → "← 返回全球"退出
+- `assets/china-provinces.geojson`：DataV 阿里云省界（中文名+centroid，国内可访问），同域托管，**首次下钻才加载**
+- `fetcher.fetch_cn_provinces()` → `news-cn.json`：每省一个"综合"查询取前 8 条。**省级热度坑**：单查询省名都撞 ~100 RSS 上限、无区分度 → 改用"近 12h 内发布条数"近似新闻速度（今日 12–76，不饱和）。复用 Google 解码+百度兜底。
+- 前端加 `viewMode`（global/cn）状态机；省级光柱用更陡的高度曲线（区间窄）
+- `daily.yml` 同时提交 `news-cn.json`；`_headers` 给它加 no-store
+- **扩展到美/俄/日**：现在只需加各国省界 geojson + 省名→查询词映射，管道已通用化
+
+### 9. 今日 commit
+`99e9f65` 抗竞争推送 → `6e95268` HANDOFF → `fb7a555` 时区+链接解码 → `1a5e46f` 光柱热度 → `f5a3982` 中国省级下钻
 
 ---
 
@@ -52,7 +66,8 @@ C:\Users\zou18\globe-news\
 ├── .gitignore                          屏蔽 config.json / server.log / __pycache__
 ├── _headers                            CF Pages 缓存策略（news-data.json no-store）
 ├── assets\                             同域托管的外部资源
-│   ├── countries.geojson               488 KB
+│   ├── countries.geojson               488 KB（国家级）
+│   ├── china-provinces.geojson         582 KB（中国34省界，DataV，下钻用）[新]
 │   ├── earth-night.jpg                 715 KB
 │   ├── earth-topology.png              378 KB
 │   └── night-sky.png                   904 KB
@@ -62,7 +77,8 @@ C:\Users\zou18\globe-news\
 ├── push.py                             [孤儿] 调 Server酱；workflow 已不调用，留作手动备用
 ├── index.html                          前端主页；新闻项现为可点击 <a> 链接 [今日改]
 ├── news-data.js                        静态 fallback 数据
-├── news-data.json                      实时数据，Actions 每天更新
+├── news-data.json                      国家级实时数据，Actions 每天更新（含 _intensity 热度）
+├── news-cn.json                        中国省级综合热点，Actions 每天更新，下钻时加载 [新]
 ├── requirements.txt                    feedparser
 ├── setup_schedule.ps1                  本地 Windows 计划任务（已不用）
 ├── .last-push-date                     [孤儿] 旧幂等标记；精简后不再读写，可删
@@ -145,8 +161,8 @@ C:\Users\zou18\globe-news\
 ## 六、未来路线图（不紧急，看心情做）
 
 ### 🎨 视觉/功能
-1. 改 fetcher.py 让光柱真有高低差（当前等高）
-2. 省/州下钻（美 50 州 / 俄联邦主体 / 日本都道府县）
+1. ✅ 光柱高低差（已做，commit 1a5e46f：按新闻热度+对数缩放）
+2. 省/州下钻：✅ 中国（commit f5a3982）；待扩展 美 50 州 / 俄联邦主体 / 日本都道府县（加各国省界 geojson + 省名→查询词映射即可，管道已通用化）
 3. SEO 垃圾源过滤（黑名单 + 标题去重）
 4. 多语言（中/英切换，hl=en-US）
 5. 历史时间轴（利用 git history 看"昨天的新闻"）
