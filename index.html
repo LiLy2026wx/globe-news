@@ -86,6 +86,23 @@
   }
   #region .nav:hover { background: rgba(201, 169, 110, 0.12); color: #fff; }
 
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 7px;
+    margin: 0 0 20px; padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chip {
+    font-size: 12px; color: #cfccc4; cursor: pointer;
+    padding: 6px 11px; border: 1px solid var(--border);
+    border-radius: 14px; transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .chip:hover { border-color: rgba(201, 169, 110, 0.5); color: var(--text); }
+  .chip.sel {
+    background: rgba(201, 169, 110, 0.16);
+    border-color: var(--gold); color: var(--gold);
+  }
+
   .cat { margin: 0 0 22px; }
   .cat h2 {
     font-size: 11px; color: var(--gold);
@@ -357,7 +374,19 @@
           <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.country}</div>
           热度 ${d.intensity} · 主导：${d.dominantLabel}
         </div>
-      `);
+      `)
+      // 光柱挡在面前面，点到柱子时 onPolygonClick 不会触发 → 选择卡住。
+      // 给柱子也加点击：按名字找回对应的省/国 feature 再选中。
+      .onPointClick(d => {
+        if (viewMode === 'cn') {
+          const feat = cnProvinceFeatures().find(f => f.properties.name === d.country);
+          if (feat) selectProvince(feat);
+        } else {
+          const feat = allCountries.features.find(
+            f => (f.properties.ADMIN || f.properties.NAME) === d.country);
+          if (feat) selectCountry(feat);
+        }
+      });
 
     // Initial view
     world.pointOfView({ lat: 30, lng: 110, altitude: 2.5 }, 0);
@@ -449,20 +478,21 @@
   // 面填充色。省级视图（cn）不填充：否则缩放到中国时，每个省的半透明金色叠在
   // 被照亮的地表上会糊成一坨实心金色。省份靠白色描边 + 光柱来区分。
   function capColor(f) {
-    // 省级一律不填充（含选中的省）：否则点到大省（新疆/西藏等）+镜头拉近时
-    // 那层金色会糊满整屏。选中靠下面的亮金描边高亮。
+    // 省级用极淡填充（不能全透明！全透明会让面网格不可点击，只剩小柱子能点→选择卡死；
+    // 0.12 又会让 34 省叠在亮地表上糊成一坨金色）。0.035 兼顾：几乎不可见，但可点击。
     if (viewMode === 'cn') return 'rgba(0, 0, 0, 0)';
     if (f === selectedFeat) return 'rgba(201, 169, 110, 0.55)';
     return hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)';
   }
 
-  // 描边：选中的国家/省份用亮金描边高亮（省级无填充色，全靠它来标记选中）
+  // 描边：选中的国家/省份用亮金描边高亮（省级靠它标记选中，不靠填充/抬高）
   function strokeColor(f) {
     return f === selectedFeat ? 'rgba(201, 169, 110, 0.95)' : 'rgba(255, 255, 255, 0.18)';
   }
 
   function highlightSelected() {
-    const lift = viewMode === 'cn' ? 0.03 : 0.06;
+    // 省级选中不抬高：抬高的面会拦截点向相邻省份的点击，导致"卡住"。
+    const lift = viewMode === 'cn' ? 0.006 : 0.06;
     world.polygonAltitude(f => f === selectedFeat ? lift : 0.006)
          .polygonCapColor(capColor)
          .polygonStrokeColor(strokeColor);
@@ -477,12 +507,11 @@
   }
 
   function selectProvince(feat) {
+    // 不移动镜头：已在中国总览视图，点省只高亮+出新闻；每次点都飞镜头会让地图乱跳、
+    // 还会使紧接着的下一次点击落到错位的省份上（之前"卡住"的元凶之一）。
     selectedFeat = feat;
     highlightSelected();
     showProvinceNews(feat);
-    const c = feat.properties.centroid || feat.properties.center;
-    const [lng, lat] = c ? [c[0], c[1]] : polygonCenter(feat);
-    world.pointOfView({ lat, lng, altitude: 1.5 }, 1000);
   }
 
   // ---------- 中国省级下钻 ----------
@@ -566,17 +595,39 @@
     if (back) back.onclick = exitDrill;
     const drill = document.getElementById('drill-btn');
     if (drill) drill.onclick = enterCNDrill;
+    // 省份标签：面板里直接选省，不必去点被面板盖住的地图（手机关键）
+    document.querySelectorAll('#news .chip').forEach(c =>
+      c.onclick = () => selectProvinceByName(c.dataset.name));
+  }
+
+  function provShort(name) {
+    return name.replace(/(省|市|特别行政区|维吾尔自治区|壮族自治区|回族自治区|自治区)$/, '');
+  }
+
+  // 省份标签栏，按热度从高到低排。selectedName 高亮。
+  function provinceChips(selectedName) {
+    if (!cnNews) return '';
+    const names = Object.keys(cnNews.provinces)
+      .sort((a, b) => (cnNews.provinces[b]._intensity || 0) - (cnNews.provinces[a]._intensity || 0));
+    return '<div class="chips">' + names.map(n =>
+      `<span class="chip${n === selectedName ? ' sel' : ''}" data-name="${n}">${provShort(n)}</span>`
+    ).join('') + '</div>';
+  }
+
+  function selectProvinceByName(name) {
+    const feat = cnProvinceFeatures().find(f => f.properties.name === name);
+    if (feat) selectProvince(feat);
   }
 
   function showDrillIntro() {
     document.getElementById('region').innerHTML = `
       <span class="iso">中国 · 省级</span>
       各省热点
-      <span class="hint">点击地图上的省份查看该省综合新闻</span>
+      <span class="hint">点下方省份，或点地图上的金色光柱</span>
       <span class="nav" id="back-btn">← 返回全球</span>
     `;
     document.getElementById('news').innerHTML =
-      '<div class="empty">点击地图上的省份，查看该省今日综合热点。</div>';
+      provinceChips(null) + '<div class="empty">选择一个省份，查看该省今日综合热点。</div>';
     bindNav();
   }
 
@@ -591,11 +642,10 @@
       <span class="hint">${(p && p._meta) || ''} · 综合热点</span>
       <span class="nav" id="back-btn">← 返回全球</span>
     `;
-    if (!p || !p.items || !p.items.length) {
-      news.innerHTML = '<div class="empty">该省暂无近期新闻。</div>';
-    } else {
-      news.innerHTML = `<div class="cat">${p.items.map(renderItem).join('')}</div>`;
-    }
+    const body = (!p || !p.items || !p.items.length)
+      ? '<div class="empty">该省暂无近期新闻。</div>'
+      : `<div class="cat">${p.items.map(renderItem).join('')}</div>`;
+    news.innerHTML = provinceChips(name) + body;
     bindNav();
   }
 
