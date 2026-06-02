@@ -480,7 +480,7 @@
 
   function loadCN() {
     const needGeo = cnGeo ? Promise.resolve(cnGeo)
-      : fetch('assets/china-provinces.geojson').then(r => r.json());
+      : fetch('assets/china-provinces.geojson?v=2').then(r => r.json());  // v=2: 简化版，绕开旧缓存
     const needNews = cnNews ? Promise.resolve(cnNews)
       : fetch('news-cn.json?t=' + Date.now(), { cache: 'no-store' }).then(r => r.ok ? r.json() : null);
     return Promise.all([needGeo, needNews]).then(([g, n]) => { cnGeo = g; cnNews = n; });
