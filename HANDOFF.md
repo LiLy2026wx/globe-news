@@ -2,7 +2,7 @@
 
 > **状态截止**：2026-06-02
 > **当前阶段**：**生产稳定，全自动**。GitHub Actions schedule 已确认能自动触发（每日自动抓取+提交），冗余 cron 撞 push 的 non-fast-forward 竞争已修复。纯网页访问，微信推送已下线、域名迁移作废。
-> **下次继续**：基本无待办——观察 06-03 起那批 "Run failed" 邮件是否停了即可。其余皆为不紧急的路线图项（第六节）。
+> **下次继续**：① 手机验证新闻点击能正常打开文章（已修 Google 链接黑屏跳回）② 观察 06-03 起 "Run failed" 邮件是否停。⚠️ Google News 解码走非公开 `batchexecute` 接口，未来若 Google 改版可能批量回退到百度搜索——届时点击仍可用（落搜索页），但需更新 `fetcher.py::resolve_gnews_url`。其余皆不紧急（第六节）。
 
 ---
 
@@ -29,8 +29,18 @@
 - 查 API：本仓库已有 43 个 run、`event=schedule` 成功提交（如 06-02 03:33 / 04:00 自动 refresh）
 - 记忆里"历史 0 次触发"的担忧**已解除**——之前的失败纯粹是 push 竞争，不是没触发
 
-### 5. 今日 commit
-`99e9f65` 抗竞争推送修复（在远端 cron 自动提交 `b57b2a6` 之上 rebase 后推送）
+### 6. 修两个用户反馈的线上 bug（commit `fb7a555`）
+- **更新时间不对劲** → `fetcher.py` 原用裸 `datetime.now()`（Actions runner 是 UTC），存出的 `_generated`/`_meta` 比北京时间慢 8 小时，前端 `new Date()` 渲染成"昨天 19:58"。改为 `datetime.now(BJT)`（`timezone(timedelta(hours=8))`），`_generated` 带 `+08:00` 偏移；`humanize_time` 的"x小时前"本就用 UTC 比较、不受影响。
+- **新闻点进去黑屏跳回** → 存的 URL 全是 `news.google.com/rss/articles/...` 跳转链接，Google 在国内/微信打不开。改为**抓取时解码成真实文章直链**：
+  - 走 Google 内部 `batchexecute` 接口（`resolve_gnews_url`）：先 GET rss/articles 页拿 `data-n-a-sg`/`data-n-a-ts` 签名，再 POST 还原真实 URL。**注意：签名在那 576KB 页面末尾，必须下整页**，没法流式省流量。
+  - 8 线程并发（`resolve_all_urls`），全量 694 条约 36s；GET 累计下载 ~385MB（Actions 带宽够）
+  - **双重兜底，绝不存打不开的链接**：① 解码失败 → 百度搜索该标题；② 已知被墙外媒域名（BBC/RFI/DW/NYT/路透/卫报… 见 `BLOCKED_DOMAINS`）即便解出真链也转百度搜索同题报道
+  - 全量结果：641 直链 + 53 转百度，0 残留 google 链接
+  - 新增依赖 `requests`（已写入 requirements.txt）
+- 已本地全量跑一遍把修好的数据推上线（`_generated=2026-06-02T10:30+08:00`），不用等明早 cron
+
+### 7. 今日 commit
+`99e9f65` 抗竞争推送 → `6e95268` HANDOFF → `fb7a555` 时区+链接解码（含全量新数据）
 
 ---
 
