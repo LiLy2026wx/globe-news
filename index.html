@@ -330,9 +330,7 @@
       // 每帧重新三角化所有面，手机主线程直接卡死。
       .polygonsTransitionDuration(0)
       .polygonAltitude(f => f === selectedFeat ? 0.06 : 0.006)
-      .polygonCapColor(f => f === selectedFeat
-        ? 'rgba(201, 169, 110, 0.55)'
-        : (hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)'))
+      .polygonCapColor(capColor)
       .polygonSideColor(() => 'rgba(201, 169, 110, 0.08)')
       .polygonStrokeColor(() => 'rgba(255, 255, 255, 0.18)')
       .polygonLabel(({properties: d}) => `
@@ -448,12 +446,18 @@
     return Boolean(NEWS_DATA[name] || NEWS_DATA[iso]);
   }
 
+  // 面填充色。省级视图（cn）不填充：否则缩放到中国时，每个省的半透明金色叠在
+  // 被照亮的地表上会糊成一坨实心金色。省份靠白色描边 + 光柱来区分。
+  function capColor(f) {
+    if (f === selectedFeat) return 'rgba(201, 169, 110, 0.55)';
+    if (viewMode === 'cn') return 'rgba(0, 0, 0, 0)';
+    return hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)';
+  }
+
   function highlightSelected() {
-    const lift = viewMode === 'cn' ? 0.04 : 0.06;
+    const lift = viewMode === 'cn' ? 0.03 : 0.06;
     world.polygonAltitude(f => f === selectedFeat ? lift : 0.006)
-         .polygonCapColor(f => f === selectedFeat
-           ? 'rgba(201, 169, 110, 0.55)'
-           : (hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)'));
+         .polygonCapColor(capColor);
   }
 
   function selectCountry(feat) {
@@ -494,7 +498,7 @@
       const feats = cnProvinceFeatures();
       world.polygonsData(feats)
            .polygonAltitude(0.006)
-           .polygonCapColor(f => hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)')
+           .polygonCapColor(capColor)
            .pointsData(buildProvinceBars(feats));
       world.pointOfView({ lat: 34, lng: 104, altitude: 1.7 }, 1000);
       const panel = document.getElementById('panel');
@@ -509,7 +513,7 @@
     selectedFeat = null;
     world.polygonsData(allCountries.features.filter(f => f.properties.ISO_A2 !== 'AQ'))
          .polygonAltitude(0.006)
-         .polygonCapColor(f => hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)')
+         .polygonCapColor(capColor)
          .pointsData(buildBars(allCountries));
     world.pointOfView({ lat: 30, lng: 110, altitude: 2.5 }, 1000);
     document.getElementById('region').innerHTML = `
