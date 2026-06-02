@@ -470,7 +470,7 @@
     showProvinceNews(feat);
     const c = feat.properties.centroid || feat.properties.center;
     const [lng, lat] = c ? [c[0], c[1]] : polygonCenter(feat);
-    world.pointOfView({ lat, lng, altitude: 0.6 }, 1000);
+    world.pointOfView({ lat, lng, altitude: 1.2 }, 1000);
   }
 
   // ---------- 中国省级下钻 ----------
@@ -496,7 +496,7 @@
            .polygonAltitude(0.006)
            .polygonCapColor(f => hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)')
            .pointsData(buildProvinceBars(feats));
-      world.pointOfView({ lat: 34, lng: 104, altitude: 1.1 }, 1000);
+      world.pointOfView({ lat: 34, lng: 104, altitude: 1.7 }, 1000);
       const panel = document.getElementById('panel');
       panel.classList.remove('collapsed');
       document.getElementById('toggle').textContent = '隐藏面板';
