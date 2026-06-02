@@ -28,6 +28,11 @@ if sys.platform == 'win32':
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(PROJECT_DIR, 'news-data.json')
+# 省级下钻：中国各省"综合热点"，单独成文件，前端下钻时才加载。
+CN_GEOJSON = os.path.join(PROJECT_DIR, 'assets', 'china-provinces.geojson')
+CN_OUTPUT_FILE = os.path.join(PROJECT_DIR, 'news-cn.json')
+MAX_PROVINCE_ITEMS = 8
+RECENCY_HOT_HOURS = 12  # 省级热度 = 近这么多小时内发布的条数
 
 # 显示用时间一律北京时区。Actions runner 是 UTC，若用裸 datetime.now()
 # 存出来的 _generated/_meta 会比北京时间慢 8 小时，前端显示成"昨天"。
@@ -270,9 +275,102 @@ def fetch_all():
     log(f'Wrote news-data.json ({elapsed:.1f}s)')
 
 
+_PROV_SUFFIXES = (
+    '维吾尔自治区', '壮族自治区', '回族自治区', '自治区',
+    '特别行政区', '省', '市',
+)
+
+
+def province_query_name(name: str) -> str:
+    """省级行政区全名 → 适合搜索的短名。北京市→北京 / 新疆维吾尔自治区→新疆。"""
+    for suf in _PROV_SUFFIXES:  # 长后缀在前，避免"自治区"先吃掉"维吾尔自治区"
+        if name.endswith(suf):
+            return name[: -len(suf)]
+    return name
+
+
+def fetch_province_cell(query_name: str):
+    """单个省的'综合热点'：不分类，取近2天前 N 条 + 热度。
+
+    热度不能用 len(feed.entries)——省名是常见词，单查询基本都撞 100 上限、毫无
+    区分度。改用'近 12 小时内发布的条数'近似新闻速度：活跃省多、安静省少，天然不饱和。
+    """
+    query = f'{query_name} when:{RECENCY_WINDOW}'
+    try:
+        feed = feedparser.parse(gnews_rss(query))
+    except Exception as e:
+        log(f'parse failed "{query}": {e}')
+        return [], 0
+    now = datetime.now(timezone.utc)
+    hot = 0
+    for entry in feed.entries:
+        pp = entry.get('published_parsed')
+        if not pp:
+            continue
+        age_h = (now - datetime(*pp[:6], tzinfo=timezone.utc)).total_seconds() / 3600
+        if age_h < RECENCY_HOT_HOURS:
+            hot += 1
+    items = []
+    for entry in feed.entries[:MAX_PROVINCE_ITEMS]:
+        title = (entry.get('title') or '').strip()
+        if not title:
+            continue
+        source = extract_source(entry)
+        if source and title.endswith(' - ' + source):
+            title = title[: -(len(source) + 3)].strip()
+        items.append({
+            'title': title,
+            'time': humanize_time(entry.get('published_parsed')),
+            'source': source,
+            'url': entry.get('link', ''),
+        })
+    return items, hot
+
+
+def fetch_cn_provinces():
+    """抓中国各省综合热点 → news-cn.json。省名取自 china-provinces.geojson。"""
+    try:
+        with open(CN_GEOJSON, encoding='utf-8') as f:
+            geo = json.load(f)
+    except Exception as e:
+        log(f'skip CN provinces (no geojson): {e}')
+        return
+    names = [
+        feat['properties']['name']
+        for feat in geo.get('features', [])
+        if feat.get('properties', {}).get('level') == 'province'
+        and feat['properties'].get('name')
+    ]
+    started = datetime.now(BJT)
+    log(f'Refreshing CN provinces: {len(names)} regions')
+    meta = f'{started.strftime("%Y-%m-%d %H:%M")} · 自动抓取'
+    out = {
+        '_generated': started.isoformat(timespec='seconds'),
+        '_kind': 'cn-provinces',
+        'provinces': {},
+    }
+    all_items = []
+    for name in names:
+        items, hot = fetch_province_cell(province_query_name(name))
+        out['provinces'][name] = {'_intensity': hot, '_meta': meta, 'items': items}
+        all_items.extend(items)
+        time.sleep(REQUEST_DELAY_SECONDS)
+    log(f'  CN provinces fetched: {sum(len(p["items"]) for p in out["provinces"].values())} items')
+
+    resolve_all_urls(all_items)
+
+    tmp = CN_OUTPUT_FILE + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, CN_OUTPUT_FILE)
+    elapsed = (datetime.now(BJT) - started).total_seconds()
+    log(f'Wrote news-cn.json ({elapsed:.1f}s)')
+
+
 if __name__ == '__main__':
     try:
         fetch_all()
+        fetch_cn_provinces()
     except Exception:
-        log('fetch_all crashed:\n' + traceback.format_exc())
+        log('fetch crashed:\n' + traceback.format_exc())
         sys.exit(1)

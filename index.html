@@ -77,6 +77,14 @@
     display: block; margin-top: 8px;
     font-weight: 400; letter-spacing: 0.5px;
   }
+  #region .nav {
+    display: inline-block; margin-top: 12px; font-size: 11px;
+    color: var(--gold); cursor: pointer; letter-spacing: 1px;
+    border: 1px solid rgba(201, 169, 110, 0.35); border-radius: 2px;
+    padding: 5px 11px; font-weight: 400;
+    transition: background 0.2s, color 0.2s;
+  }
+  #region .nav:hover { background: rgba(201, 169, 110, 0.12); color: #fff; }
 
   .cat { margin: 0 0 22px; }
   .cat h2 {
@@ -187,6 +195,11 @@
   let selectedFeat = null;
   let allCountries = null;
 
+  // 下钻状态：'global' = 国家级；'cn' = 中国省级
+  let viewMode = 'global';
+  let cnGeo = null;    // 中国省界 geojson（首次下钻时加载并缓存）
+  let cnNews = null;   // news-cn.json（同上）
+
   const CATEGORIES = [
     ['政治', 'politics'],
     ['军事', 'military'],
@@ -278,7 +291,7 @@
           }
           updateStatus(json._generated, true);
           refreshBars();
-          if (selectedFeat) showNews(selectedFeat);
+          if (selectedFeat) reshowSelected();
         }
       })
       .catch(() => {});
@@ -299,7 +312,7 @@
         }
         updateStatus(json._generated, true);
         refreshBars();
-        if (selectedFeat) showNews(selectedFeat);
+        if (selectedFeat) reshowSelected();
       })
       .catch(() => updateStatus(null, false));
   });
@@ -321,21 +334,13 @@
       .polygonStrokeColor(() => 'rgba(255, 255, 255, 0.18)')
       .polygonLabel(({properties: d}) => `
         <div style="background:rgba(5,8,16,0.92);padding:6px 10px;border-radius:2px;font-size:12px;border:1px solid rgba(201,169,110,0.3);color:#e8e6df;">
-          <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.ISO_A2 || ''}</div>
-          ${d.ADMIN || d.NAME || ''}
+          <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.ISO_A2 || (d.level === 'province' ? '中国' : '')}</div>
+          ${d.ADMIN || d.NAME || d.name || ''}
         </div>
       `)
       .onPolygonClick(feat => {
-        selectedFeat = feat;
-        world.polygonAltitude(f => f === selectedFeat ? 0.06 : 0.006)
-             .polygonCapColor(f => f === selectedFeat
-               ? 'rgba(201, 169, 110, 0.55)'
-               : (hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)'));
-        showNews(feat);
-
-        // Smooth camera move to clicked country
-        const [lng, lat] = polygonCenter(feat);
-        world.pointOfView({ lat, lng, altitude: 1.8 }, 1000);
+        if (viewMode === 'cn') selectProvince(feat);
+        else selectCountry(feat);
       })
       // News-density bars: height = total news count, color = dominant category
       .pointsData(buildBars(countries))
@@ -416,15 +421,167 @@
   }
 
   function refreshBars() {
-    if (world && allCountries) {
+    if (!world) return;
+    if (viewMode === 'cn' && cnGeo) {
+      world.pointsData(buildProvinceBars(cnProvinceFeatures()));
+    } else if (allCountries) {
       world.pointsData(buildBars(allCountries));
     }
   }
 
+  function reshowSelected() {
+    if (!selectedFeat) return;
+    if (viewMode === 'cn') showProvinceNews(selectedFeat);
+    else showNews(selectedFeat);
+  }
+
   function hasNews(feat) {
+    if (viewMode === 'cn') {
+      const p = cnNews && cnNews.provinces[feat.properties.name];
+      return Boolean(p && p.items && p.items.length);
+    }
     const name = feat.properties.ADMIN || feat.properties.NAME;
     const iso = feat.properties.ISO_A2;
     return Boolean(NEWS_DATA[name] || NEWS_DATA[iso]);
+  }
+
+  function highlightSelected() {
+    const lift = viewMode === 'cn' ? 0.04 : 0.06;
+    world.polygonAltitude(f => f === selectedFeat ? lift : 0.006)
+         .polygonCapColor(f => f === selectedFeat
+           ? 'rgba(201, 169, 110, 0.55)'
+           : (hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)'));
+  }
+
+  function selectCountry(feat) {
+    selectedFeat = feat;
+    highlightSelected();
+    showNews(feat);
+    const [lng, lat] = polygonCenter(feat);
+    world.pointOfView({ lat, lng, altitude: 1.8 }, 1000);
+  }
+
+  function selectProvince(feat) {
+    selectedFeat = feat;
+    highlightSelected();
+    showProvinceNews(feat);
+    const c = feat.properties.centroid || feat.properties.center;
+    const [lng, lat] = c ? [c[0], c[1]] : polygonCenter(feat);
+    world.pointOfView({ lat, lng, altitude: 0.6 }, 1000);
+  }
+
+  // ---------- 中国省级下钻 ----------
+  function cnProvinceFeatures() {
+    return cnGeo.features.filter(f => f.properties.level === 'province' && f.properties.name);
+  }
+
+  function loadCN() {
+    const needGeo = cnGeo ? Promise.resolve(cnGeo)
+      : fetch('assets/china-provinces.geojson').then(r => r.json());
+    const needNews = cnNews ? Promise.resolve(cnNews)
+      : fetch('news-cn.json?t=' + Date.now(), { cache: 'no-store' }).then(r => r.ok ? r.json() : null);
+    return Promise.all([needGeo, needNews]).then(([g, n]) => { cnGeo = g; cnNews = n; });
+  }
+
+  function enterCNDrill() {
+    loadCN().then(() => {
+      if (!cnGeo || !cnNews) return;   // 数据没就绪则留在全球视图
+      viewMode = 'cn';
+      selectedFeat = null;
+      const feats = cnProvinceFeatures();
+      world.polygonsData(feats)
+           .polygonAltitude(0.006)
+           .polygonCapColor(f => hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)')
+           .pointsData(buildProvinceBars(feats));
+      world.pointOfView({ lat: 34, lng: 104, altitude: 1.1 }, 1000);
+      const panel = document.getElementById('panel');
+      panel.classList.remove('collapsed');
+      document.getElementById('toggle').textContent = '隐藏面板';
+      showDrillIntro();
+    });
+  }
+
+  function exitDrill() {
+    viewMode = 'global';
+    selectedFeat = null;
+    world.polygonsData(allCountries.features.filter(f => f.properties.ISO_A2 !== 'AQ'))
+         .polygonAltitude(0.006)
+         .polygonCapColor(f => hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)')
+         .pointsData(buildBars(allCountries));
+    world.pointOfView({ lat: 30, lng: 110, altitude: 2.5 }, 1000);
+    document.getElementById('region').innerHTML = `
+      <span class="iso">— 等待选择 —</span>
+      请点击地球上任意国家
+      <span class="hint">鼠标左键拖动旋转 · 滚轮缩放</span>
+    `;
+    document.getElementById('news').innerHTML = '';
+  }
+
+  function buildProvinceBars(feats) {
+    return feats.map(f => {
+      const name = f.properties.name;
+      const p = cnNews && cnNews.provinces[name];
+      const hot = p ? (p._intensity || 0) : 0;
+      if (!hot) return null;
+      const c = f.properties.centroid || f.properties.center;
+      if (!c) return null;
+      // 省级热度=近12h条数，区间约 12–74（比国家级窄），单独标定一条更陡的曲线
+      const a = Math.log1p(hot) * 0.033 - 0.0725;
+      return {
+        lat: c[1], lng: c[0],
+        intensity: hot,
+        total: p.items.length,
+        country: name,
+        dominantLabel: '综合',
+        color: 'rgba(201, 169, 110, 0.9)',
+        altitude: Math.max(0.008, Math.min(a, 0.085)),
+      };
+    }).filter(Boolean);
+  }
+
+  function renderItem(item) {
+    const inner = `${item.title}<span class="time">${item.time}${item.source ? ' · ' + item.source : ''}</span>`;
+    return item.url
+      ? `<a class="news-item" href="${item.url}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="news-item">${inner}</div>`;
+  }
+
+  function bindNav() {
+    const back = document.getElementById('back-btn');
+    if (back) back.onclick = exitDrill;
+    const drill = document.getElementById('drill-btn');
+    if (drill) drill.onclick = enterCNDrill;
+  }
+
+  function showDrillIntro() {
+    document.getElementById('region').innerHTML = `
+      <span class="iso">中国 · 省级</span>
+      各省热点
+      <span class="hint">点击地图上的省份查看该省综合新闻</span>
+      <span class="nav" id="back-btn">← 返回全球</span>
+    `;
+    document.getElementById('news').innerHTML =
+      '<div class="empty">点击地图上的省份，查看该省今日综合热点。</div>';
+    bindNav();
+  }
+
+  function showProvinceNews(feat) {
+    const name = feat.properties.name;
+    const p = cnNews && cnNews.provinces[name];
+    const region = document.getElementById('region');
+    const news = document.getElementById('news');
+    region.innerHTML = `
+      <span class="iso">中国 · 省级</span>
+      ${name}
+      <span class="hint">${(p && p._meta) || ''} · 综合热点</span>
+      <span class="nav" id="back-btn">← 返回全球</span>
+    `;
+    if (!p || !p.items || !p.items.length) {
+      news.innerHTML = '<div class="empty">该省暂无近期新闻。</div>';
+    } else {
+      news.innerHTML = `<div class="cat">${p.items.map(renderItem).join('')}</div>`;
+    }
+    bindNav();
   }
 
   function polygonCenter(feat) {
@@ -470,23 +627,17 @@
       <span class="iso">${iso || '—'}</span>
       ${name}
       <span class="hint">${data._meta || '今日要闻 · 五大类'}</span>
+      ${iso === 'CN' ? '<span class="nav" id="drill-btn">下钻到省份 →</span>' : ''}
     `;
 
     news.innerHTML = CATEGORIES.map(([label, key]) => {
       const items = data[key] || [];
       return `<div class="cat">
         <h2>${label}<span class="count">${items.length ? `(${items.length})` : ''}</span></h2>
-        ${items.length === 0
-          ? '<div class="empty">暂无</div>'
-          : items.map(item => {
-              const inner = `${item.title}<span class="time">${item.time}${item.source ? ' · ' + item.source : ''}</span>`;
-              return item.url
-                ? `<a class="news-item" href="${item.url}" target="_blank" rel="noopener">${inner}</a>`
-                : `<div class="news-item">${inner}</div>`;
-            }).join('')
-        }
+        ${items.length === 0 ? '<div class="empty">暂无</div>' : items.map(renderItem).join('')}
       </div>`;
     }).join('');
+    bindNav();
   }
 </script>
 </body>

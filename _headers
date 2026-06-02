@@ -6,6 +6,11 @@
   Cache-Control: no-store
   Access-Control-Allow-Origin: *
 
+# Province drill-down data, same daily refresh — never cache.
+/news-cn.json
+  Cache-Control: no-store
+  Access-Control-Allow-Origin: *
+
 # Static assets can be cached briefly.
 /*.html
   Cache-Control: public, max-age=300
