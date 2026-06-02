@@ -1,36 +1,36 @@
 # 每日新闻地球仪 · 项目交接文档
 
-> **状态截止**：2026-05-29
-> **当前阶段**：**生产稳定，纯网页访问**。微信推送已下线、域名迁移作废（用户只用浏览器看网页，pages.dev 在系统浏览器本就正常）。新闻已可点开原文 + 限定近 2 天。
-> **下次继续**：明早（05-30 09:45 BJT）看定时 routine 报告——GitHub Actions schedule 是否终于自动触发（历史 0 次）；若仍 0 触发则上外部兜底触发（第五节·🔭）。
+> **状态截止**：2026-06-02
+> **当前阶段**：**生产稳定，全自动**。GitHub Actions schedule 已确认能自动触发（每日自动抓取+提交），冗余 cron 撞 push 的 non-fast-forward 竞争已修复。纯网页访问，微信推送已下线、域名迁移作废。
+> **下次继续**：基本无待办——观察 06-03 起那批 "Run failed" 邮件是否停了即可。其余皆为不紧急的路线图项（第六节）。
 
 ---
 
-## 一、今日（2026-05-29）做了什么
+## 一、今日（2026-06-02）做了什么
 
-### 1. 核实：is-a.dev 域名路线已死 🪦
-- 用权威方式（GitHub API + 实际访问）确认 PR #39517 = **closed, not merged**（2026-05-28T21:36:33Z）
-- 拒绝理由 "reason: not dev related"——is-a.dev 根级子域名必须软件开发相关，儿童时事项目不符
-- `globe-news.is-a.dev` 访问 302 跳 `https://is-a.dev/?d=globe-news`（未注册落地页），从未归属我们
-- 详见第九节归档
+### 1. 排查：连日 "Daily News Refresh Run failed" 邮件
+- 用户连续几天收到 GitHub 失败通知邮件（All jobs have failed，2 annotations）
+- 用公开 GitHub API 逐 run 拆步骤定位：**失败永远在第 7 步 `Commit data if changed`（exit code 1），抓取本身（第 6 步）每次都成功**
+- 失败是**间歇性**的（有成功有失败，且都挤在两三分钟内的爆发里）
 
-### 2. 关键决策：微信推送下线 + 放弃换域名
-- 用户明确**不需要微信推送**，直接浏览器开网页看每日地球仪即可
-- 微信 X5 黑名单只拦微信内置浏览器，对系统浏览器/电脑访问无影响 → **不必换域名**
-- `daily.yml` 精简为**纯抓取+提交**（commit `5ba899b`）：删 push 步骤/幂等标记/SCT_SENDKEY/force_push；cron 扩到 5 档错峰（07:31/07:53/08:17/08:41/09:13 BJT）
+### 2. 根因：冗余 cron 爆发触发 → push 撞 non-fast-forward
+- 免费公共仓库的 schedule 会高延迟 + **批量爆发触发**，5 档错峰 cron 被挤在同一时段
+- 一个 run checkout 后，另一个 run 抢先 push，它再 push 就被远端拒绝（`fetch first` / non-fast-forward）→ exit 1
+- 排查时我自己提交 daily.yml 也现场撞上同一个 bug，正好验证了诊断 😄
+- 邮件里"2 annotations" = ① Node20 弃用**警告**（无害，checkout@v4/setup-python@v5 已是最新大版本）+ ② push 失败
+- `dynamic` 事件的 run 是 **GitHub Pages 自动部署**（github-pages[bot]），只部署不 push，与冲突无关
 
-### 3. 发现真隐患：schedule 从未自动触发
-- 查 GitHub API：`event=schedule` 历史运行 = **0 次**，前两天数据全靠手动 Run
-- 本地手动跑 fetcher.py 把 05-29 数据推上线兜底
-- 排定一次性 routine：**05-30 09:45 BJT** 自动检查 schedule 有没有终于跑起来（见第五节·🔭）
+### 3. 修复：抗竞争推送（commit `99e9f65`）
+- `daily.yml` 第 7 步改为：`git push` 被拒 → `git fetch origin main` + `git reset --soft origin/main` 把本次最新 `news-data.json` 原样叠到最新 main 上 → 重推，循环最多 5 次
+- 单一生成文件 → 零合并冲突、幂等；若上游已是当前数据则直接跳过
+- **5 档错峰 cron 是有意保留的可靠性设计，不删**——现在它们再撞也会自动让路重推
 
-### 4. 修两个内容质量坑（commit `71f419e`）
-- **点不进去** → `index.html` 原把标题渲染成纯文本 `<div>`、没用 `item.url`。改成 `<a href target="_blank" rel="noopener">` 可点开原文（CSS 加 `display:block; cursor:pointer`）
-- **大多几天前** → Google News 搜索默认按相关性排序混入旧闻。`fetcher.py` 查询加 `when:2d` 限近 2 天（`gnews_rss` 用 `safe=":"` 保冒号不被编码）。重抓后 671 条全部 ≤1天前、零旧日期
-- 线上已验证：`_generated=2026-05-29T10:14`，根页面含链接渲染代码
+### 4. 顺带确认：schedule 已能自动触发 ✅
+- 查 API：本仓库已有 43 个 run、`event=schedule` 成功提交（如 06-02 03:33 / 04:00 自动 refresh）
+- 记忆里"历史 0 次触发"的担忧**已解除**——之前的失败纯粹是 push 竞争，不是没触发
 
 ### 5. 今日 commit
-`5ba899b` 精简workflow → `71f419e` 链接+新鲜度 → `40f1c36` HANDOFF → 本次再补 docs
+`99e9f65` 抗竞争推送修复（在远端 cron 自动提交 `b57b2a6` 之上 rebase 后推送）
 
 ---
 
@@ -112,19 +112,15 @@ C:\Users\zou18\globe-news\
   1. 新闻点不进去 → `index.html` 原来把标题渲染成纯文本 `<div>`，没用 `item.url`。改成 `<a target="_blank" rel="noopener">` 可点开原文（CSS 加 display:block/cursor:pointer）
   2. 新闻大多几天前 → Google News 搜索默认按相关性排序混入旧闻。`fetcher.py` 查询加 `when:2d` 限近 2 天（`gnews_rss` 用 safe=":" 保冒号）。重抓后 671 条全部 ≤1天前，零旧日期
 
-### 🔭 唯一待观察项：schedule 是否真能自动触发
-- **背景**：GitHub Actions schedule 在本仓库历史触发次数 = **0**（前几天数据全是手动 Run 出来的）。免费公共仓库 schedule 高延迟/会丢首跑。
-- **怎么验**：明天（05-30）早上 9:30 BJT 后查
-  ```powershell
-  # 浏览器：https://github.com/LiLy2026wx/globe-news/actions
-  # 或 API：看有没有 event=schedule 的成功 run
-  ```
-  也可直接看网页 news-data.json 的 `_generated` 是不是 05-30。
-- **若仍不触发**（连续两天 0 schedule run）→ 升级为外部触发兜底（任选其一）：
-  1. 免费外部 cron（cron-job.org）定时打 GitHub API `workflow_dispatch`（需一个 fine-grained PAT，scope: actions:write）
-  2. 本机 Windows 计划任务每早跑 `fetcher.py` + push（见 setup_schedule.ps1，但要求开机）
-  3. Cloudflare Worker Cron Trigger（最可靠，但 fetcher 是 Python 需重写为 JS，工作量大）
-- **手动应急刷新**（任何时候数据旧了）：
+### ✅ 2026-06-02 已解决：schedule 自动触发 + push 竞争
+- **schedule 已确认能自动触发**：API 查到 43 个 run、`event=schedule` 成功提交（06-02 03:33/04:00 自动 refresh）。免费公共仓库 schedule 高延迟/批量爆发，但确实会跑——外部触发兜底**不再需要**。
+- **修掉 push 竞争**（commit `99e9f65`）：冗余 cron 爆发触发导致第 7 步 `git push` 互撞 non-fast-forward（exit 1），即连日 "Run failed" 邮件根因。已改为被拒→同步最新 main→叠数据→重推（最多 5 次，单文件零冲突）。
+- **怎么验收**：06-03 起观察那批失败邮件是否停了；或浏览器 https://github.com/LiLy2026wx/globe-news/actions 看 schedule run 是否全绿。
+
+### 🛟 外部触发兜底（已不需要，留作万一退路）
+- 若哪天 schedule 又罢工（连续两天 0 schedule run）：① cron-job.org 定时打 `workflow_dispatch`（需 fine-grained PAT，scope actions:write）② 本机计划任务跑 `fetcher.py`+push（setup_schedule.ps1，要求开机）③ CF Worker Cron（最稳但 fetcher 需重写 JS）
+
+### 🆘 手动应急刷新（任何时候数据旧了）
   ```powershell
   cd C:\Users\zou18\globe-news
   $env:PYTHONUTF8="1"; $env:HTTP_PROXY="http://127.0.0.1:7890"; $env:HTTPS_PROXY="http://127.0.0.1:7890"
@@ -162,18 +158,15 @@ C:\Users\zou18\globe-news\
 # === 看 is-a.dev PR 状态 ===
 # 浏览器：https://github.com/is-a-dev/register/pull/39517
 
-# === 手动触发一次完整 Actions 跑 + 强制推送 ===
-# 浏览器：Actions → Daily News Refresh & Push → Run workflow → 勾 force_push → Run
+# === 手动触发一次 Actions 跑（无需任何输入）===
+# 浏览器：Actions → Daily News Refresh → Run workflow → Run
+# （微信推送已下线，已无 force_push 选项）
 
-# === 本地手动跑一次抓取（验证 fetcher.py，不发微信）===
+# === 本地手动跑一次抓取（验证 fetcher.py）===
 cd C:\Users\zou18\globe-news
 $env:PYTHONUTF8="1"
 python fetcher.py
-
-# === 本地手动测一次推送（会真发微信！）===
-$env:SCT_SENDKEY="SCT你的新KEY"      # ⚠️ 用 2026-05-28 重置后的新值
-$env:SITE_URL="https://globe-news-do4.pages.dev"
-python push.py
+# 注：push.py / SCT_SENDKEY 已随微信推送下线作废，不要再用
 
 # === push 代码到 GitHub（公司电脑仪式）===
 # 步骤 0：浏览器先确认 github.com 登的是 LiLy2026wx 而非同事 gaoguangzhi82-oss
@@ -190,12 +183,13 @@ cmdkey /delete:LegacyGeneric:target=git:https://github.com
 
 ```
 1. 浏览器开 https://globe-news-do4.pages.dev/ 看地球仪是否最新
-2. 看 news-data.json 的 _generated 是不是当天 → 判断 schedule 自动跑了没
-3. 若 schedule 连续两天 0 触发 → 上外部触发兜底（第五节·🔭·1）
-4. 数据旧了随时手动应急刷新（第五节末尾命令）
+2. 看 news-data.json 的 _generated 是不是当天 → 确认 schedule 自动跑了
+3. 收到 "Run failed" 邮件别慌：先按第一节方法拆步骤（多半已被抗竞争推送自动解决）
+4. 数据旧了随时手动应急刷新（第五节·🆘 命令）
+5. 想做新东西 → 第六节路线图
 ```
 
-**完。** 2026-05-29：域名任务作废，微信推送下线，链路精简为「cron→抓取→提交→CF Pages→浏览器」。当前数据已手动刷到 05-29，待观察 schedule 明早能否自动跑。
+**完。** 2026-06-02：定位并修复连日 "Run failed" 邮件根因（冗余 cron 撞 push non-fast-forward），改为抗竞争重推；同时确认 schedule 已能自动触发。项目进入**全自动稳定**状态，基本无待办。
 
 ---
 
