@@ -332,7 +332,7 @@
       .polygonAltitude(f => f === selectedFeat ? 0.06 : 0.006)
       .polygonCapColor(capColor)
       .polygonSideColor(() => 'rgba(201, 169, 110, 0.08)')
-      .polygonStrokeColor(() => 'rgba(255, 255, 255, 0.18)')
+      .polygonStrokeColor(strokeColor)
       .polygonLabel(({properties: d}) => `
         <div style="background:rgba(5,8,16,0.92);padding:6px 10px;border-radius:2px;font-size:12px;border:1px solid rgba(201,169,110,0.3);color:#e8e6df;">
           <div style="color:#c9a96e;font-size:10px;letter-spacing:2px;">${d.ISO_A2 || (d.level === 'province' ? '中国' : '')}</div>
@@ -449,15 +449,23 @@
   // 面填充色。省级视图（cn）不填充：否则缩放到中国时，每个省的半透明金色叠在
   // 被照亮的地表上会糊成一坨实心金色。省份靠白色描边 + 光柱来区分。
   function capColor(f) {
-    if (f === selectedFeat) return 'rgba(201, 169, 110, 0.55)';
+    // 省级一律不填充（含选中的省）：否则点到大省（新疆/西藏等）+镜头拉近时
+    // 那层金色会糊满整屏。选中靠下面的亮金描边高亮。
     if (viewMode === 'cn') return 'rgba(0, 0, 0, 0)';
+    if (f === selectedFeat) return 'rgba(201, 169, 110, 0.55)';
     return hasNews(f) ? 'rgba(201, 169, 110, 0.12)' : 'rgba(255, 255, 255, 0.02)';
+  }
+
+  // 描边：选中的国家/省份用亮金描边高亮（省级无填充色，全靠它来标记选中）
+  function strokeColor(f) {
+    return f === selectedFeat ? 'rgba(201, 169, 110, 0.95)' : 'rgba(255, 255, 255, 0.18)';
   }
 
   function highlightSelected() {
     const lift = viewMode === 'cn' ? 0.03 : 0.06;
     world.polygonAltitude(f => f === selectedFeat ? lift : 0.006)
-         .polygonCapColor(capColor);
+         .polygonCapColor(capColor)
+         .polygonStrokeColor(strokeColor);
   }
 
   function selectCountry(feat) {
@@ -474,7 +482,7 @@
     showProvinceNews(feat);
     const c = feat.properties.centroid || feat.properties.center;
     const [lng, lat] = c ? [c[0], c[1]] : polygonCenter(feat);
-    world.pointOfView({ lat, lng, altitude: 1.2 }, 1000);
+    world.pointOfView({ lat, lng, altitude: 1.5 }, 1000);
   }
 
   // ---------- 中国省级下钻 ----------
