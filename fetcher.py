@@ -9,13 +9,16 @@ Output: news-data.json (overwrites in place, atomic via tmp + rename)
 """
 import json
 import os
+import re
 import sys
 import time
 import traceback
-from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta, timezone
 from urllib.parse import quote
 
 import feedparser
+import requests
 
 if sys.platform == 'win32':
     try:
@@ -26,11 +29,25 @@ if sys.platform == 'win32':
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE = os.path.join(PROJECT_DIR, 'news-data.json')
 
+# 显示用时间一律北京时区。Actions runner 是 UTC，若用裸 datetime.now()
+# 存出来的 _generated/_meta 会比北京时间慢 8 小时，前端显示成"昨天"。
+BJT = timezone(timedelta(hours=8))
+
 MAX_ITEMS_PER_CELL = 5
 REQUEST_DELAY_SECONDS = 0.4
 # Google News 搜索默认按相关性排序，会混入几天/几周前的旧闻。
 # 用 when: 操作符限定近 N 天，偏向新鲜内容。
 RECENCY_WINDOW = '2d'
+
+# Google News RSS 给的是 news.google.com 跳转链接，国内/微信打不开（黑屏跳回）。
+# 抓取时（Actions 能访问 Google）把它解码成真实文章地址，存直链。
+RESOLVE_WORKERS = 8
+RESOLVE_TIMEOUT = 20
+_HTTP = requests.Session()
+_HTTP.headers['User-Agent'] = (
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+    '(KHTML, like Gecko) Chrome/124.0 Safari/537.36'
+)
 
 # (geojson ADMIN key, Chinese display name, ISO_A2)
 COUNTRIES = [
@@ -84,6 +101,80 @@ def log(msg):
 def gnews_rss(query: str) -> str:
     # safe=':' 保留 when:2d 里的冒号不被编码成 %3A
     return f'https://news.google.com/rss/search?q={quote(query, safe=":")}&hl=zh-CN&gl=CN&ceid=CN:zh-Hans'
+
+
+def baidu_search_url(title: str) -> str:
+    # 兜底：解码失败时跳百度搜索该标题，国内必定可开。
+    return f'https://www.baidu.com/s?wd={quote(title)}'
+
+
+# 国内被墙的常见外媒域名：即便解出真实直链也打不开，统一转百度搜索同题报道。
+BLOCKED_DOMAINS = (
+    'bbc.com', 'bbc.co.uk', 'rfi.fr', 'dw.com', 'rfa.org',
+    'voachinese.com', 'voanews.com', 'nytimes.com', 'nyt.com',
+    'wsj.com', 'reuters.com', 'bloomberg.com', 'theguardian.com',
+    'ft.com', 'economist.com', 'youtube.com', 'x.com', 'twitter.com',
+    'facebook.com', 'wikipedia.org', 't.me',
+)
+
+
+def is_blocked(real_url: str) -> bool:
+    host = re.sub(r'^https?://', '', real_url).split('/', 1)[0].lower()
+    return any(host == d or host.endswith('.' + d) for d in BLOCKED_DOMAINS)
+
+
+def resolve_gnews_url(url: str, title: str) -> str:
+    """把 news.google.com 跳转链接解码成真实文章直链。
+
+    走 Google 内部 batchexecute 接口（非公开，未来可能变）。任何失败都兜底为
+    百度搜索链接——绝不返回打不开的 google 链接。非 google 链接原样返回。
+    """
+    if 'news.google.com' not in url or '/articles/' not in url:
+        return url
+    try:
+        art = url.split('/articles/')[1].split('?')[0]
+        page = _HTTP.get(
+            f'https://news.google.com/rss/articles/{art}', timeout=RESOLVE_TIMEOUT
+        ).text
+        sg = re.search(r'data-n-a-sg="([^"]+)"', page).group(1)
+        ts = re.search(r'data-n-a-ts="([^"]+)"', page).group(1)
+        inner = (
+            '["garturlreq",[["X","X",["X","X"],null,null,1,1,"US:en",null,1,'
+            'null,null,null,null,null,0,1],"X","X",1,[1,1,1],1,1,null,0,0,null,0],'
+            f'"{art}",{ts},"{sg}"]'
+        )
+        freq = json.dumps([[['Fbv4je', inner, None, 'generic']]])
+        resp = _HTTP.post(
+            'https://news.google.com/_/DotsSplashUi/data/batchexecute',
+            data='f.req=' + quote(freq),
+            headers={'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+            timeout=RESOLVE_TIMEOUT,
+        ).text
+        line = next(l for l in resp.split('\n') if l.startswith('[['))
+        real = json.loads(json.loads(line)[0][2])[1]
+        if real and real.startswith('http'):
+            return baidu_search_url(title) if is_blocked(real) else real
+    except Exception as e:
+        log(f'resolve failed ({title[:20]}): {e}')
+    return baidu_search_url(title)
+
+
+def resolve_all_urls(items):
+    """并发把一批 item 的 google 链接换成真实直链（原地修改）。"""
+    targets = [it for it in items if 'news.google.com' in it.get('url', '')]
+    if not targets:
+        return
+    log(f'Resolving {len(targets)} Google News links → real URLs ({RESOLVE_WORKERS} workers)...')
+    started = time.time()
+
+    def work(it):
+        it['url'] = resolve_gnews_url(it['url'], it.get('title', ''))
+
+    with ThreadPoolExecutor(max_workers=RESOLVE_WORKERS) as pool:
+        list(pool.map(work, targets))
+    baidu = sum(1 for it in targets if it['url'].startswith('https://www.baidu.com/s'))
+    log(f'Resolved {len(targets)} links in {time.time() - started:.1f}s '
+        f'({len(targets) - baidu} direct, {baidu} fell back to Baidu search)')
 
 
 def humanize_time(published_struct):
@@ -141,28 +232,32 @@ def fetch_cell(country_zh: str, category_query: str):
 
 
 def fetch_all():
-    started = datetime.now()
+    started = datetime.now(BJT)
     log(f'Refreshing news: {len(COUNTRIES)} countries x {len(CATEGORIES)} categories')
     data = {
         '_generated': started.isoformat(timespec='seconds'),
         '_countries': len(COUNTRIES),
     }
+    all_items = []
     for country_key, country_zh, iso in COUNTRIES:
         cell = {'_meta': f'{started.strftime("%Y-%m-%d %H:%M")} · 自动抓取'}
         cell_total = 0
         for cat_key, _, cat_query in CATEGORIES:
             items = fetch_cell(country_zh, cat_query)
             cell[cat_key] = items
+            all_items.extend(items)
             cell_total += len(items)
             time.sleep(REQUEST_DELAY_SECONDS)
         log(f'  {country_zh} {iso}: {cell_total} items')
         data[country_key] = cell
 
+    resolve_all_urls(all_items)
+
     tmp = OUTPUT_FILE + '.tmp'
     with open(tmp, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     os.replace(tmp, OUTPUT_FILE)
-    elapsed = (datetime.now() - started).total_seconds()
+    elapsed = (datetime.now(BJT) - started).total_seconds()
     log(f'Wrote news-data.json ({elapsed:.1f}s)')
 
 
