@@ -326,6 +326,9 @@
       .atmosphereColor('#6a8aaf')
       .atmosphereAltitude(0.18)
       .polygonsData(countries.features.filter(f => f.properties.ISO_A2 !== 'AQ'))
+      // 关键：关掉多边形过渡动画。否则切换到省级面时 globe.gl 会在 1s 过渡里
+      // 每帧重新三角化所有面，手机主线程直接卡死。
+      .polygonsTransitionDuration(0)
       .polygonAltitude(f => f === selectedFeat ? 0.06 : 0.006)
       .polygonCapColor(f => f === selectedFeat
         ? 'rgba(201, 169, 110, 0.55)'
