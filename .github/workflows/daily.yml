@@ -55,7 +55,26 @@ jobs:
           git add news-data.json
           if git diff --cached --quiet; then
             echo "No data changes."
-          else
-            git commit -m "chore(data): refresh news $(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M%z)"
-            git push
+            exit 0
           fi
+          msg="chore(data): refresh news $(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M%z)"
+          git commit -m "$msg"
+          # 抗竞争推送：多档错峰 cron 被 GitHub 批量触发时易撞 non-fast-forward。
+          # 被拒就 fetch 最新 origin/main，把本次最新数据原样叠上去重推（单文件零冲突、幂等）。
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Pushed on attempt $i."
+              exit 0
+            fi
+            echo "Push attempt $i rejected — syncing onto latest origin/main..."
+            git fetch origin main
+            git reset --soft origin/main
+            if git diff --cached --quiet; then
+              echo "Upstream already has current data; nothing to push."
+              exit 0
+            fi
+            git commit -m "$msg"
+            sleep $(( (RANDOM % 4) + 2 ))
+          done
+          echo "::error::git push failed after 5 attempts" >&2
+          exit 1
