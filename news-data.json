@@ -1,9 +1,15 @@
 {
-  "_generated": "2026-07-02T12:32:28+08:00",
+  "_generated": "2026-07-02T12:45:25+08:00",
   "_countries": 30,
   "China": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
+      {
+        "title": "首届政治哲学青年论坛在京举行",
+        "time": "1小时前",
+        "source": "中国社会科学网",
+        "url": "https://www.cssn.cn/zx/zx_rdkx/202607/t20260702_6057232.shtml"
+      },
       {
         "title": "习近平系列重要讲话数据库",
         "time": "3小时前",
@@ -12,13 +18,13 @@
       },
       {
         "title": "深圳集中收看庆祝中国共产党成立105周年大会",
-        "time": "16分钟前",
+        "time": "29分钟前",
         "source": "sz.gov.cn",
         "url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_12874048.html"
       },
       {
         "title": "中国共产党为什么能，习近平强调这6个优秀特质- 中国日报网",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "China Daily",
         "url": "http://china.chinadaily.com.cn/a/202607/02/WS6a45c6b9a310d709c2fbb6c1.html"
       },
@@ -27,12 +33,6 @@
         "time": "1小时前",
         "source": "中国网",
         "url": "http://ccpd.china.com.cn/2026-07/02/content_43456087.html"
-      },
-      {
-        "title": "读懂中国共产党为什么能的关键密码",
-        "time": "3小时前",
-        "source": "佛山新闻网",
-        "url": "https://www.foshannews.net/h/192/20260702/873197.html"
       }
     ],
     "military": [
@@ -44,7 +44,7 @@
       },
       {
         "title": "【早报】美将部分中企列入“中国军事企业清单”，商务部回应；OpenAI被查",
-        "time": "16小时前",
+        "time": "17小时前",
         "source": "财联社",
         "url": "https://www.cls.cn/detail/2399163"
       },
@@ -94,17 +94,17 @@
       },
       {
         "title": "老胡同里的新空间_中国经济网——国家经济门户",
-        "time": "1小时前",
+        "time": "2小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044621176_120702?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       }
     ],
     "technology": [
       {
-        "title": "中国科技创新为世界提供发展机遇（国际论坛·读懂中国·读懂中国式现代化）",
-        "time": "1小时前",
-        "source": "中国日报网",
-        "url": "http://cn.chinadaily.com.cn/a/202607/02/WS6a45da4ba310d709c2fbb783.html"
+        "title": "中国科技创新为世界提供发展机遇（国际论坛·读懂中国·读懂中国式现代化） --观点",
+        "time": "6小时前",
+        "source": "人民网观点",
+        "url": "http://opinion.people.com.cn/n1/2026/0702/c461529-40751854.html"
       },
       {
         "title": "六月中国科技高光时刻",
@@ -120,7 +120,7 @@
       },
       {
         "title": "流动科普设施服务公众超6亿人次 科普大篷车行驶里程相当于绕地球1547圈",
-        "time": "7小时前",
+        "time": "8小时前",
         "source": "光明网",
         "url": "https://news.gmw.cn/2026-07/02/content_38862762.htm"
       },
@@ -152,7 +152,7 @@
       },
       {
         "title": "朱雀三号点火待飞+SpaceX下周纳入纳指100，商业航天拐点来了？华宝基金通用航空ETF（159231）强势连阳",
-        "time": "16小时前",
+        "time": "17小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.cn/fund/etf/2026-07-01/detail-inifiaew3060125.d.html?oid=WA%200859%203970%200884%20RAB%20Bangun%20Plafon%20Gypsum%20Buat%20Kamar%20Murah%20Banyumanik%20Semarang&vt=4"
       },
@@ -165,18 +165,18 @@
     ],
     "_intensity": {
       "politics": 100,
-      "military": 42,
+      "military": 41,
       "economy": 100,
-      "technology": 37,
+      "technology": 40,
       "aviation": 43
     }
   },
   "United States of America": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "【世界说】“美国梦”渐行渐远：暮色笼罩下的美国250周年国庆",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "中国日报网",
         "url": "https://cn.chinadaily.com.cn/a/202607/02/WS6a45c1d6a310d709c2fbb6ad.html"
       },
@@ -194,7 +194,7 @@
       },
       {
         "title": "第二批“马姆达尼们”的挑战：美国民主社会主义者能否成为政治主流？ : 中国·国际",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "韩民族日报",
         "url": "https://china.hani.co.kr/arti/international/17076.html"
       },
@@ -208,9 +208,15 @@
     "military": [
       {
         "title": "【早报】美将部分中企列入“中国军事企业清单”，商务部回应；OpenAI被查",
-        "time": "16小时前",
+        "time": "17小时前",
         "source": "财联社",
         "url": "https://www.cls.cn/detail/2399163"
+      },
+      {
+        "title": "美军机紧急迫降阿拉伯海，1名机组人员失踪",
+        "time": "1小时前",
+        "source": "央广网",
+        "url": "https://military.cnr.cn/zcff/20260702/t20260702_527686096.shtml"
       },
       {
         "title": "白宫：美国对伊朗军事行动已花费约300亿美元",
@@ -219,22 +225,16 @@
         "url": "https://www.chinanews.com.cn/gj/2026/07-01/10650598.shtml"
       },
       {
-        "title": "[评论]中国需跨越的三大陷阱",
-        "time": "8小时前",
-        "source": "朝鮮日報中文版",
-        "url": "http://cnnews.chosun.com/client/news/viw.asp?cate=C08&mcate=&nNewsNumb=20260664955&nidx="
-      },
-      {
         "title": "万斯副总统：伊朗距离研制出核弹的距离是至少20年来最远的",
-        "time": "7小时前",
+        "time": "8小时前",
         "source": "美国之音",
         "url": "https://www.baidu.com/s?wd=%E4%B8%87%E6%96%AF%E5%89%AF%E6%80%BB%E7%BB%9F%EF%BC%9A%E4%BC%8A%E6%9C%97%E8%B7%9D%E7%A6%BB%E7%A0%94%E5%88%B6%E5%87%BA%E6%A0%B8%E5%BC%B9%E7%9A%84%E8%B7%9D%E7%A6%BB%E6%98%AF%E8%87%B3%E5%B0%9120%E5%B9%B4%E6%9D%A5%E6%9C%80%E8%BF%9C%E7%9A%84"
       },
       {
-        "title": "北约秘书长欲用“军火费”拉住美国？",
-        "time": "18小时前",
-        "source": "新京报",
-        "url": "https://www.bjnews.com.cn/detail/1782898993129717.html"
+        "title": "[评论]中国需跨越的三大陷阱",
+        "time": "9小时前",
+        "source": "朝鮮日報中文版",
+        "url": "http://cnnews.chosun.com/client/news/viw.asp?cate=C08&mcate=&nNewsNumb=20260664955&nidx="
       }
     ],
     "economy": [
@@ -246,14 +246,14 @@
       },
       {
         "title": "美联储主席：当前美国通胀水平仍然过高",
-        "time": "4小时前",
+        "time": "5小时前",
         "source": "新京报",
         "url": "https://www.bjnews.com.cn/detail/1782948552129915.html"
       },
       {
         "title": "科技产业如此亮眼，为什么我们仍需关注内需不足？-朱天-观察者网",
         "time": "3小时前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/ZhuTian/2026_07_02_822297.shtml"
       },
       {
@@ -270,12 +270,6 @@
       }
     ],
     "technology": [
-      {
-        "title": "全球科技上半年迎牛市狂欢 最大赢家却不在美国",
-        "time": "2小时前",
-        "source": "搜狐网",
-        "url": "https://m.sohu.com/a/1044611766_122014422?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
-      },
       {
         "title": "科技股领跑上半年全球股市：美股跑输国际同行 半导体板块表现最强",
         "time": "7小时前",
@@ -295,6 +289,12 @@
         "url": "http://www.cb.com.cn/index/show/jr1/cv/cv12526404234"
       },
       {
+        "title": "全球科技上半年迎牛市狂欢 最大赢家却不在美国",
+        "time": "2小时前",
+        "source": "搜狐网",
+        "url": "https://m.sohu.com/a/1044611766_122014422?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+      },
+      {
         "title": "美国金融市场进入下半场：AI估值忧虑升温，美股或向下调整",
         "time": "5小时前",
         "source": "新浪新闻_手机新浪网",
@@ -304,7 +304,7 @@
     "aviation": [
       {
         "title": "6亿美元合同公布！美国月球基地建设有新动向",
-        "time": "35分钟前",
+        "time": "48分钟前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044679508_122014422?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
@@ -335,17 +335,17 @@
     ],
     "_intensity": {
       "politics": 49,
-      "military": 55,
+      "military": 53,
       "economy": 58,
-      "technology": 48,
+      "technology": 47,
       "aviation": 30
     }
   },
   "Russia": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
-        "title": "俄罗斯出席哈梅内伊葬礼代表确定",
+        "title": "他将代表普京出席哈梅内伊葬礼",
         "time": "5小时前",
         "source": "凤凰网",
         "url": "https://news.ifeng.com/c/8uQKpA66jZC"
@@ -364,7 +364,7 @@
       },
       {
         "title": "德宪法保护局：德国是中国最重要的情报收集目标之一",
-        "time": "15小时前",
+        "time": "16小时前",
         "source": "DW.com",
         "url": "https://www.baidu.com/s?wd=%E5%BE%B7%E5%AE%AA%E6%B3%95%E4%BF%9D%E6%8A%A4%E5%B1%80%EF%BC%9A%E5%BE%B7%E5%9B%BD%E6%98%AF%E4%B8%AD%E5%9B%BD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%83%85%E6%8A%A5%E6%94%B6%E9%9B%86%E7%9B%AE%E6%A0%87%E4%B9%8B%E4%B8%80"
       },
@@ -396,7 +396,7 @@
       },
       {
         "title": "中共祕密訓練俄軍人 竟教授核生化敏感項目",
-        "time": "38分钟前",
+        "time": "51分钟前",
         "source": "新唐人電視台",
         "url": "https://www.ntdtv.com/gb/2026/07/02/a104111443.html"
       },
@@ -427,16 +427,16 @@
         "url": "https://www.bjnews.com.cn/detail/1782819397019879.html"
       },
       {
+        "title": "俄联邦储蓄银行CEO：俄罗斯人最关心何时能结束军事行动",
+        "time": "16小时前",
+        "source": "新浪财经",
+        "url": "https://cj.sina.cn/articles/view/1887344341/707e96d502001ryu6?froms=ggmp&vt=4"
+      },
+      {
         "title": "路透独家: 中俄秘密军事训练获高层批准 包括放射生化战 与乌克兰有关",
         "time": "20小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E8%B7%AF%E9%80%8F%E7%8B%AC%E5%AE%B6%3A%20%E4%B8%AD%E4%BF%84%E7%A7%98%E5%AF%86%E5%86%9B%E4%BA%8B%E8%AE%AD%E7%BB%83%E8%8E%B7%E9%AB%98%E5%B1%82%E6%89%B9%E5%87%86%20%E5%8C%85%E6%8B%AC%E6%94%BE%E5%B0%84%E7%94%9F%E5%8C%96%E6%88%98%20%E4%B8%8E%E4%B9%8C%E5%85%8B%E5%85%B0%E6%9C%89%E5%85%B3"
-      },
-      {
-        "title": "俄联邦储蓄银行CEO：俄罗斯人最关心何时能结束军事行动",
-        "time": "15小时前",
-        "source": "新浪财经",
-        "url": "https://cj.sina.cn/articles/view/1887344341/707e96d502001ryu6?froms=ggmp&vt=4"
       }
     ],
     "technology": [
@@ -448,7 +448,7 @@
       },
       {
         "title": "【华尔街日报】燃油短缺席卷俄罗斯，普京面临政治危机",
-        "time": "4小时前",
+        "time": "5小时前",
         "source": "端傳媒Initium Media",
         "url": "https://theinitium.com/20260702-wsj-russia-fuel-shortage-putin-political-crisis-zh-hans/"
       },
@@ -505,14 +505,14 @@
     ],
     "_intensity": {
       "politics": 40,
-      "military": 49,
-      "economy": 40,
+      "military": 48,
+      "economy": 39,
       "technology": 40,
       "aviation": 8
     }
   },
   "Japan": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "快讯：日本2025年度税收或达84万亿日元创新高",
@@ -521,16 +521,16 @@
         "url": "https://china.kyodonews.net/articles/-/12429"
       },
       {
+        "title": "日本将设“对外情报厅”加强对外间谍活动",
+        "time": "12小时前",
+        "source": "凤凰网",
+        "url": "https://news.ifeng.com/c/8sytTv8xN0x?mobile=2"
+      },
+      {
         "title": "中国外交部不按套路出牌，突然三问日本为政者，刀刀扎在要害",
         "time": "3小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044567653_121289767?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
-      },
-      {
-        "title": "日本将设“对外情报厅”加强对外间谍活动",
-        "time": "11小时前",
-        "source": "凤凰网",
-        "url": "https://news.ifeng.com/c/8sytTv8xN0x?mobile=2"
       },
       {
         "title": "日本众议院通过增设“国旗损毁罪”法案",
@@ -539,10 +539,10 @@
         "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E4%BC%97%E8%AE%AE%E9%99%A2%E9%80%9A%E8%BF%87%E5%A2%9E%E8%AE%BE%E2%80%9C%E5%9B%BD%E6%97%97%E6%8D%9F%E6%AF%81%E7%BD%AA%E2%80%9D%E6%B3%95%E6%A1%88"
       },
       {
-        "title": "中国实施“民族团结进步促进法”，为何引起台湾忧虑？",
-        "time": "1天前",
-        "source": "BBC",
-        "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%AE%9E%E6%96%BD%E2%80%9C%E6%B0%91%E6%97%8F%E5%9B%A2%E7%BB%93%E8%BF%9B%E6%AD%A5%E4%BF%83%E8%BF%9B%E6%B3%95%E2%80%9D%EF%BC%8C%E4%B8%BA%E4%BD%95%E5%BC%95%E8%B5%B7%E5%8F%B0%E6%B9%BE%E5%BF%A7%E8%99%91%EF%BC%9F"
+        "title": "日本学者：先解决贫困，再谈环保",
+        "time": "20小时前",
+        "source": "jpchinapress.com",
+        "url": "https://www.jpchinapress.com/static/content/sd/2026-07-01/1521907960393277440.html"
       }
     ],
     "military": [
@@ -580,13 +580,19 @@
     "economy": [
       {
         "title": "中国车在欧洲份额反超日本",
-        "time": "1小时前",
+        "time": "2小时前",
         "source": "日经中文网",
         "url": "https://cn.nikkei.com/china/ccompany/63093-2026-07-02-09-38-13.html?start=1"
       },
       {
+        "title": "日本剔除觊觎半导体和AI情报的中国资金…效仿美国，收紧对中国投资尖端技术的审查",
+        "time": "1小时前",
+        "source": "朝鮮日報中文版",
+        "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260664989&cate=c01&mcate=m1003"
+      },
+      {
         "title": "日元汇率跌至40年新低，加剧日本经济分化",
-        "time": "12小时前",
+        "time": "13小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.com.cn/jjxw/2026-07-01/doc-inifinuk0746572.shtml"
       },
@@ -594,19 +600,13 @@
         "title": "多重因素拖累日元持续走弱 日本经济民生承压",
         "time": "1天前",
         "source": "中国青年网",
-        "url": "http://news.youth.cn/gj/202607/t20260701_16740444.htm"
+        "url": "https://news.youth.cn/gj/202607/t20260701_16740444.htm"
       },
       {
-        "title": "日媒预警“严峻的生存危机”！9家日本电池设备制造商拆解产线搭“积木”“降本提速”",
-        "time": "11小时前",
-        "source": "风闻",
-        "url": "https://user.guancha.cn/main/content?id=1678996"
-      },
-      {
-        "title": "日本抗议中国海警阻止日海保船在日专属经济区开展作业",
-        "time": "3小时前",
-        "source": "联合早报",
-        "url": "https://www.zaobao.com.sg/news/china/story20260702-9298785"
+        "title": "汇率跌至近40年来最低水平 日本难破经济困局",
+        "time": "1天前",
+        "source": "中国日报网",
+        "url": "https://cn.chinadaily.com.cn/a/202606/30/WS6a438006a310d709c2fbb1a1.html"
       }
     ],
     "technology": [
@@ -668,31 +668,31 @@
       },
       {
         "title": "委内瑞拉大地震已造成1900多人遇难降雨加大救援难度| NHK WORLD-JAPAN News",
-        "time": "17小时前",
+        "time": "18小时前",
         "source": "nhk.or.jp",
         "url": "https://www3.nhk.or.jp/nhkworld/zh/news/20260701_RS10/"
       }
     ],
     "_intensity": {
-      "politics": 38,
-      "military": 38,
+      "politics": 39,
+      "military": 37,
       "economy": 47,
       "technology": 50,
-      "aviation": 22
+      "aviation": 21
     }
   },
   "Germany": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "德宪法保护局：德国是中国最重要的情报收集目标之一",
-        "time": "15小时前",
+        "time": "16小时前",
         "source": "DW.com",
         "url": "https://www.baidu.com/s?wd=%E5%BE%B7%E5%AE%AA%E6%B3%95%E4%BF%9D%E6%8A%A4%E5%B1%80%EF%BC%9A%E5%BE%B7%E5%9B%BD%E6%98%AF%E4%B8%AD%E5%9B%BD%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%83%85%E6%8A%A5%E6%94%B6%E9%9B%86%E7%9B%AE%E6%A0%87%E4%B9%8B%E4%B8%80"
       },
       {
         "title": "德国部长陷入“AI代写”风波",
-        "time": "1小时前",
+        "time": "2小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.cn/stock/jdts/2026-07-02/detail-inifkqha5912133.d.html?vt=4&cid=76993&node_id=76993"
       },
@@ -703,16 +703,16 @@
         "url": "https://www.jpchinapress.com/static/content/SS/2026-07-02/1522165140434493440.html"
       },
       {
-        "title": "德政府发言人：德国总理不会干涉纳帅去留，现阶段需要团结|德国|纳格尔斯曼|世界杯",
-        "time": "14小时前",
-        "source": "懂球帝",
-        "url": "https://m.dongqiudi.com/article/5986993.html"
-      },
-      {
         "title": "顾彬、李雪涛谈《德意志史》：对于德国，“走向西方”意味着什么？",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044284187_260616?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+      },
+      {
+        "title": "德政府发言人：德国总理不会干涉纳帅去留，现阶段需要团结|德国|纳格尔斯曼|世界杯",
+        "time": "15小时前",
+        "source": "懂球帝",
+        "url": "https://m.dongqiudi.com/article/5986993.html"
       }
     ],
     "military": [
@@ -736,21 +736,21 @@
       },
       {
         "title": "买新能源车的注意，7月1日起两项新国标将实施",
-        "time": "21小时前",
+        "time": "22小时前",
         "source": "财新",
         "url": "https://mini.caixin.com/2026-06-30/102459044.html"
       },
       {
-        "title": "当年被骂“太软”的默克尔，为啥成了德国人如今最想回去的时代？",
-        "time": "15小时前",
-        "source": "搜狐网",
-        "url": "https://m.sohu.com/a/1044401023_122116898?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+        "title": "美国、德国和波兰对削减美军反应表示欢迎，签署加强欧洲防务谅解备忘录",
+        "time": "16小时前",
+        "source": "VOI.ID",
+        "url": "https://voi.id/zh/news/580361"
       }
     ],
     "economy": [
       {
         "title": "德国经济部长陷入“AI代写”风波",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.com.cn/roll/2026-07-02/doc-inifkqfu3584077.shtml"
       },
@@ -844,15 +844,15 @@
       }
     ],
     "_intensity": {
-      "politics": 47,
-      "military": 30,
-      "economy": 31,
-      "technology": 48,
+      "politics": 48,
+      "military": 31,
+      "economy": 30,
+      "technology": 47,
       "aviation": 6
     }
   },
   "United Kingdom": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "英国政治不确定性叠加美联储降息路径分歧，英镑/美元维持低位震荡",
@@ -862,7 +862,7 @@
       },
       {
         "title": "失落十年的英国，气数已尽了吗",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044175499_656058?scm=10001.198_14-198_14_exp.0.0-0-0-0-0."
       },
@@ -888,9 +888,9 @@
     "military": [
       {
         "title": "逢低布局英国国防投资计划？200亿英镑军费加码推高国防股，英国国债遭遇抛售",
-        "time": "11小时前",
+        "time": "12小时前",
         "source": "新浪财经",
-        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-07-02/doc-inifitaq2816615.shtml?cre=tianyi&mod=pchp&loc=2&r=0&rfunc=51&tj=cxvertical_pc_hp&tr=12"
+        "url": "https://finance.sina.com.cn/stock/usstock/c/2026-07-02/doc-inifitaq2816615.shtml?cre=tianyi&mod=pchp&loc=1&r=0&rfunc=16&tj=cxvertical_pc_hp&tr=12"
       },
       {
         "title": "四渡赤水不是毛主席的“至暗时刻”",
@@ -912,8 +912,8 @@
       },
       {
         "title": "吕特替欧洲邀功：我们重整军备，养活美国近20万就业岗位-观察者网",
-        "time": "23小时前",
-        "source": "guancha.cn",
+        "time": "1天前",
+        "source": "观察者",
         "url": "https://www.guancha.cn/internation/2026_07_01_822192.shtml"
       }
     ],
@@ -958,7 +958,7 @@
       },
       {
         "title": "锁定产业关键环节，横琴赴西班牙、英国递出“合作名片”",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "珠海网",
         "url": "https://pub-zhtb.hizh.cn/a/202607/01/AP6a44c304e4b082bf21483d92.html"
       },
@@ -990,7 +990,7 @@
       },
       {
         "title": "逢低布局英国国防投资计划？200亿英镑军费加码推高国防股，英国国债遭遇抛售",
-        "time": "11小时前",
+        "time": "12小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.com.cn/stock/usstock/c/2026-07-02/doc-inifitaq2816615.shtml?finpagefr=p_108"
       },
@@ -1003,18 +1003,18 @@
     ],
     "_intensity": {
       "politics": 16,
-      "military": 26,
+      "military": 24,
       "economy": 34,
-      "technology": 44,
+      "technology": 43,
       "aviation": 3
     }
   },
   "France": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "王毅与鲁比奥通话称：改善中美关系需要“具体行动”",
-        "time": "6小时前",
+        "time": "7小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E7%8E%8B%E6%AF%85%E4%B8%8E%E9%B2%81%E6%AF%94%E5%A5%A5%E9%80%9A%E8%AF%9D%E7%A7%B0%EF%BC%9A%E6%94%B9%E5%96%84%E4%B8%AD%E7%BE%8E%E5%85%B3%E7%B3%BB%E9%9C%80%E8%A6%81%E2%80%9C%E5%85%B7%E4%BD%93%E8%A1%8C%E5%8A%A8%E2%80%9D"
       },
@@ -1038,7 +1038,7 @@
       },
       {
         "title": "视频 中国港口货物箱吞吐量创历史新高",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E8%A7%86%E9%A2%91%20%E4%B8%AD%E5%9B%BD%E6%B8%AF%E5%8F%A3%E8%B4%A7%E7%89%A9%E7%AE%B1%E5%90%9E%E5%90%90%E9%87%8F%E5%88%9B%E5%8E%86%E5%8F%B2%E6%96%B0%E9%AB%98"
       }
@@ -1052,7 +1052,7 @@
       },
       {
         "title": "特朗普，“和粉丝吵翻了”",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "凤凰网",
         "url": "https://news.ifeng.com/c/8uMPZ6rxaBi"
       },
@@ -1095,16 +1095,16 @@
         "url": "https://news.china.com/socialgd/10000169/20260702/49583948.html"
       },
       {
+        "title": "高端床垫选型不出错：7大酒店床垫品牌推荐实用指南",
+        "time": "3小时前",
+        "source": "e0734.com",
+        "url": "http://www.e0734.com/content/2026/0702/799_645018.html"
+      },
+      {
         "title": "法国PMI突破50关口 欧元应声而动",
         "time": "20小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.com.cn/stock/usstock/summary/2026-07-01/doc-inifhvwy3076682.shtml"
-      },
-      {
-        "title": "高端床垫选型不出错：7大酒店床垫品牌推荐实用指南",
-        "time": "2小时前",
-        "source": "e0734.com",
-        "url": "http://www.e0734.com/content/2026/0702/799_645018.html"
       }
     ],
     "technology": [
@@ -1121,28 +1121,28 @@
         "url": "https://fr.china-embassy.gov.cn/ttxw/202606/t20260630_11955204.htm"
       },
       {
+        "title": "比利时3分钟起死回生 3比2淘汰塞内加尔",
+        "time": "4小时前",
+        "source": "RFI",
+        "url": "https://www.baidu.com/s?wd=%E6%AF%94%E5%88%A9%E6%97%B63%E5%88%86%E9%92%9F%E8%B5%B7%E6%AD%BB%E5%9B%9E%E7%94%9F%203%E6%AF%942%E6%B7%98%E6%B1%B0%E5%A1%9E%E5%86%85%E5%8A%A0%E5%B0%94"
+      },
+      {
         "title": "法国科技企业推90秒健康监测站，切入家用医疗设备千亿市场",
         "time": "1天前",
         "source": "AgeClub",
         "url": "https://www.ageclub.net/article-detail/9734"
       },
       {
-        "title": "舒华体育亮相法国巴黎国际健身展FITEX 2026，以领 先科技深耕欧洲市场_行业动态",
-        "time": "21小时前",
-        "source": "投资界",
-        "url": "https://news.pedaily.cn/20260701/133227.shtml"
-      },
-      {
-        "title": "法国世界报 - 小包裹、钢铁、汽车制造，中国制造正在压垮欧洲企业",
-        "time": "7小时前",
-        "source": "RFI",
-        "url": "https://www.baidu.com/s?wd=%E6%B3%95%E5%9B%BD%E4%B8%96%E7%95%8C%E6%8A%A5%20-%20%E5%B0%8F%E5%8C%85%E8%A3%B9%E3%80%81%E9%92%A2%E9%93%81%E3%80%81%E6%B1%BD%E8%BD%A6%E5%88%B6%E9%80%A0%EF%BC%8C%E4%B8%AD%E5%9B%BD%E5%88%B6%E9%80%A0%E6%AD%A3%E5%9C%A8%E5%8E%8B%E5%9E%AE%E6%AC%A7%E6%B4%B2%E4%BC%81%E4%B8%9A"
+        "title": "法国对瑞典谁厉害",
+        "time": "1天前",
+        "source": "国际金融报",
+        "url": "https://www.ifnews.com/jrnews/jrnews/20260630/550769.html"
       }
     ],
     "aviation": [
       {
         "title": "联邦快递约14亿美元向法国CMA CGM出售供应链业务",
-        "time": "1小时前",
+        "time": "2小时前",
         "source": "观点网",
         "url": "https://www.guandian.cn/article/20260702/570737.html"
       },
@@ -1166,7 +1166,7 @@
       },
       {
         "title": "EDM 石油/液体市场趋势、增长、预测报告 2035",
-        "time": "23小时前",
+        "time": "1天前",
         "source": "Spherical Insights",
         "url": "https://www.sphericalinsights.com/zh/reports/edm-oils-fluids-market"
       }
@@ -1175,16 +1175,22 @@
       "politics": 49,
       "military": 44,
       "economy": 52,
-      "technology": 49,
+      "technology": 50,
       "aviation": 7
     }
   },
   "India": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
+        "title": "巴基斯坦与印度交换在押人员名单",
+        "time": "15小时前",
+        "source": "京报网",
+        "url": "https://xinwen.bjd.com.cn/content/s6a4513d8e4b03fa51a80b81e.html"
+      },
+      {
         "title": "苹果一把手还没继位，就被印度坑了把大的",
-        "time": "10小时前",
+        "time": "11小时前",
         "source": "风闻",
         "url": "https://user.guancha.cn/main/content?id=1680566"
       },
@@ -1202,35 +1208,29 @@
       },
       {
         "title": "117名印巴名人联名写信给莫迪和谢里夫：别打了，坐下来谈谈",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044401968_121726405?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
-      },
-      {
-        "title": "金价过山车后怎么走？世界黄金协会：下半年处在关键“分水岭”",
-        "time": "14小时前",
-        "source": "21财经",
-        "url": "https://m.21jingji.com/article/20260701/herald/0bec2150ccb7d2cfcf0733fb68792939.html"
       }
     ],
     "military": [
       {
         "title": "外媒：孟加拉国采购歼-10CE战斗机已经进入关键阶段，印度面临东西夹击",
-        "time": "12小时前",
+        "time": "13小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044447266_120649655?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
-      },
-      {
-        "title": "换将，印度军改大动作？",
-        "time": "18小时前",
-        "source": "新浪财经",
-        "url": "https://cj.sina.cn/articles/view/5952915720/162d2490806704aq50?froms=ggmp&vt=4"
       },
       {
         "title": "越南通过与印度和斯里兰卡的伙伴关系扩大安全合作网络",
         "time": "1天前",
         "source": "Indo-Pacific Defense FORUM",
         "url": "https://ipdefenseforum.com/zh-hans/2026/06/%E8%B6%8A%E5%8D%97%E9%80%9A%E8%BF%87%E4%B8%8E%E5%8D%B0%E5%BA%A6%E5%92%8C%E6%96%AF%E9%87%8C%E5%85%B0%E5%8D%A1%E7%9A%84%E4%BC%99%E4%BC%B4%E5%85%B3%E7%B3%BB%E6%89%A9%E5%A4%A7%E5%AE%89%E5%85%A8%E5%90%88/"
+      },
+      {
+        "title": "男子吃印度菜得阑尾炎_新浪新闻",
+        "time": "18小时前",
+        "source": "新浪网",
+        "url": "https://www.sina.cn/news/detail/5315930496440024.html"
       },
       {
         "title": "高市早苗拟邀500名印度高技能人才赴日加强AI合作",
@@ -1253,12 +1253,6 @@
         "url": "https://www.cnnpn.cn/article/55569.html"
       },
       {
-        "title": "高市的供应链算盘，莫迪会接吗？",
-        "time": "5小时前",
-        "source": "同花顺财经",
-        "url": "https://m.10jqka.com.cn/20260702/c677881919.shtml"
-      },
-      {
         "title": "据印度《经济时报》报道，阿达尼集团和IHC计划合并成立一家价值115亿美元的铝业公司。",
         "time": "3小时前",
         "source": "新浪财经",
@@ -1271,22 +1265,28 @@
         "url": "https://user.guancha.cn/main/content?id=1680720&comments-container"
       },
       {
-        "title": "日本首相高市启程出访印度",
-        "time": "18小时前",
-        "source": "共同网",
-        "url": "https://china.kyodonews.net/articles/-/12405"
+        "title": "印度GDP增速放缓，星展即时预测显示进一步降温，提升对冲与波动率关注度",
+        "time": "6小时前",
+        "source": "VT Markets",
+        "url": "https://www.vtmarkets.com/cn/live-updates/%E5%8D%B0%E5%BA%A6gdp%E5%A2%9E%E9%80%9F%E6%94%BE%E7%BC%93%EF%BC%8C%E6%98%9F%E5%B1%95%E5%8D%B3%E6%97%B6%E9%A2%84%E6%B5%8B%E6%98%BE%E7%A4%BA%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%99%8D%E6%B8%A9%EF%BC%8C/"
+      },
+      {
+        "title": "改变印度经济与文化的耆那教精神",
+        "time": "5小时前",
+        "source": "亚洲日报",
+        "url": "https://www.ajudaily.com/view/20260702083270787"
       }
     ],
     "technology": [
       {
         "title": "“美国要安抚：我不是中国，不让你当小弟”特朗普肯吗？-观察者网",
         "time": "2小时前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/internation/2026_07_02_822310.shtml"
       },
       {
         "title": "印度坑了苹果",
-        "time": "32分钟前",
+        "time": "45分钟前",
         "source": "36Kr",
         "url": "https://www.36kr.com/p/3877934994209412"
       },
@@ -1298,7 +1298,7 @@
       },
       {
         "title": "日本首相高市早苗从7月1日开始访问印度",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E9%A6%96%E7%9B%B8%E9%AB%98%E5%B8%82%E6%97%A9%E8%8B%97%E4%BB%8E7%E6%9C%881%E6%97%A5%E5%BC%80%E5%A7%8B%E8%AE%BF%E9%97%AE%E5%8D%B0%E5%BA%A6"
       },
@@ -1343,15 +1343,21 @@
     ],
     "_intensity": {
       "politics": 42,
-      "military": 30,
-      "economy": 44,
+      "military": 28,
+      "economy": 43,
       "technology": 44,
       "aviation": 5
     }
   },
   "South Korea": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
+      {
+        "title": "韩国主教练被追责，李在明的表演天赋众所周知",
+        "time": "2小时前",
+        "source": "搜狐网",
+        "url": "https://m.sohu.com/a/1044627656_122157682?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+      },
       {
         "title": "[社论]“作战指挥权移交应基于军事而非政治标准”，是给韩美的忠告",
         "time": "20小时前",
@@ -1375,15 +1381,15 @@
         "time": "1天前",
         "source": "韩民族日报",
         "url": "https://china.hani.co.kr/arti/opinion/17071.html"
-      },
-      {
-        "title": "韩国队2026世界杯出局引发“政治干预”担忧，或招致国际足联处罚",
-        "time": "1天前",
-        "source": "搜狐网",
-        "url": "https://m.sohu.com/a/1044062707_121390070?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       }
     ],
     "military": [
+      {
+        "title": "美中钨矿争夺战：这座韩国矿山能否重构供应链？",
+        "time": "3小时前",
+        "source": "纽约时报中文网",
+        "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%B8%AD%E9%92%A8%E7%9F%BF%E4%BA%89%E5%A4%BA%E6%88%98%EF%BC%9A%E8%BF%99%E5%BA%A7%E9%9F%A9%E5%9B%BD%E7%9F%BF%E5%B1%B1%E8%83%BD%E5%90%A6%E9%87%8D%E6%9E%84%E4%BE%9B%E5%BA%94%E9%93%BE%EF%BC%9F"
+      },
       {
         "title": "[社论]“作战指挥权移交应基于军事而非政治标准”，是给韩美的忠告",
         "time": "20小时前",
@@ -1391,14 +1397,8 @@
         "url": "https://cnnews.chosun.com/client/news/viw.asp?cate=C08&mcate=M1001&nNewsNumb=20260464654&nidx=64655"
       },
       {
-        "title": "美中钨矿争夺战：这座韩国矿山能否重构供应链？",
-        "time": "2小时前",
-        "source": "纽约时报中文网",
-        "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E4%B8%AD%E9%92%A8%E7%9F%BF%E4%BA%89%E5%A4%BA%E6%88%98%EF%BC%9A%E8%BF%99%E5%BA%A7%E9%9F%A9%E5%9B%BD%E7%9F%BF%E5%B1%B1%E8%83%BD%E5%90%A6%E9%87%8D%E6%9E%84%E4%BE%9B%E5%BA%94%E9%93%BE%EF%BC%9F"
-      },
-      {
         "title": "“环太平洋”军演来了 曹卫东：规模创下55年来的历史新高",
-        "time": "53分钟前",
+        "time": "1小时前",
         "source": "qq.com",
         "url": "https://news.qq.com/rain/a/20260702A03ZIG00?adChannelId=news"
       },
@@ -1456,7 +1456,7 @@
       },
       {
         "title": "韩国迎历史第二位女总理：曾任互联网高管 力推AI转型政企协同",
-        "time": "1小时前",
+        "time": "2小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044629237_258768?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
@@ -1500,7 +1500,7 @@
       },
       {
         "title": "早闻 | 我国全面进入主汛期，北方洪涝偏重；济南站也可办理宠物托运了；首尔警方调查韩国队主帅任命是否违法",
-        "time": "5小时前",
+        "time": "6小时前",
         "source": "jinantimes.com.cn",
         "url": "https://www.jinantimes.com.cn/news-7-5282169.html"
       },
@@ -1512,15 +1512,15 @@
       }
     ],
     "_intensity": {
-      "politics": 48,
-      "military": 52,
+      "politics": 46,
+      "military": 51,
       "economy": 47,
-      "technology": 32,
+      "technology": 31,
       "aviation": 15
     }
   },
   "Ukraine": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "欧亚事务｜泽连斯基对白俄“极限施压”：政治表演还是战争前奏？",
@@ -1535,14 +1535,8 @@
         "url": "https://news.ifeng.com/c/8uQSFOAoyr1"
       },
       {
-        "title": "莫斯科加油站排出长队，普京扛得住吗？",
-        "time": "4小时前",
-        "source": "风闻",
-        "url": "https://user.guancha.cn/main/content?id=1680721"
-      },
-      {
         "title": "袭击莫斯科，乌克兰无人机操纵员的隐身生活",
-        "time": "10小时前",
+        "time": "11小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E8%A2%AD%E5%87%BB%E8%8E%AB%E6%96%AF%E7%A7%91%EF%BC%8C%E4%B9%8C%E5%85%8B%E5%85%B0%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%93%8D%E7%BA%B5%E5%91%98%E7%9A%84%E9%9A%90%E8%BA%AB%E7%94%9F%E6%B4%BB"
       },
@@ -1551,6 +1545,12 @@
         "time": "3小时前",
         "source": "中华军事",
         "url": "https://military.china.com/news/13004177/20260702/49583634.html"
+      },
+      {
+        "title": "燃油短缺席卷俄罗斯，普京面临政治危机",
+        "time": "23小时前",
+        "source": "华尔街日报中文网",
+        "url": "https://www.baidu.com/s?wd=%E7%87%83%E6%B2%B9%E7%9F%AD%E7%BC%BA%E5%B8%AD%E5%8D%B7%E4%BF%84%E7%BD%97%E6%96%AF%EF%BC%8C%E6%99%AE%E4%BA%AC%E9%9D%A2%E4%B8%B4%E6%94%BF%E6%B2%BB%E5%8D%B1%E6%9C%BA"
       }
     ],
     "military": [
@@ -1588,7 +1588,7 @@
     "economy": [
       {
         "title": "袭击莫斯科，乌克兰无人机操纵员的隐身生活",
-        "time": "10小时前",
+        "time": "11小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E8%A2%AD%E5%87%BB%E8%8E%AB%E6%96%AF%E7%A7%91%EF%BC%8C%E4%B9%8C%E5%85%8B%E5%85%B0%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%93%8D%E7%BA%B5%E5%91%98%E7%9A%84%E9%9A%90%E8%BA%AB%E7%94%9F%E6%B4%BB"
       },
@@ -1620,13 +1620,13 @@
     "technology": [
       {
         "title": "袭击莫斯科，乌克兰无人机操纵员的隐身生活",
-        "time": "10小时前",
+        "time": "11小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E8%A2%AD%E5%87%BB%E8%8E%AB%E6%96%AF%E7%A7%91%EF%BC%8C%E4%B9%8C%E5%85%8B%E5%85%B0%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%93%8D%E7%BA%B5%E5%91%98%E7%9A%84%E9%9A%90%E8%BA%AB%E7%94%9F%E6%B4%BB"
       },
       {
         "title": "【华尔街日报】燃油短缺席卷俄罗斯，普京面临政治危机",
-        "time": "4小时前",
+        "time": "5小时前",
         "source": "端傳媒Initium Media",
         "url": "https://theinitium.com/20260702-wsj-russia-fuel-shortage-putin-political-crisis-zh-hans/"
       },
@@ -1682,19 +1682,19 @@
       }
     ],
     "_intensity": {
-      "politics": 40,
-      "military": 83,
+      "politics": 38,
+      "military": 82,
       "economy": 38,
       "technology": 40,
       "aviation": 10
     }
   },
   "Israel": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "以色列窝里斗？多名大佬扎堆争夺总理之位",
-        "time": "38分钟前",
+        "time": "51分钟前",
         "source": "凤凰网",
         "url": "https://news.ifeng.com/c/8uQeLjikOKB"
       },
@@ -1712,7 +1712,7 @@
       },
       {
         "title": "美国管不住以色列，也离不开以色列",
-        "time": "17小时前",
+        "time": "18小时前",
         "source": "搜狐网",
         "url": "https://www.sohu.com/a/1044349137_180220?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
@@ -1743,16 +1743,16 @@
         "url": "https://m.sohu.com/a/1044205386_115362?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
+        "title": "60 天终局大限将至！以军筹备单独打击伊朗，多哈技术团不信和局",
+        "time": "20小时前",
+        "source": "凤凰网",
+        "url": "https://mil.ifeng.com/c/8uPD0PTHcS6"
+      },
+      {
         "title": "以军：伊斯梅尔·马斯里，被打死",
         "time": "1天前",
         "source": "21财经",
         "url": "https://m.21jingji.com/article/20260630/herald/36eb7c3fb990ff9e58435256d7b43779.html"
-      },
-      {
-        "title": "1 亿军火暗单曝光！以海湾巨头地下联手，德黑兰后院彻底起火了",
-        "time": "20小时前",
-        "source": "凤凰网",
-        "url": "https://mil.ifeng.com/c/8uOhr9qlOVm"
       }
     ],
     "economy": [
@@ -1770,7 +1770,7 @@
       },
       {
         "title": "国内航线燃油附加费将大幅下调",
-        "time": "17小时前",
+        "time": "18小时前",
         "source": "每日经济新闻",
         "url": "https://www.nbd.com.cn/articles/2026-07-01/4444155.html"
       },
@@ -1781,10 +1781,10 @@
         "url": "https://news.ifeng.com/c/8uPNYSIsjbJ"
       },
       {
-        "title": "俄经济发展部：俄罗斯 5 月国内生产总值同比增长 0.3%，4 月同比增幅为",
-        "time": "12小时前",
-        "source": "新浪财经",
-        "url": "https://wap.cj.sina.cn/pc/7x24/4965769"
+        "title": "内塔尼亚胡：明年起终结美国对以援助，称以色列经济已能“断奶”",
+        "time": "1天前",
+        "source": "qq.com",
+        "url": "https://news.qq.com/rain/a/20260701V01LJN00"
       }
     ],
     "technology": [
@@ -1796,7 +1796,7 @@
       },
       {
         "title": "【早报】中国驻以使馆提醒：远离民用基础设施；特朗普再次警告伊朗",
-        "time": "22小时前",
+        "time": "23小时前",
         "source": "财联社",
         "url": "https://www.cls.cn/detail/2335441"
       },
@@ -1835,14 +1835,14 @@
     ],
     "_intensity": {
       "politics": 29,
-      "military": 43,
-      "economy": 33,
+      "military": 42,
+      "economy": 32,
       "technology": 32,
       "aviation": 2
     }
   },
   "Iran": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "【早报】美方提出含“15项条件”的和谈方案，特朗普：伊朗同意“永不拥核”；日本拟将中日关系定位降级，中方回应",
@@ -1870,7 +1870,7 @@
       },
       {
         "title": "拒签、持枪押送、禁止过夜，但伊朗男足撑到了今天",
-        "time": "8小时前",
+        "time": "9小时前",
         "source": "风闻",
         "url": "https://user.guancha.cn/main/content?id=1678797&comments-container"
       }
@@ -1878,7 +1878,7 @@
     "military": [
       {
         "title": "万斯副总统：伊朗距离研制出核弹的距离是至少20年来最远的",
-        "time": "7小时前",
+        "time": "8小时前",
         "source": "美国之音",
         "url": "https://www.baidu.com/s?wd=%E4%B8%87%E6%96%AF%E5%89%AF%E6%80%BB%E7%BB%9F%EF%BC%9A%E4%BC%8A%E6%9C%97%E8%B7%9D%E7%A6%BB%E7%A0%94%E5%88%B6%E5%87%BA%E6%A0%B8%E5%BC%B9%E7%9A%84%E8%B7%9D%E7%A6%BB%E6%98%AF%E8%87%B3%E5%B0%9120%E5%B9%B4%E6%9D%A5%E6%9C%80%E8%BF%9C%E7%9A%84"
       },
@@ -1910,7 +1910,7 @@
     "economy": [
       {
         "title": "【早报】伊朗提出停战六项条件；宇树科技IPO获受理",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "财联社",
         "url": "https://www.cls.cn/detail/2320760"
       },
@@ -1922,47 +1922,47 @@
       },
       {
         "title": "特朗普称美伊会谈“进展顺利”伊朗宣布多哈技术谈判结束",
-        "time": "6小时前",
+        "time": "7小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E7%A7%B0%E7%BE%8E%E4%BC%8A%E4%BC%9A%E8%B0%88%E2%80%9C%E8%BF%9B%E5%B1%95%E9%A1%BA%E5%88%A9%E2%80%9D%E4%BC%8A%E6%9C%97%E5%AE%A3%E5%B8%83%E5%A4%9A%E5%93%88%E6%8A%80%E6%9C%AF%E8%B0%88%E5%88%A4%E7%BB%93%E6%9D%9F"
       },
       {
         "title": "海湾国家被曝欲独自与伊朗达成地区安全协议",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "中华网",
         "url": "https://news.china.com/international/1000/20260702/49583360.html"
       },
       {
-        "title": "“海湾国家想撇开美国”-观察者网",
+        "title": "特朗普：“伊朗的输油管道三天后将饱和，发生内部爆炸”",
         "time": "1天前",
-        "source": "guancha.cn",
-        "url": "https://www.guancha.cn/internation/2026_07_01_822165.shtml"
+        "source": "朝鮮日報中文版",
+        "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260464671&cate=c01&mcate="
       }
     ],
     "technology": [
       {
         "title": "【早报】伊朗提出停战六项条件；宇树科技IPO获受理",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "财联社",
         "url": "https://www.cls.cn/detail/2320760"
       },
       {
         "title": "特朗普称美伊会谈“进展顺利”伊朗宣布多哈技术谈判结束",
-        "time": "6小时前",
+        "time": "7小时前",
         "source": "RFI",
         "url": "https://www.baidu.com/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E7%A7%B0%E7%BE%8E%E4%BC%8A%E4%BC%9A%E8%B0%88%E2%80%9C%E8%BF%9B%E5%B1%95%E9%A1%BA%E5%88%A9%E2%80%9D%E4%BC%8A%E6%9C%97%E5%AE%A3%E5%B8%83%E5%A4%9A%E5%93%88%E6%8A%80%E6%9C%AF%E8%B0%88%E5%88%A4%E7%BB%93%E6%9D%9F"
-      },
-      {
-        "title": "早报丨特朗普称美伊今天多哈会谈，伊朗称近日无意与美谈判；Rocket Lab上一交易日大涨近16%，拟收购铱星通讯；鲟龙科技、江西生物、真健康医疗-B、来福谐波今日港股上市",
-        "time": "18小时前",
-        "source": "东方财富",
-        "url": "https://wap.eastmoney.com/a/202606303787338766.html"
       },
       {
         "title": "华尔街大跌，科技股重挫，伊朗冲突引发市场不安",
         "time": "14小时前",
         "source": "Moomoo",
         "url": "https://www.moomoo.com/hans/news/post/71354449/wall-street-tumbles-as-tech-stocks-sink-iran-conflict-sparks"
+      },
+      {
+        "title": "早报丨特朗普称美伊今天多哈会谈，伊朗称近日无意与美谈判；Rocket Lab上一交易日大涨近16%，拟收购铱星通讯；鲟龙科技、江西生物、真健康医疗-B、来福谐波今日港股上市",
+        "time": "18小时前",
+        "source": "东方财富",
+        "url": "https://wap.eastmoney.com/a/202606303787338766.html"
       },
       {
         "title": "【早报】伊朗总统发表致美国人民公开信；宇树科技、中科宇航被抽中现场检查",
@@ -1986,7 +1986,7 @@
       },
       {
         "title": "\"伊朗利用中国侦察卫星打击美军基地”,在泄露的文件被确认",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "朝鮮日報中文版",
         "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260464609&cate=&mcate=M1003"
       },
@@ -2006,13 +2006,13 @@
     "_intensity": {
       "politics": 33,
       "military": 36,
-      "economy": 38,
-      "technology": 43,
+      "economy": 37,
+      "technology": 45,
       "aviation": 12
     }
   },
   "Turkey": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "《习近平谈治国理政》第五卷土耳其推介会在安卡拉举行",
@@ -2022,7 +2022,7 @@
       },
       {
         "title": "轮到以色列被威胁，但土耳其不是伊朗，内塔不敢打只敢告状",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044429881_122116898?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
@@ -2066,7 +2066,7 @@
       },
       {
         "title": "埃及、土耳其同哈马斯讨论落实加沙停火事宜",
-        "time": "23小时前",
+        "time": "1天前",
         "source": "央广网",
         "url": "https://military.cnr.cn/zcff/20260701/t20260701_527685054.shtml"
       },
@@ -2104,7 +2104,7 @@
       },
       {
         "title": "《习近平谈治国理政》第五卷土耳其推介会在安卡拉举行",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "京报网",
         "url": "https://news.bjd.com.cn/2026/07/01/11839234.shtml"
       }
@@ -2118,7 +2118,7 @@
       },
       {
         "title": "第12届核电站峰会在伊斯坦布尔开幕 土耳其提出2053年20吉瓦核电目标",
-        "time": "22小时前",
+        "time": "23小时前",
         "source": "中国核电网",
         "url": "https://www.cnnpn.cn/article/55533.html"
       },
@@ -2153,12 +2153,12 @@
       "politics": 32,
       "military": 40,
       "economy": 28,
-      "technology": 13,
+      "technology": 14,
       "aviation": 1
     }
   },
   "Saudi Arabia": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "沙特外长结束访华行程，正值特朗普与穆罕默德·本·萨勒曼关系紧张之际：你需要了解哪些信息",
@@ -2211,16 +2211,16 @@
         "url": "https://www.sohu.com/a/1044415615_334198?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
+        "title": "胡塞也参战，战火烧到红海",
+        "time": "9小时前",
+        "source": "朝鮮日報中文版",
+        "url": "https://cnnews.chosun.com/client/news/viw.asp?cate=C01&mcate=M1003&nNewsNumb=20260364517&nidx=64518"
+      },
+      {
         "title": "美与沙特因霍尔木兹军事行动关系紧张，安全冲突达到数年最严重",
         "time": "21小时前",
         "source": "亚洲日报",
         "url": "https://www.ajudaily.com/view/20260701154870049"
-      },
-      {
-        "title": "胡塞也参战，战火烧到红海",
-        "time": "8小时前",
-        "source": "朝鮮日報中文版",
-        "url": "https://cnnews.chosun.com/client/news/viw.asp?cate=C01&mcate=M1003&nNewsNumb=20260364517&nidx=64518"
       }
     ],
     "economy": [
@@ -2281,30 +2281,30 @@
         "url": "https://wap.eastmoney.com/a/202606303788246474.html"
       },
       {
-        "title": "美伊再次大打出手，沙特外长关键时刻飞抵北京，有三件大事要谈",
-        "time": "19小时前",
-        "source": "新浪网",
-        "url": "https://k.sina.com.cn/article_7295511718_1b2d8aca602001jky0.html"
+        "title": "隆基绿能与沙特水务局签署战略备忘录",
+        "time": "1天前",
+        "source": "观点网",
+        "url": "https://www.guandian.cn/article/20260630/570250.html"
       }
     ],
     "aviation": [
       {
         "title": "\"伊朗利用中国侦察卫星打击美军基地”,在泄露的文件被确认",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "朝鮮日報中文版",
         "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260464609&cate=&mcate=M1003"
       }
     ],
     "_intensity": {
       "politics": 15,
-      "military": 45,
+      "military": 46,
       "economy": 36,
       "technology": 22,
       "aviation": 1
     }
   },
   "Brazil": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "日本惜败巴西，球迷：与世界的距离拉近了",
@@ -2313,28 +2313,28 @@
         "url": "https://cn.nikkei.com/politicsaeconomy/politicsasociety/63057-2026-06-30-09-43-49.html?start=1"
       },
       {
-        "title": "巴西举办中国古代饮食文化展",
-        "time": "19小时前",
-        "source": "搜狐网",
-        "url": "https://www.sohu.com/a/1044284763_114911?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
-      },
-      {
         "title": "巴西总统卢拉力促南共市对华贸易谈判：南美洲不属于任何人",
         "time": "1天前",
         "source": "br-cn.com",
         "url": "https://www.br-cn.com/static/content/news/br_news/2026-07-01/1521950004233778064.html"
       },
       {
+        "title": "巴西举办中国古代饮食文化展",
+        "time": "20小时前",
+        "source": "搜狐网",
+        "url": "https://www.sohu.com/a/1044284763_114911?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+      },
+      {
         "title": "巴西一男子为拍照爬上山顶，下撤时不慎滑倒，从150米高悬崖坠落身亡-观察者网",
         "time": "19小时前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/video/gczvideo/content.html?id=56835"
       },
       {
-        "title": "深度 | 四战终登顶，秘鲁将迎首位日裔女总统，“藤森阴影”会否重现？",
+        "title": "世界杯：摩洛哥点球大战淘汰荷兰率先晋级 日本1比2惜败巴西 无缘16强",
         "time": "1天前",
-        "source": "上观新闻",
-        "url": "https://www.jfdaily.com/news/detail?id=1137118"
+        "source": "RFI",
+        "url": "https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E6%9D%AF%EF%BC%9A%E6%91%A9%E6%B4%9B%E5%93%A5%E7%82%B9%E7%90%83%E5%A4%A7%E6%88%98%E6%B7%98%E6%B1%B0%E8%8D%B7%E5%85%B0%E7%8E%87%E5%85%88%E6%99%8B%E7%BA%A7%20%E6%97%A5%E6%9C%AC1%E6%AF%942%E6%83%9C%E8%B4%A5%E5%B7%B4%E8%A5%BF%20%E6%97%A0%E7%BC%9816%E5%BC%BA"
       }
     ],
     "military": [
@@ -2390,15 +2390,15 @@
       },
       {
         "title": "日韩足球，正反镜鉴",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "eeo.com.cn",
         "url": "http://www.eeo.com.cn/2026/0701/938084.shtml"
       },
       {
-        "title": "世界杯不黑钱_世界杯亏还是赚",
-        "time": "1天前",
-        "source": "国际金融报",
-        "url": "https://www.ifnews.com/jrnews/jrnews/20260630/748423.html"
+        "title": "巴西网友：中国男足很差劲！为他们难过 中国球迷：国足进世界杯需5步",
+        "time": "21小时前",
+        "source": "Sina Sports",
+        "url": "https://sports.sina.cn/2026-07-01/detail-iniffytk3179115.d.html?oid=4071476636803832&vt=4&cid=76959&node_id=76959"
       }
     ],
     "technology": [
@@ -2410,7 +2410,7 @@
       },
       {
         "title": "挚达科技午前涨超16% 挚达全资子公司签约落户张江",
-        "time": "13分钟前",
+        "time": "26分钟前",
         "source": "新浪财经",
         "url": "https://finance.sina.cn/hkstock/sckxjfx/2026-07-02/detail-inifkuqa2655661.d.html?vt=4"
       },
@@ -2448,20 +2448,20 @@
       }
     ],
     "_intensity": {
-      "politics": 18,
+      "politics": 16,
       "military": 9,
       "economy": 28,
-      "technology": 45,
+      "technology": 46,
       "aviation": 2
     }
   },
   "Australia": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "重审AUKUS核潜艇项目，一场事关澳大利亚国运的争论-鲍韶山-观察者网",
         "time": "2小时前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/WarwickPowell/2026_07_02_822311.shtml"
       },
       {
@@ -2493,7 +2493,7 @@
       {
         "title": "重审AUKUS核潜艇项目，一场事关澳大利亚国运的争论-鲍韶山-观察者网",
         "time": "2小时前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/WarwickPowell/2026_07_02_822311.shtml"
       },
       {
@@ -2536,7 +2536,7 @@
       },
       {
         "title": "通胀当前，最鸽派的央行也坐不住了",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.cn/2026-06-30/detail-inifenry6692147.d.html?vt=4&wm=2824_0024?q$q&cid=76729&node_id=76729"
       },
@@ -2557,20 +2557,20 @@
       {
         "title": "重审AUKUS核潜艇项目，一场事关澳大利亚国运的争论-鲍韶山-观察者网",
         "time": "2小时前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/WarwickPowell/2026_07_02_822311.shtml"
-      },
-      {
-        "title": "道通科技发力澳洲光储充市场，重构数字能源商业逻辑",
-        "time": "19小时前",
-        "source": "搜狐网",
-        "url": "https://www.sohu.com/a/1044300662_104421?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
         "title": "两种抗生素联手可杀灭铜绿假单胞菌",
         "time": "1天前",
         "source": "中国科技网",
         "url": "https://www.stdaily.com/web/gdxw/2026-06/30/content_539739.html"
+      },
+      {
+        "title": "道通科技发力澳洲光储充市场，重构数字能源商业逻辑",
+        "time": "19小时前",
+        "source": "搜狐网",
+        "url": "https://www.sohu.com/a/1044300662_104421?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
         "title": "澳大利亚收紧16岁以下青少年使用社交媒体的禁令，并加强对大型科技公司的监管权力",
@@ -2588,14 +2588,14 @@
     "aviation": [],
     "_intensity": {
       "politics": 16,
-      "military": 10,
+      "military": 9,
       "economy": 28,
-      "technology": 32,
+      "technology": 31,
       "aviation": 0
     }
   },
   "Canada": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "美国决定不续签《美墨加协定》 将继续与加墨谈判",
@@ -2605,7 +2605,7 @@
       },
       {
         "title": "7月1日起，中方准时征收保证金，加拿大付出代价，省长紧急访华",
-        "time": "15小时前",
+        "time": "16小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044401059_122219919?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
@@ -2617,13 +2617,13 @@
       },
       {
         "title": "托卡耶夫向加拿大总理致贺电祝贺国庆日",
-        "time": "16小时前",
+        "time": "17小时前",
         "source": "哈通社",
         "url": "https://cn.inform.kz/news/daliguori-13bf88d6/"
       },
       {
         "title": "消博会参展外企：加大在华投资力度，投资中国就是投资未来",
-        "time": "5小时前",
+        "time": "6小时前",
         "source": "凤凰网",
         "url": "https://news.ifeng.com/c/8sJy0CHmtfQ"
       }
@@ -2637,8 +2637,8 @@
       },
       {
         "title": "吕特替欧洲邀功：我们重整军备，养活美国近20万就业岗位-观察者网",
-        "time": "23小时前",
-        "source": "guancha.cn",
+        "time": "1天前",
+        "source": "观察者",
         "url": "https://www.guancha.cn/internation/2026_07_01_822192.shtml"
       },
       {
@@ -2662,16 +2662,16 @@
     ],
     "economy": [
       {
-        "title": "美国令与加拿大和墨西哥的贸易协定前景蒙上阴影",
-        "time": "4小时前",
-        "source": "华尔街日报中文网",
-        "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E4%BB%A4%E4%B8%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%92%8C%E5%A2%A8%E8%A5%BF%E5%93%A5%E7%9A%84%E8%B4%B8%E6%98%93%E5%8D%8F%E5%AE%9A%E5%89%8D%E6%99%AF%E8%92%99%E4%B8%8A%E9%98%B4%E5%BD%B1"
-      },
-      {
         "title": "加拿大经济势将在第二季度大幅反弹 摆脱低迷状态",
         "time": "1天前",
         "source": "新浪财经",
         "url": "https://cj.sina.cn/articles/view/5953189932/162d6782c06704jmzw?froms=ggmp&vt=4"
+      },
+      {
+        "title": "美国令与加拿大和墨西哥的贸易协定前景蒙上阴影",
+        "time": "5小时前",
+        "source": "华尔街日报中文网",
+        "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E4%BB%A4%E4%B8%8E%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%92%8C%E5%A2%A8%E8%A5%BF%E5%93%A5%E7%9A%84%E8%B4%B8%E6%98%93%E5%8D%8F%E5%AE%9A%E5%89%8D%E6%99%AF%E8%92%99%E4%B8%8A%E9%98%B4%E5%BD%B1"
       },
       {
         "title": "赶在加拿大做出决定前，中方用一纸公告，给卡尼政府提了个醒",
@@ -2706,16 +2706,16 @@
         "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%86%B3%E5%AE%9A%E4%B8%8D%E7%BB%AD%E7%AD%BE%E3%80%8A%E7%BE%8E%E5%A2%A8%E5%8A%A0%E5%8D%8F%E5%AE%9A%E3%80%8B%20%E5%B0%86%E7%BB%A7%E7%BB%AD%E4%B8%8E%E5%8A%A0%E5%A2%A8%E8%B0%88%E5%88%A4"
       },
       {
+        "title": "美迈科技2026 Prime Day：北美市场稳中见韧，欧洲市场表现亮眼",
+        "time": "53分钟前",
+        "source": "搜狐网",
+        "url": "https://m.sohu.com/a/1044677008_104421?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+      },
+      {
         "title": "民科园核心区侨港中加科技园主体结构封顶",
         "time": "22小时前",
         "source": "nfplus.nfnews.com",
         "url": "https://static.nfnews.com/content/202607/01/c12581881.html"
-      },
-      {
-        "title": "康冠科技：约4.59亿股限售股10月9 日解禁",
-        "time": "10小时前",
-        "source": "MSN",
-        "url": "http://www.msn.com/zh-cn/news/other/%E5%BA%B7%E5%86%A0%E7%A7%91%E6%8A%80-%E7%BA%A6459%E4%BA%BF%E8%82%A1%E9%99%90%E5%94%AE%E8%82%A110%E6%9C%889%E6%97%A5%E8%A7%A3%E7%A6%81/ar-AA1Ns3W3?apiversion=v2&domshim=1&noservercache=1&noservertelemetry=1&batchservertelemetry=1&renderwebcomponents=1&wcseo=1"
       },
       {
         "title": "医赋科技携手“循证医学之父”Gordon Guyatt教授团队，开启循证证据合成系统新篇章",
@@ -2757,15 +2757,15 @@
       }
     ],
     "_intensity": {
-      "politics": 30,
+      "politics": 31,
       "military": 11,
       "economy": 51,
-      "technology": 40,
+      "technology": 41,
       "aviation": 11
     }
   },
   "Italy": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "刘海星会见意大利驻华大使安博思",
@@ -2801,7 +2801,7 @@
     "military": [
       {
         "title": "特朗普，“和粉丝吵翻了”",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "凤凰网",
         "url": "https://news.ifeng.com/c/8uMPZ6rxaBi"
       },
@@ -2813,7 +2813,7 @@
       },
       {
         "title": "意大利否认阻挡对乌克兰的2027年援助，表示将维持支持水平",
-        "time": "11小时前",
+        "time": "12小时前",
         "source": "Межа. Новини України.",
         "url": "https://mezha.net/ch/bukvy/076ed370_italy_confirms_it/"
       },
@@ -2834,12 +2834,12 @@
       {
         "title": "驻米兰总领事张承刚接受意大利电视栏目《远航》访谈",
         "time": "12小时前",
-        "source": "中华人民共和国驻米兰总领事馆",
+        "source": "驻米兰总领事馆",
         "url": "https://milano.china-consulate.gov.cn/zxhd/202607/t20260702_11956118.htm"
       },
       {
         "title": "杰拉奇呼吁火车准点_新浪新闻",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "新浪网",
         "url": "https://www.sina.cn/news/detail/5316152193454377.html"
       },
@@ -2866,7 +2866,7 @@
       {
         "title": "驻米兰总领事张承刚接受意大利电视栏目《远航》访谈",
         "time": "12小时前",
-        "source": "中华人民共和国驻米兰总领事馆",
+        "source": "驻米兰总领事馆",
         "url": "https://milano.china-consulate.gov.cn/zxhd/202607/t20260702_11956118.htm"
       },
       {
@@ -2896,40 +2896,34 @@
     ],
     "aviation": [
       {
-        "title": "GE航空航天公司和Avio Aero公司在氢燃料电池重燃和测试方面取得重要进展",
-        "time": "1天前",
-        "source": "新浪财经",
-        "url": "http://finance.sina.com.cn/jjxw/2026-07-01/doc-inifhmie3099271.shtml"
-      },
-      {
         "title": "欧洲航天局CAVES 2026：五名航天员在意大利亚平宁山脉洞穴完成两周高度模拟训练",
         "time": "18小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044333271_122396381?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
-        "title": "2026年航空航天节：奥尔比亚准备举办第四届 - L'Unione Sarda Chinese",
-        "time": "1小时前",
-        "source": "L'Unione Sarda.it",
-        "url": "https://www.unionesarda.it/zh/%E6%92%92%E4%B8%81%E5%B2%9B/2026%E5%B9%B4%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E8%8A%82%E5%A5%A5%E5%B0%94%E6%AF%94%E4%BA%9A%E5%87%86%E5%A4%87%E4%B8%BE%E5%8A%9E%E7%AC%AC%E5%9B%9B%E5%B1%8A-mhrhz59h"
-      },
-      {
         "title": "意大利加倍资助乌克兰数字发展：将向塔林机制投入200万欧元",
         "time": "21小时前",
         "source": "Межа. Новини України.",
         "url": "https://mezha.net/ch/bukvy/6d8ec3d7_italy_doubles_tallinn/"
+      },
+      {
+        "title": "2026年航空航天节：奥尔比亚准备举办第四届 - L'Unione Sarda Chinese",
+        "time": "15小时前",
+        "source": "L'Unione Sarda.it",
+        "url": "https://www.unionesarda.it/zh/%E6%92%92%E4%B8%81%E5%B2%9B/2026%E5%B9%B4%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E8%8A%82%E5%A5%A5%E5%B0%94%E6%AF%94%E4%BA%9A%E5%87%86%E5%A4%87%E4%B8%BE%E5%8A%9E%E7%AC%AC%E5%9B%9B%E5%B1%8A-mhrhz59h"
       }
     ],
     "_intensity": {
       "politics": 24,
       "military": 8,
       "economy": 36,
-      "technology": 34,
-      "aviation": 4
+      "technology": 36,
+      "aviation": 3
     }
   },
   "Spain": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "萨尔瓦多大监狱为何让右翼政治人物趋之若鹜？",
@@ -2939,27 +2933,27 @@
       },
       {
         "title": "殡仪馆爆满，婴儿也热死，他们还在反对空调",
-        "time": "13小时前",
+        "time": "14小时前",
         "source": "凤凰网",
         "url": "https://news.ifeng.com/c/8uPjFtcpFoD"
       },
       {
         "title": "全世界都很困惑：欧洲这也能吵得不可开交？-观察者网",
         "time": "1天前",
-        "source": "guancha.cn",
+        "source": "观察者",
         "url": "https://www.guancha.cn/internation/2026_06_30_822136.shtml"
-      },
-      {
-        "title": "西班牙遭遇极端高温，六月成为有记录以来第二热月| 乌克兰新闻",
-        "time": "19小时前",
-        "source": "Межа. Новини України.",
-        "url": "https://mezha.net/ch/bukvy/a807bc77_spain_endured_one/"
       },
       {
         "title": "哥伦比亚对加纳",
         "time": "1天前",
         "source": "国际金融报",
         "url": "https://www.ifnews.com/jrnews/jrnews/20260630/197415.html"
+      },
+      {
+        "title": "西班牙遭遇极端高温，六月成为有记录以来第二热月| 乌克兰新闻",
+        "time": "20小时前",
+        "source": "Межа. Новини України.",
+        "url": "https://mezha.net/ch/bukvy/a807bc77_spain_endured_one/"
       }
     ],
     "military": [
@@ -2989,7 +2983,7 @@
       },
       {
         "title": "西班牙对奥地利的计划很简单：把球交给拉米内·亚马尔",
-        "time": "18小时前",
+        "time": "19小时前",
         "source": "VOI.ID",
         "url": "https://voi.id/zh/sports-zh/582674"
       }
@@ -3014,28 +3008,28 @@
         "url": "https://finance.sina.com.cn/stock/usstock/summary/2026-07-01/doc-inifhvwy3076631.shtml"
       },
       {
-        "title": "【南篱/指南】07.02黄金下半年开启",
-        "time": "2小时前",
-        "source": "财经号",
-        "url": "http://mp.cnfol.com/29237/article/1782958101-142533143.html"
-      },
-      {
         "title": "西班牙 vs 奥地利 数据",
         "time": "1天前",
         "source": "国际金融报",
         "url": "https://www.ifnews.com/jrnews/jrnews/20260630/400102.html"
+      },
+      {
+        "title": "21评论丨佛得角逆袭背后的“足球经济学”",
+        "time": "1天前",
+        "source": "21财经",
+        "url": "https://m.21jingji.com/article/20260701/2a5c6129381e267161dfcb77a83d809a.html"
       }
     ],
     "technology": [
       {
         "title": "锁定产业关键环节，横琴赴西班牙、英国递出“合作名片”",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "珠海网",
         "url": "https://pub-zhtb.hizh.cn/a/202607/01/AP6a44c304e4b082bf21483d92.html"
       },
       {
         "title": "中国车在欧洲份额反超日本",
-        "time": "1小时前",
+        "time": "2小时前",
         "source": "日经中文网",
         "url": "https://cn.nikkei.com/china/ccompany/63093-2026-07-02-09-38-13.html?start=1"
       },
@@ -3046,16 +3040,16 @@
         "url": "https://www.cls.cn/detail/2414594"
       },
       {
-        "title": "西班牙人买空调，不看价格了？",
-        "time": "2小时前",
-        "source": "潮起网",
-        "url": "https://www.ichaoqi.com/guandian/2026/0702/82786.html"
+        "title": "美迈科技2026 Prime Day：北美市场稳中见韧，欧洲市场表现亮眼",
+        "time": "53分钟前",
+        "source": "搜狐网",
+        "url": "https://m.sohu.com/a/1044677008_104421?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
-        "title": "奇瑞\"星途\"换名Exlantix进军西班牙：800V架构+10分钟快充",
-        "time": "16小时前",
-        "source": "汽车之家",
-        "url": "https://chejiahao.m.autohome.com.cn/info/25245175"
+        "title": "西班牙人买空调，不看价格了？",
+        "time": "3小时前",
+        "source": "潮起网",
+        "url": "https://www.ichaoqi.com/guandian/2026/0702/82786.html"
       }
     ],
     "aviation": [
@@ -3081,13 +3075,13 @@
     "_intensity": {
       "politics": 15,
       "military": 6,
-      "economy": 48,
-      "technology": 25,
+      "economy": 47,
+      "technology": 27,
       "aviation": 3
     }
   },
   "Mexico": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "美国决定不续签《美墨加协定》 将继续与加墨谈判",
@@ -3096,8 +3090,14 @@
         "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%86%B3%E5%AE%9A%E4%B8%8D%E7%BB%AD%E7%AD%BE%E3%80%8A%E7%BE%8E%E5%A2%A8%E5%8A%A0%E5%8D%8F%E5%AE%9A%E3%80%8B%20%E5%B0%86%E7%BB%A7%E7%BB%AD%E4%B8%8E%E5%8A%A0%E5%A2%A8%E8%B0%88%E5%88%A4"
       },
       {
+        "title": "一个中国女人走进墨西哥腹地后 发现可怕的不是毒贩",
+        "time": "9分钟前",
+        "source": "文学城",
+        "url": "https://www.wenxuecity.com/news/2026/07/01/126695885.html"
+      },
+      {
         "title": "伊朗国家队留信感谢墨西哥 展现东道主精神",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "中华网",
         "url": "https://news.china.com/socialgd/10000169/20260702/49583385.html"
       },
@@ -3112,12 +3112,6 @@
         "time": "7小时前",
         "source": "懂球帝",
         "url": "https://m.dongqiudi.com/article/5988242.html"
-      },
-      {
-        "title": "当美国部长跳起舞来",
-        "time": "5小时前",
-        "source": "qq.com",
-        "url": "https://view.inews.qq.com/a/20260701A0B8MH00"
       }
     ],
     "military": [
@@ -3146,10 +3140,10 @@
         "url": "https://m.dongqiudi.com/article/5988242.html"
       },
       {
-        "title": "（美加墨世界杯）墨西哥2：0击败厄瓜多尔晋级16强",
-        "time": "19小时前",
-        "source": "新浪财经",
-        "url": "https://finance.sina.com.cn/roll/2026-07-01/doc-inifhvws1002206.shtml"
+        "title": "墨西哥击毙被美国起诉的大型贩毒集团头目",
+        "time": "23小时前",
+        "source": "朝鮮日報中文版",
+        "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260264336&cate=&mcate=M1003"
       }
     ],
     "economy": [
@@ -3186,16 +3180,16 @@
     ],
     "technology": [
       {
-        "title": "美国决定不续签《美墨加协定》 将继续与加墨谈判",
-        "time": "6小时前",
-        "source": "RFI",
-        "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%86%B3%E5%AE%9A%E4%B8%8D%E7%BB%AD%E7%AD%BE%E3%80%8A%E7%BE%8E%E5%A2%A8%E5%8A%A0%E5%8D%8F%E5%AE%9A%E3%80%8B%20%E5%B0%86%E7%BB%A7%E7%BB%AD%E4%B8%8E%E5%8A%A0%E5%A2%A8%E8%B0%88%E5%88%A4"
-      },
-      {
         "title": "日产压缩墨西哥产车型成本应对美国进口关税冲击_车市动态",
-        "time": "18分钟前",
+        "time": "31分钟前",
         "source": "中金在线",
         "url": "http://auto.cnfol.com/cheshidongtai/20260702/32297054.shtml"
+      },
+      {
+        "title": "美迈科技2026 Prime Day：北美市场稳中见韧，欧洲市场表现亮眼",
+        "time": "54分钟前",
+        "source": "搜狐网",
+        "url": "https://m.sohu.com/a/1044677008_104421?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
       {
         "title": "墨西哥万豪海滩巨鳄鱼袭人：28岁男子被拖入水中遇难|巴亚尔塔港|墨西哥城|野生动物|搜救|游客_手机新浪网",
@@ -3205,7 +3199,7 @@
       },
       {
         "title": "比亚迪助力少年足球队墨西哥夺冠，体验国产黑科技",
-        "time": "10小时前",
+        "time": "11小时前",
         "source": "新浪网",
         "url": "http://k.sina.com.cn/article_1868493055_6f5ef0ff04001esgg.html?cre=tianyi&mod=pcspth&loc=10&r=0&rfunc=6&tj=cxvertical_pc_spth&tr=12&from=sports&subch=osport"
       },
@@ -3245,13 +3239,13 @@
     "_intensity": {
       "politics": 25,
       "military": 22,
-      "economy": 33,
+      "economy": 34,
       "technology": 37,
       "aviation": 4
     }
   },
   "Indonesia": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "庆祝中国共产党成立105周年大会在京隆重举行",
@@ -3325,13 +3319,13 @@
       },
       {
         "title": "一平方米展台是最好的窗口- 经济",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "中工网",
         "url": "https://www.workercn.cn/c/2026-07-02/8837116.shtml"
       },
       {
         "title": "【财经分析】印尼B50生物柴油政策启动：经济可持续性待检验",
-        "time": "16小时前",
+        "time": "17小时前",
         "source": "中国金融信息网",
         "url": "https://m.cnfin.com/yw-lb//zixun/20260701/4434339_1.html"
       },
@@ -3343,7 +3337,7 @@
       },
       {
         "title": "供应端具有不确定 短期锡价仍维持高位宽幅震荡",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "新浪财经",
         "url": "https://finance.sina.cn/futuremarket/qsyw/2026-07-01/detail-inifhrqs4238933.d.html?vt=4&cid=76576&node_id=76576"
       }
@@ -3351,7 +3345,7 @@
     "technology": [
       {
         "title": "一平方米展台是最好的窗口- 经济",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "中工网",
         "url": "https://www.workercn.cn/c/2026-07-02/8837116.shtml"
       },
@@ -3421,7 +3415,7 @@
     }
   },
   "Vietnam": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "驻越南大使何炜拜会越共中央内政部部长黎明智",
@@ -3449,7 +3443,7 @@
       },
       {
         "title": "朝鲜金与正地位上升，晋升长官级“党部长”",
-        "time": "13小时前",
+        "time": "14小时前",
         "source": "朝鮮日報中文版",
         "url": "https://cnnews.chosun.com/client/news/viw.asp?cate=C01&mcate=M1001&nNewsNumb=20260264343&nidx=64344"
       }
@@ -3533,13 +3527,13 @@
       },
       {
         "title": "越南建成首个国家级芯片试产中心",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "见道网",
         "url": "https://www.seetao.com/details/269894.html"
       },
       {
         "title": "越美地方间合作迈上新台阶 经贸科技教育多领域并进",
-        "time": "22小时前",
+        "time": "23小时前",
         "source": "cn.qdnd.vn",
         "url": "https://cn.qdnd.vn/cid-6123/7183/-635627"
       },
@@ -3573,7 +3567,7 @@
     }
   },
   "Thailand": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "泰南和平对话进展顺利 泰马拟9月再开高层会谈",
@@ -3719,13 +3713,13 @@
     }
   },
   "Pakistan": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "InXinjiang(124)丨11年后再访新疆，巴基斯坦政治家连连赞叹新疆的全面发展",
         "time": "1天前",
         "source": "央广网",
-        "url": "https://news.cnr.cn/native/gd/20260630/t20260630_527684667.shtml"
+        "url": "https://www.cnr.cn/newscenter/native/gd/20260630/t20260630_527684667.shtml"
       },
       {
         "title": "铁路暑运即将开启预计发送旅客10.1亿人次_国内要闻",
@@ -3787,7 +3781,7 @@
     "economy": [
       {
         "title": "庆祝中国共产党成立105周年招待会在巴基斯坦举行--国际",
-        "time": "3小时前",
+        "time": "4小时前",
         "source": "人民网",
         "url": "http://world.people.com.cn/n1/2026/0702/c1002-40752115.html"
       },
@@ -3831,7 +3825,7 @@
       },
       {
         "title": "共筑“一带一路”农业创新高地——西北农林科技大学深化科技合作服务旱区农业发展",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044591233_121443915?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
       },
@@ -3850,22 +3844,22 @@
     ],
     "aviation": [
       {
-        "title": "中国科技创新为世界提供发展机遇（国际论坛·读懂中国·读懂中国式现代化） --观点",
-        "time": "6小时前",
-        "source": "人民网观点",
-        "url": "http://opinion.people.com.cn/n1/2026/0702/c461529-40751854.html"
+        "title": "中国科技创新为世界提供发展机遇（国际论坛·读懂中国·读懂中国式现代化）",
+        "time": "1小时前",
+        "source": "中国日报网",
+        "url": "http://cn.chinadaily.com.cn/a/202607/02/WS6a45da4ba310d709c2fbb783.html"
       }
     ],
     "_intensity": {
       "politics": 22,
       "military": 31,
       "economy": 14,
-      "technology": 9,
+      "technology": 7,
       "aviation": 1
     }
   },
   "Egypt": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "驻埃及大使廖力强出席阿盟秘书长盖特离任典礼",
@@ -3907,13 +3901,13 @@
       },
       {
         "title": "埃及、土耳其同哈马斯讨论落实加沙停火事宜",
-        "time": "23小时前",
+        "time": "1天前",
         "source": "央广网",
         "url": "https://military.cnr.cn/zcff/20260701/t20260701_527685054.shtml"
       },
       {
         "title": "北约秘书长鲁特表示土耳其是联盟中最强大的军队之一",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "TRT中文",
         "url": "https://www.trtzhongwen.com/article/06bc9a485c07"
       },
@@ -3945,21 +3939,21 @@
       },
       {
         "title": "沃什：倘若经济模型会阻碍制定合理政策，那就舍弃这些模型。",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "新浪财经",
         "url": "https://wap.cj.sina.cn/pc/7x24/4965461"
-      },
-      {
-        "title": "跨越山海！山推搅拌车批量奔赴埃及，助力一带一路基建升级",
-        "time": "21小时前",
-        "source": "见道网",
-        "url": "https://www.seetao.com/details/269866.html"
       },
       {
         "title": "【环时深度】科特迪瓦靠自主与合作谋安全和发展",
         "time": "1天前",
         "source": "搜狐网",
         "url": "https://m.sohu.com/a/1044018411_121620820?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+      },
+      {
+        "title": "跨越山海！山推搅拌车批量奔赴埃及，助力一带一路基建升级",
+        "time": "21小时前",
+        "source": "见道网",
+        "url": "https://www.seetao.com/details/269866.html"
       }
     ],
     "technology": [
@@ -3977,7 +3971,7 @@
       },
       {
         "title": "佛得角驻华大使：该国公务车全部是中国电车",
-        "time": "22小时前",
+        "time": "23小时前",
         "source": "星岛环球网",
         "url": "https://www.stnn.cc/c/2026-07-01/4118457.shtml"
       },
@@ -4004,7 +3998,7 @@
     }
   },
   "South Africa": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "南非总统拉马福萨部分改组内阁",
@@ -4120,13 +4114,13 @@
     "_intensity": {
       "politics": 4,
       "military": 2,
-      "economy": 36,
+      "economy": 38,
       "technology": 9,
       "aviation": 1
     }
   },
   "Argentina": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "日裔\"罪犯的女儿\"当选秘鲁总统，美国的算盘打到中国家门口了！",
@@ -4199,10 +4193,10 @@
         "url": "https://www.huxiu.com/article/4871674.html"
       },
       {
-        "title": "享受足球，更珍惜心脏：遵医嘱备好硝酸甘油舌下片，高危时刻能保命",
-        "time": "21小时前",
-        "source": "中华网",
-        "url": "https://mtz.china.com/toutiaos/20260701/0701245724.html"
+        "title": "这些世界杯输赢新玄学真的应验了吗？",
+        "time": "1天前",
+        "source": "Sina Sports",
+        "url": "https://sports.sina.cn/2026-07-01/detail-inifheze6292972.d.html?vt=4"
       }
     ],
     "technology": [
@@ -4249,12 +4243,12 @@
       "politics": 5,
       "military": 2,
       "economy": 29,
-      "technology": 13,
+      "technology": 12,
       "aviation": 1
     }
   },
   "Poland": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "政治僵局导致波兰未能参与欧盟最新加密货币监管措施的推行",
@@ -4354,7 +4348,7 @@
     "technology": [
       {
         "title": "出海日报｜奇瑞单月出口首破19万辆，老乡鸡拟进军新加坡市场",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "Jiemian.com",
         "url": "https://www.jiemian.com/article/14684318.html"
       },
@@ -4378,7 +4372,7 @@
       },
       {
         "title": "金发科技：稳步提升海外业务收入占比",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "东方财富",
         "url": "https://wap.eastmoney.com/a/202607013790567759.html"
       }
@@ -4392,21 +4386,27 @@
       },
       {
         "title": "进攻的K方山… 全面反映海外订单业绩",
-        "time": "19小时前",
+        "time": "20小时前",
         "source": "매일경제",
         "url": "https://www.mk.co.kr/cn/business/12087918"
+      },
+      {
+        "title": "GE航空航天公司和Avio Aero公司在氢燃料电池重燃和测试方面取得重要进展",
+        "time": "1天前",
+        "source": "新浪财经",
+        "url": "http://finance.sina.com.cn/jjxw/2026-07-01/doc-inifhmie3099271.shtml"
       }
     ],
     "_intensity": {
       "politics": 12,
       "military": 19,
-      "economy": 16,
+      "economy": 17,
       "technology": 18,
-      "aviation": 2
+      "aviation": 3
     }
   },
   "North Korea": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "中国共产党成立105周年庆祝活动在朝鲜举办--国际",
@@ -4416,7 +4416,7 @@
       },
       {
         "title": "朝鲜金与正地位上升，晋升长官级“党部长”",
-        "time": "13小时前",
+        "time": "14小时前",
         "source": "朝鮮日報中文版",
         "url": "https://cnnews.chosun.com/client/news/viw.asp?cate=C01&mcate=M1001&nNewsNumb=20260264343&nidx=64344"
       },
@@ -4442,7 +4442,7 @@
     "military": [
       {
         "title": "金正恩：韩国推进拥有核潜艇，军事演习极端恶化局势…最敌对国家",
-        "time": "13小时前",
+        "time": "14小时前",
         "source": "朝鮮日報中文版",
         "url": "http://cnnews.chosun.com/client/news/viw.asp?cate=&mcate=&nNewsNumb=20260664956&nidx="
       },
@@ -4479,10 +4479,10 @@
         "url": "https://world.people.com.cn/n1/2026/0701/c1002-40751729.html"
       },
       {
-        "title": "美中北京会谈首日，经济松绑、安保止步",
-        "time": "8小时前",
+        "title": "日本剔除觊觎半导体和AI情报的中国资金…效仿美国，收紧对中国投资尖端技术的审查",
+        "time": "1小时前",
         "source": "朝鮮日報中文版",
-        "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260564754&cate=c01&mcate="
+        "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260664989&cate=c01&mcate=m1003"
       },
       {
         "title": "中国驻朝鲜使馆举办庆祝中国共产党成立105周年招待会",
@@ -4524,7 +4524,7 @@
       },
       {
         "title": "[万物相]找到美国战机驾驶员的量子技术",
-        "time": "22小时前",
+        "time": "23小时前",
         "source": "朝鮮日報中文版",
         "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260464583&cate=&mcate=M1001"
       },
@@ -4538,21 +4538,21 @@
     "aviation": [
       {
         "title": "\"伊朗利用中国侦察卫星打击美军基地”,在泄露的文件被确认",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "朝鮮日報中文版",
         "url": "https://cnnews.chosun.com/client/news/viw.asp?nNewsNumb=20260464609&cate=&mcate=M1003"
       }
     ],
     "_intensity": {
-      "politics": 35,
+      "politics": 36,
       "military": 41,
-      "economy": 37,
+      "economy": 35,
       "technology": 7,
       "aviation": 1
     }
   },
   "Singapore": {
-    "_meta": "2026-07-02 12:32 · 自动抓取",
+    "_meta": "2026-07-02 12:45 · 自动抓取",
     "politics": [
       {
         "title": "李光耀为何背刺新加坡共产主义运动？",
@@ -4562,27 +4562,27 @@
       },
       {
         "title": "新日企发局续签合作备忘录 深化战略伙伴关系",
-        "time": "17分钟前",
+        "time": "30分钟前",
         "source": "联合早报",
         "url": "https://www.zaobao.com.sg/finance/singapore/story20260702-9299409"
       },
       {
-        "title": "中国实施“民族团结进步促进法”，为何引起台湾忧虑？",
-        "time": "1天前",
-        "source": "BBC",
-        "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%AE%9E%E6%96%BD%E2%80%9C%E6%B0%91%E6%97%8F%E5%9B%A2%E7%BB%93%E8%BF%9B%E6%AD%A5%E4%BF%83%E8%BF%9B%E6%B3%95%E2%80%9D%EF%BC%8C%E4%B8%BA%E4%BD%95%E5%BC%95%E8%B5%B7%E5%8F%B0%E6%B9%BE%E5%BF%A7%E8%99%91%EF%BC%9F"
-      },
-      {
         "title": "我国同日本扩大商业合作领域 深化两国经贸关系",
-        "time": "28分钟前",
+        "time": "41分钟前",
         "source": "8world",
         "url": "https://www.8world.com/singapore/jetro-singapore-business-forum-3202846"
       },
       {
         "title": "一个月过去了，新加坡《联合早报》还在哭诉它们被统战了。。。。。。",
-        "time": "21小时前",
+        "time": "22小时前",
         "source": "风闻",
         "url": "https://user.guancha.cn/main/content?id=1670173"
+      },
+      {
+        "title": "博彩业增长、人工智能提振供应链：标普列出亚太区当前值得关注的五大行业",
+        "time": "4小时前",
+        "source": "The Business Times",
+        "url": "https://www.businesstimes.com.sg/zh-hans/companies-markets/gaming-growth-ai-boosted-supply-chains-sp-lists-5-apac-sectors-watch-right-now"
       }
     ],
     "military": [
@@ -4600,13 +4600,13 @@
       },
       {
         "title": "狮城获美批准购“地狱火”飞弹配套 支援空军训练作战需求 | 新加坡 | 国际",
-        "time": "4分钟前",
+        "time": "17分钟前",
         "source": "orientaldaily.com.my",
         "url": "https://www.orientaldaily.com.my/news/spr/2026/07/02/829896"
       },
       {
         "title": "我国获美批准 购2840万元“地狱火”导弹配套",
-        "time": "14小时前",
+        "time": "15小时前",
         "source": "8world",
         "url": "https://www.8world.com/singapore/singapore-set-to-buy-additional-hellfire-missiles-after-us-approves-3202336"
       },
@@ -4620,13 +4620,13 @@
     "economy": [
       {
         "title": "新日企发局续签合作备忘录 深化战略伙伴关系",
-        "time": "17分钟前",
+        "time": "30分钟前",
         "source": "联合早报",
         "url": "https://www.zaobao.com.sg/finance/singapore/story20260702-9299409"
       },
       {
         "title": "我国同日本扩大商业合作领域 深化两国经贸关系",
-        "time": "28分钟前",
+        "time": "41分钟前",
         "source": "8world",
         "url": "https://www.8world.com/singapore/jetro-singapore-business-forum-3202846"
       },
@@ -4651,8 +4651,14 @@
     ],
     "technology": [
       {
+        "title": "京基智农于深圳成立智算科技公司 注册资本5000万元",
+        "time": "29分钟前",
+        "source": "观点网",
+        "url": "https://www.guandian.cn/article/20260702/570769.html"
+      },
+      {
         "title": "出海日报｜奇瑞单月出口首破19万辆，老乡鸡拟进军新加坡市场",
-        "time": "2小时前",
+        "time": "3小时前",
         "source": "Jiemian.com",
         "url": "https://www.jiemian.com/article/14684318.html"
       },
@@ -4664,29 +4670,23 @@
       },
       {
         "title": "韩国i-SMR技术开发事业团与新加坡能源市场管理局签署合作备忘录",
-        "time": "20小时前",
+        "time": "21小时前",
         "source": "中国核电网",
         "url": "https://www.cnnpn.cn/article/55543.html"
       },
       {
         "title": "新日企发局续签合作备忘录 深化战略伙伴关系",
-        "time": "17分钟前",
+        "time": "30分钟前",
         "source": "联合早报",
         "url": "https://www.zaobao.com.sg/finance/singapore/story20260702-9299409"
-      },
-      {
-        "title": "人文学院代表团赴新加坡、马来西亚合作院校交流访问",
-        "time": "1天前",
-        "source": "上海交通大学 新闻网",
-        "url": "https://news.sjtu.edu.cn/zhxw/20260630/224271.html"
       }
     ],
     "aviation": [],
     "_intensity": {
-      "politics": 16,
+      "politics": 15,
       "military": 10,
       "economy": 37,
-      "technology": 42,
+      "technology": 44,
       "aviation": 0
     }
   }
