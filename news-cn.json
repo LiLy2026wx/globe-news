@@ -1,16 +1,22 @@
 {
-  "_generated": "2026-09-29T14:13:29+08:00",
+  "_generated": "2026-09-29T14:55:31+08:00",
   "_kind": "cn-provinces",
   "provinces": {
     "北京市": {
       "_intensity": 94,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "北京何以引领词元经济新浪潮",
           "time": "5小时前",
-          "source": "beijing.gov.cn",
+          "source": "北京市人民政府门户网站",
           "url": "https://www.beijing.gov.cn/fuwu/lqfw/gggs/202609/t20260929_4884676.html"
+        },
+        {
+          "title": "北京化工大学图书馆科尔沁左翼中旗乡村振兴分馆落成",
+          "time": "36分钟前",
+          "source": "新华网客户端",
+          "url": "https://app.xinhuanet.com/news/article.html?articleId=20260929a58e79fc9b594f28804173e4f50e810e"
         },
         {
           "title": "2026年新创建北京市企业技术中心名单公布",
@@ -20,103 +26,97 @@
         },
         {
           "title": "保障机场车站夜间出行，北京8条地铁线路延时运营",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "新京报",
           "url": "https://m.bjnews.com.cn/detail/1790646427129830.html"
         },
         {
+          "title": "北京汽车集团产业投资有限公司发生工商变更",
+          "time": "38分钟前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886399326.html"
+        },
+        {
           "title": "“五年规划与中国式现代化高质量发展”学术研讨会在北京大学举行",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "北京大学新闻网",
           "url": "https://news.pku.edu.cn/info/7921/3219891.htm"
         },
         {
           "title": "中国人民政治协商会议海淀区委员会",
-          "time": "2小时前",
-          "source": "hdzx.bjhd.gov.cn",
+          "time": "3小时前",
+          "source": "海淀区政协",
           "url": "https://hdzx.bjhd.gov.cn/2019/zxyx/szxw/202609/t20260929_4830450.shtml"
         },
         {
-          "title": "北京国庆进出京日均约440万人次 同比增长8%",
-          "time": "1小时前",
-          "source": "观点网",
-          "url": "https://www.guandian.cn/article/20260929/608124.html"
-        },
-        {
-          "title": "关于对《“十五五”时期美丽平谷建设规划》公开征集意见的公告",
-          "time": "3小时前",
-          "source": "beijing.gov.cn",
-          "url": "https://www.beijing.gov.cn/hudong/gfxwjzj/qjzjxx/202609/t20260929_4884938.html"
-        },
-        {
-          "title": "从展馆到公园，国防教育融入北京城市生活",
-          "time": "2小时前",
-          "source": "新京报",
-          "url": "https://www.bjnews.com.cn/detail/1790651042129889.html"
+          "title": "昌平区“一校一策”校城融合工作启动会暨北京沙河高教园区高校联盟理事会第四次会议召开",
+          "time": "42分钟前",
+          "source": "北航新闻网",
+          "url": "https://news.buaa.edu.cn/info/1002/69911.htm"
         }
       ]
     },
     "天津市": {
-      "_intensity": 84,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 85,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
-          "title": "京津冀生态环境志愿服务活动在津启动",
-          "time": "8小时前",
-          "source": "天津日报",
-          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143080_3882128.htm"
-        },
-        {
           "title": "【答卷】《中国教育报》头版头条：天津大学深化教学改革探索未来卓越人才培养上“未来”的课育“未来”的人",
-          "time": "6分钟前",
+          "time": "48分钟前",
           "source": "天津大学新闻网",
           "url": "https://news.tju.edu.cn/info/1003/614509.htm"
         },
         {
-          "title": "天津西站这处接驳场站，下月开通试运行",
-          "time": "2小时前",
-          "source": "finance.sina.com.cn",
-          "url": "https://finance.sina.com.cn/jjxw/2026-09-29/doc-initnfqm3034821.shtml"
+          "title": "京津冀生态环境志愿服务活动在津启动",
+          "time": "9小时前",
+          "source": "天津日报",
+          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143080_3882128.htm"
         },
         {
-          "title": "天津大学图书馆“知学”品牌建设成果刊发《大学图书馆学报》",
-          "time": "4小时前",
+          "title": "海河乳品上新“天津包子味牛奶”",
+          "time": "14分钟前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886410793.html"
+        },
+        {
+          "title": "天津西站这处接驳场站，下月开通试运行",
+          "time": "2小时前",
+          "source": "finance.sina.cn",
+          "url": "https://finance.sina.cn/2026-09-29/detail-initnfqm3034821.d.html?vt=4&cid=76729&node_id=76729"
+        },
+        {
+          "title": "【答卷】《光明日报》：祖国的需要就是我们的志愿——天津大学为国育才的传承与实践",
+          "time": "43分钟前",
           "source": "天津大学新闻网",
-          "url": "https://news.tju.edu.cn/info/1003/614429.htm"
+          "url": "https://news.tju.edu.cn/info/1003/614529.htm"
         },
         {
           "title": "2030年末租赁产业规模瞄准2.8 万亿元",
-          "time": "8小时前",
+          "time": "9小时前",
           "source": "天津日报",
           "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143080_3882124.htm"
         },
         {
+          "title": "天津大学图书馆“知学”品牌建设成果刊发《大学图书馆学报》",
+          "time": "5小时前",
+          "source": "天津大学新闻网",
+          "url": "https://news.tju.edu.cn/info/1003/614429.htm"
+        },
+        {
           "title": "逐梦青春多彩社团竞绽放",
-          "time": "8小时前",
+          "time": "9小时前",
           "source": "天津日报",
           "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143086_3882146.htm"
-        },
-        {
-          "title": "天津戏剧节戏剧地图发布",
-          "time": "8小时前",
-          "source": "天津日报",
-          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143092_3882173.htm"
-        },
-        {
-          "title": "REITs 扩容提质路线图出炉",
-          "time": "8小时前",
-          "source": "天津日报",
-          "url": "https://epaper.tianjinwe.com/tjrb/html/2026-09/29/content_143080_3882126.htm"
         }
       ]
     },
     "河北省": {
-      "_intensity": 59,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 61,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "促进村集体节支增收",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "hebcdi.gov.cn",
           "url": "http://www.hebcdi.gov.cn/2026-09/29/content_9564047.htm"
         },
@@ -140,43 +140,43 @@
         },
         {
           "title": "“领导留言板”河北月度数据报告丨8月份，各级领导干部共回复群众留言3794件",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "人民网－河北频道",
           "url": "http://he.people.com.cn/n2/2026/0929/c192235-41710474.html"
         },
         {
           "title": "河北滦州：花生收获忙",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "光明网",
           "url": "https://politics.gmw.cn/2026-09/29/content_39026153.htm"
         },
         {
           "title": "大风蓝色预警：内蒙古河北山东等地部分地区阵风可达7至9级",
           "time": "7小时前",
-          "source": "weather.com.cn",
+          "source": "天气网",
           "url": "https://m.weather.com.cn/news/2026/09/4806092.shtml"
         },
         {
           "title": "京港高铁雄商段开通，为河北带来什么",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "人民雄安网",
           "url": "http://www.rmxiongan.com/n2/2026/0929/c383557-41710229.html"
         }
       ]
     },
     "山西省": {
-      "_intensity": 53,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 57,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
-          "title": "豆包成为山西文旅官方AI讲解员 首次落地省级文旅合作项目",
-          "time": "3小时前",
-          "source": "观点网",
-          "url": "https://www.guandian.cn/article/20260929/608045.html"
+          "title": "豆包成为山西文旅官方AI讲解员 覆盖上百景区古建文博场馆",
+          "time": "8分钟前",
+          "source": "guandian.cn",
+          "url": "https://www.guandian.cn/article/20260929/608210.html"
         },
         {
           "title": "（乡村行·看振兴）山西屯留：谷穗飘香秋收忙",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/sh/2026/09-29/10705390.shtml"
         },
@@ -188,69 +188,69 @@
         },
         {
           "title": "山西公布首批省级零碳园区建设名单",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "新浪新闻_手机新浪网",
           "url": "https://news.sina.com.cn/zx/gj/2026-09-29/doc-initnfqp2896469.shtml"
         },
         {
           "title": "第八届全国国防教育竞技大赛总决赛在山西武乡举办 播撒革命火种 厚植家国情怀",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "中华人民共和国国防部",
           "url": "http://www.mod.gov.cn/gfbw/gfdy/16490104.html"
         },
         {
           "title": "【文明中国·看山西】红土绽新韵 清风润吕梁",
-          "time": "20小时前",
+          "time": "21小时前",
           "source": "新华网",
           "url": "http://www.news.cn/government/20260928/31e530e402f745a28a64d507ec37bae8/c.html"
         },
         {
           "title": "豆包成为山西文旅官方AI讲解员 覆盖山西上百景点 解锁智慧旅游新体验",
-          "time": "1小时前",
+          "time": "2小时前",
           "source": "驱动之家",
           "url": "https://news.mydrivers.com/1/1154/1154651.htm"
         },
         {
           "title": "中标 | 4600元/kW！山西50MW“驭风”项目EPC中标候选公示",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "国际风力发电网",
           "url": "https://wind.in-en.com/html/wind-2470803.shtml"
         }
       ]
     },
     "内蒙古自治区": {
-      "_intensity": 46,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 51,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "内蒙古4个园区上榜",
-          "time": "39分钟前",
+          "time": "1小时前",
           "source": "潮新闻客户端",
           "url": "https://tidenews.com.cn/tmh_news.html?id=6abb4e0b1081840001476cc7"
         },
         {
-          "title": "石榴花开内蒙古 民族团结情意浓",
-          "time": "5小时前",
-          "source": "人民网",
-          "url": "http://nm.people.com.cn/n2/2026/0929/c196667-41710325.html"
-        },
-        {
           "title": "大风蓝色预警：内蒙古河北山东等地部分地区阵风可达7至9级",
           "time": "7小时前",
-          "source": "weather.com.cn",
+          "source": "天气网",
           "url": "https://m.weather.com.cn/news/2026/09/4806092.shtml"
         },
         {
           "title": "民航内蒙古空管分局成功保障机上患病旅客紧急救助",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中国民航网",
           "url": "http://www.caacnews.com.cn/1/3/202609/t20260929_1397590.html"
         },
         {
           "title": "【央媒聚焦内蒙古·工人日报】内蒙古自治区推进民族团结进步工作落地生根 石榴籽抱得紧 劳动人民心连心",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "内蒙古新闻网",
           "url": "https://inews.nmgnews.com.cn/system/2026/09/29/030406348.shtml"
+        },
+        {
+          "title": "石榴花开内蒙古 民族团结情意浓",
+          "time": "6小时前",
+          "source": "nm.people.com.cn",
+          "url": "http://nm.people.com.cn/n2/2026/0929/c196667-41710325.html"
         },
         {
           "title": "较强冷空气南下内蒙古有明显降温 华西至江淮降雨持续",
@@ -259,26 +259,26 @@
           "url": "https://k.sina.com.cn/article_5426766895_14375e42f00102yr2u.html"
         },
         {
-          "title": "内蒙古通辽：南茭北种喜丰收",
-          "time": "5小时前",
-          "source": "新华网",
-          "url": "http://www.nmg.xinhuanet.com/20260929/0926e821bdcf4e4b9a6f819862b60c97/c.html"
+          "title": "27家单位联手，内蒙古生物育种“集团军”进展如何？",
+          "time": "3小时前",
+          "source": "finance.sina.cn",
+          "url": "https://finance.sina.cn/2026-09-29/detail-initnfqc7848373.d.html?vt=4&cid=76729&node_id=76729"
         },
         {
-          "title": "27家单位联手，内蒙古生物育种“集团军”进展如何？",
-          "time": "2小时前",
-          "source": "新浪财经",
-          "url": "https://finance.sina.cn/2026-09-29/detail-initnfqc7848373.d.html?vt=4&cid=76729&node_id=76729"
+          "title": "内蒙古通辽：南茭北种喜丰收",
+          "time": "6小时前",
+          "source": "新华网",
+          "url": "http://www.nmg.xinhuanet.com/20260929/0926e821bdcf4e4b9a6f819862b60c97/c.html"
         }
       ]
     },
     "辽宁省": {
-      "_intensity": 52,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 57,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "辽宁省国（央）企民企融通发展交流对接会成功举办",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "ln.gov.cn",
           "url": "https://www.ln.gov.cn/web/ywdt/tjdt/2026092910062026815/index.shtml"
         },
@@ -290,51 +290,63 @@
         },
         {
           "title": "今天辽宁强对流天气来袭局地有大到暴雨 明后天气温下降寒凉感加重",
-          "time": "4小时前",
-          "source": "weather.com.cn",
+          "time": "5小时前",
+          "source": "天气网",
           "url": "https://m.weather.com.cn/news/2026/09/4806529.shtml"
         },
         {
           "title": "辽宁省人才政策宣讲活动在中国海洋大学举行",
-          "time": "12小时前",
+          "time": "13小时前",
           "source": "中国海洋大学",
-          "url": "http://news.ouc.edu.cn/_t5/2026/0928/c91a122850/page.psp"
+          "url": "http://news.ouc.edu.cn/_t5/2026/0928/c91a122850/page.htm"
         },
         {
           "title": "辽宁2027年电力市场交易工作方案征求意见：年度交易合约电量占比≥80%、中长期交易签约电量占比≥90%",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "gdshe.org",
           "url": "https://www.gdshe.org/article/28387.html"
         },
         {
           "title": "“好好吃饭”——辽宁理工职业大学开学第一课这样上- 中国日报网",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "China Daily",
           "url": "https://ln.chinadaily.com.cn/a/202609/29/WS6abb21c9e4b09a165c78d40a.html"
         },
         {
-          "title": "开放积蓄动能 外资投下辽宁振兴发展“信任票”",
-          "time": "3小时前",
-          "source": "新浪财经",
-          "url": "https://finance.sina.cn/2026-09-29/detail-initmzhp3079363.d.html?vt=4&wm=1029?q"
+          "title": "校领导走访慰问党外人士和归侨侨眷代表",
+          "time": "4小时前",
+          "source": "辽宁师范大学",
+          "url": "https://news.lnnu.edu.cn/info/1161/10604.htm"
         },
         {
-          "title": "粮食大省秋收忙丨辽宁：盐碱地变身丰收田",
-          "time": "19小时前",
-          "source": "新华网",
-          "url": "https://www.news.cn/local/20260928/22b568d397384f04b1a96ba8465da88a/c.html"
+          "title": "许昆林王新伟会见参加辽宁籍文化人才回乡行动嘉宾代表",
+          "time": "6小时前",
+          "source": "ln.gov.cn",
+          "url": "https://www.ln.gov.cn/web/zwgkx/rdxx01_105674/2026092908441278592/index.shtml"
         }
       ]
     },
     "吉林省": {
-      "_intensity": 24,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 29,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "松花江畔涌新潮 | 黑土地+硬科技 吉林“南果北种”闯出新赛道",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "央广网",
           "url": "https://www.cnr.cn/jlfw/jlyw1/20260929/t20260929_527828261.shtml"
+        },
+        {
+          "title": "吉林大学举行“强化诚信科研意识 勇担科技创新重任”报告会",
+          "time": "35分钟前",
+          "source": "吉林大学",
+          "url": "https://news.jlu.edu.cn/info/1021/62043.htm"
+        },
+        {
+          "title": "国网吉林供电公司：逐梦冰雪 电力满格 吉林永吉北游66千伏输变电工程建成投运",
+          "time": "45分钟前",
+          "source": "新华网",
+          "url": "http://www.jl.xinhuanet.com/20260929/f1589261be7e471f940ec1ac6b7e1a8c/c.html"
         },
         {
           "title": "吉林白山：渔村焕新文旅热",
@@ -344,51 +356,51 @@
         },
         {
           "title": "出入吉林便捷化｜一路风景一路情吉林高速打造长春大冬会最美服务窗口-中国吉林网",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "news.cnjiwang.com",
           "url": "https://news.cnjiwang.com/jwyc/202609/4085960.html"
         },
         {
           "title": "中央精神文明建设办公室发布2026年第三批“中国好人榜”",
-          "time": "13分钟前",
+          "time": "55分钟前",
           "source": "中国文明网",
           "url": "http://www.wenming.cn/20260928/315f308eb3f040b4a35bb56e1904485f/c.html"
         },
         {
+          "title": "榜样就在身边！吉林市文庙广场：听好人故事，享便民服务",
+          "time": "1小时前",
+          "source": "极目新闻",
+          "url": "https://www.ctdsb.net/c1722_202609/2868040.html"
+        },
+        {
           "title": "2026年第三批“中国好人榜”发布仪式在吉林市举办",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "jl.chinanews.com.cn",
           "url": "https://www.jl.chinanews.com.cn/kjww/2026-09-29/261894.html"
-        },
-        {
-          "title": "全国优秀教师、吉林大学教授韩喜平：落实立德树人任务，以爱的情怀守好思政课堂",
-          "time": "4小时前",
-          "source": "吉林大学",
-          "url": "https://news.jlu.edu.cn/info/1211/62038.htm"
-        },
-        {
-          "title": "加快吉林铁路基础设施建设推动轨道交通产业发展壮大黄强胡玉亭会见国铁集团总经理徐建军",
-          "time": "22小时前",
-          "source": "吉林省人民政府",
-          "url": "http://www.jl.gov.cn/yaowen/202609/t20260928_3673031.html"
-        },
-        {
-          "title": "媒体原创9月28日，吉林市玄天岭文化公园。女孩以中国舞迎接国庆，用翩跹舞姿祝福祖国母亲。“如果信...",
-          "time": "18小时前",
-          "source": "川观新闻",
-          "url": "https://cbgc.scol.com.cn/news/8006265"
         }
       ]
     },
     "黑龙江省": {
-      "_intensity": 22,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 28,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "来黑龙江，走进秋天的油画里",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "新华网",
           "url": "https://www.news.cn/20260929/b8b45a2fff3745cd9806f4311406e7a0/c.html"
+        },
+        {
+          "title": "哈伊高铁开通！快来查收新车站专属“明信片”",
+          "time": "42分钟前",
+          "source": "hlj.gov.cn",
+          "url": "https://www.hlj.gov.cn/hlj/c107856/202609/c00_31980430.shtml"
+        },
+        {
+          "title": "黑龙江省人民政府令第3号",
+          "time": "5小时前",
+          "source": "川观新闻",
+          "url": "https://cbgc.scol.com.cn/news/8007759"
         },
         {
           "title": "国务院新闻办在黑龙江举行“粮食生产”中外记者见面会",
@@ -397,10 +409,10 @@
           "url": "http://www.scio.gov.cn/cfhd/202609/t20260928_1010235.html"
         },
         {
-          "title": "林都秋意正浓，五花山色如画",
-          "time": "4小时前",
-          "source": "黑龙江省文化和旅游厅",
-          "url": "https://wlt.hlj.gov.cn/wlt/c114165/202609/c00_31980286.shtml"
+          "title": "美丽中国丨斑斓北国“醉美”龙江- 中国日报网",
+          "time": "32分钟前",
+          "source": "China Daily",
+          "url": "https://hlj.chinadaily.com.cn/a/202609/29/WS6abb59cce4b09a165c78d581.html"
         },
         {
           "title": "黑龙江推进农信“统一法人”改革 原股金处置的挑战",
@@ -416,97 +428,97 @@
         },
         {
           "title": "“黑土优品”最快次日达! 京东物流与黑龙江农投食品集团达成战略合作",
-          "time": "14分钟前",
+          "time": "56分钟前",
           "source": "搜狐网",
           "url": "https://m.sohu.com/a/1082211474_121613636?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
-        },
-        {
-          "title": "深度调研｜四季龙江，走向世界",
-          "time": "6小时前",
-          "source": "新浪财经",
-          "url": "https://finance.sina.cn/2026-09-29/detail-initmuyp9361869.d.html?vt=4"
-        },
-        {
-          "title": "2026年9月29日黑龙江省华博农产品市场有限公司价格行情_综合资讯",
-          "time": "1小时前",
-          "source": "证券之星",
-          "url": "https://futures.stockstar.com/IG2026092900018981.shtml"
         }
       ]
     },
     "上海市": {
-      "_intensity": 84,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 94,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
+          "title": "光临普陀，闪耀TOP！ 第三届上海国际光影节普陀分会场启幕2026-09-29",
+          "time": "18分钟前",
+          "source": "上海市人民政府",
+          "url": "https://www.shanghai.gov.cn/nw15343/20260929/9f1c6fbb890a407291d7621b238bdae9.html"
+        },
+        {
           "title": "上海虎鲸队加冕CPB联赛夏至联赛总冠军",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "新华网",
           "url": "https://www.news.cn/sports/20260929/03b6ed0465874fe39d2f4276cf292e7e/c.html"
         },
         {
           "title": "上海市浦东新区人民政府房屋征收决定（浦府房征决字[2026]第013号）",
-          "time": "3分钟前",
+          "time": "45分钟前",
           "source": "pudong.gov.cn",
           "url": "https://www.pudong.gov.cn/zwgk/ghj_zdgz_zsjd/2026/272/361437.html"
         },
         {
-          "title": "上海市进一步深化国资国企改革工作会议举行在服务国家战略、推动产业升级、实现创新突破上展现新作为",
-          "time": "4小时前",
-          "source": "上海市人民政府",
-          "url": "https://www.shanghai.gov.cn/nw4411/20260929/24c9379a11024b93a6fcf0a2a7e4303a.html"
+          "title": "报告指出，文商旅体展深度融合成上海建设国际消费中心城市关键抓手",
+          "time": "3小时前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886309093.html"
         },
         {
           "title": "上海电气用AI打通中国制造的“中试”之路_国企动态",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "gzw.sh.gov.cn",
           "url": "https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20260929/1096767abe544f28aff722a486f58432.html"
         },
         {
           "title": "赋能台企发展，上海举办“台商新视界”专题讲座",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "上观新闻",
           "url": "https://www.jfdaily.com/news/detail?id=1186366"
         },
         {
-          "title": "上海小马智卡科技有限公司成立",
+          "title": "【会展区】更多的“上海设计”，被世界看见",
           "time": "1小时前",
-          "source": "东方财富",
-          "url": "https://finance.eastmoney.com/a/202609293886349030.html"
+          "source": "上观新闻",
+          "url": "https://www.jfdaily.com.cn/news/detail?id=1186352"
         },
         {
           "title": "上海第十批次土拍开启 象屿12.15亿元获得吴淞一宗宅地",
-          "time": "2小时前",
-          "source": "观点网",
+          "time": "3小时前",
+          "source": "guandian.cn",
           "url": "https://www.guandian.cn/m/show/608096"
-        },
-        {
-          "title": "财经早知道｜有序实施现房销售 上海出台商品住房销售制度改革地方实施意见",
-          "time": "7小时前",
-          "source": "财新",
-          "url": "https://finance.caixin.com/2026-09-29/102489406.html"
         }
       ]
     },
     "江苏省": {
-      "_intensity": 61,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 73,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "江苏省委常委会召开会议",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "江苏省委新闻网",
           "url": "https://www.zgjssw.gov.cn/yaowen/202609/t20260929_8594500.shtml"
         },
         {
-          "title": "江苏首次为城市更新立法 明确支持城镇老旧住房自主更新",
-          "time": "21分钟前",
-          "source": "观点网",
-          "url": "https://www.guandian.cn/article/20260929/608172.html"
+          "title": "【中国新闻网】江苏省2026年“9·28经典诵读”活动在东南大学启幕",
+          "time": "31分钟前",
+          "source": "东大新闻网",
+          "url": "https://news.seu.edu.cn/2026/0929/c5485a584662/page.htm"
+        },
+        {
+          "title": "堂吉诃德江苏奇遇记",
+          "time": "2小时前",
+          "source": "jsnews.jschina.com.cn",
+          "url": "https://jsnews.jschina.com.cn/jsyw/202609/t20260929_s6abb44aae4b0c7c3ee73ee96.shtml"
+        },
+        {
+          "title": "江苏省质量发展委员会办公室发布“十四五”质量发展状况",
+          "time": "6小时前",
+          "source": "guandian.cn",
+          "url": "https://www.guandian.cn/m/show/607969"
         },
         {
           "title": "任职前公示",
-          "time": "11分钟前",
+          "time": "53分钟前",
           "source": "ycnews.cn",
           "url": "https://www.ycnews.cn/jiangsu/2026/09-29/71e0OoMk.html"
         },
@@ -514,67 +526,55 @@
           "title": "江苏生态“家底”有多厚？一图读懂",
           "time": "1小时前",
           "source": "新华报业网",
-          "url": "http://www.xhby.net/content/s6abb4632e4b088096d2ec42f.html"
+          "url": "https://www.xhby.net/content/s6abb4632e4b088096d2ec42f.html"
         },
         {
           "title": "江苏省教育厅副厅长吴昊一行来校调研",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "南京信息工程大学",
           "url": "https://news.nuist.edu.cn/info/1002/131372.htm"
         },
         {
-          "title": "江苏生态“家底”有多厚？一图读懂",
-          "time": "2小时前",
-          "source": "中国江苏网",
-          "url": "https://finance.jschina.com.cn/ywjj/202609/t20260929_s6abb32d7e4b0f4e7e4b4cfa4.shtml"
-        },
-        {
           "title": "激活“水韵江苏”消费势能，江苏省市文旅国企首次共建文旅产业集群OTA平台",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "紫牛新闻",
           "url": "https://www.yzwb.net/news/jiangsu/nanjing/202609/t20260929_397931.html"
-        },
-        {
-          "title": "江苏南京：向“新”发力 企业跑出“加速度”",
-          "time": "2小时前",
-          "source": "南京广播电视台",
-          "url": "https://www.nbs.cn/news/5/202609/t20260929_796084.html"
         }
       ]
     },
     "浙江省": {
-      "_intensity": 53,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 58,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
+          "title": "首批国家级创建对象！浙江这些园区、企业入选",
+          "time": "1小时前",
+          "source": "hznews.hangzhou.com.cn",
+          "url": "https://hznews.hangzhou.com.cn/chengshi/content/2026-09/29/content_9323327.htm"
+        },
+        {
           "title": "十八年走遍浙江，签证官再赴台州——在山海福地、智造之都“看先行、促合作”",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "新蓝网",
           "url": "https://www.cztv.com/newsDetail/906264"
         },
         {
           "title": "今起三天浙江阴雨频繁 10月1日前后冷空气来袭多地气温下降",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "天气网",
           "url": "http://news.weather.com.cn/2026/09/4806482.shtml"
         },
         {
-          "title": "首批国家级创建对象！浙江这些园区、企业入选",
-          "time": "51分钟前",
-          "source": "hznews.hangzhou.com.cn",
-          "url": "https://hznews.hangzhou.com.cn/chengshi/content/2026-09/29/content_9323327.htm"
+          "title": "浙江凌臻新能源科技有限公司成立",
+          "time": "38分钟前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886399450.html"
         },
         {
           "title": "“时光不老·泛舟浙里”浙江福彩公益航班中秋节专场钱塘江畔温暖启航",
           "time": "2小时前",
           "source": "中国日报网",
           "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb381ce4b09a165c78d511.html"
-        },
-        {
-          "title": "数贸会照见“创新浙江”三重变迁",
-          "time": "3分钟前",
-          "source": "chinanews.com.cn",
-          "url": "https://www.chinanews.com.cn/cj/2026/09-29/10705462.shtml"
         },
         {
           "title": "浙江宣传 | 这个“国字号”基地肩负什么样的使命",
@@ -590,16 +590,28 @@
         },
         {
           "title": "浙江湖州：太湖蟹迎来丰收季",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "新华网",
           "url": "https://csj.news.cn/20260929/edbc7c8662984cd79367a3e9e20718ea/c.html"
         }
       ]
     },
     "安徽省": {
-      "_intensity": 50,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 55,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
+        {
+          "title": "安徽省1月至8月经济延续向新向优态势",
+          "time": "5小时前",
+          "source": "ah.xinhuanet.com",
+          "url": "http://www.ah.xinhuanet.com/20260929/29f94cd5ef514ead8407ffe6c21b7f70/c.html"
+        },
+        {
+          "title": "食品与生物工程学院与安徽佳禾检测科技有限公司共建大学生就业实习基地",
+          "time": "4小时前",
+          "source": "合肥工业大学新闻网",
+          "url": "https://news.hfut.edu.cn/info/1020/79175.htm"
+        },
         {
           "title": "一卷宣纸绘淮月 安徽艺术学院师生亮相央视中秋晚会",
           "time": "2小时前",
@@ -607,62 +619,50 @@
           "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb3816e4b09a165c78d50f.html"
         },
         {
-          "title": "安徽省1月至8月经济延续向新向优态势",
-          "time": "5小时前",
-          "source": "新华网",
-          "url": "http://www.ah.xinhuanet.com/20260929/29f94cd5ef514ead8407ffe6c21b7f70/c.html"
-        },
-        {
-          "title": "安徽池州：九华山云雾缥缈美如画",
-          "time": "4小时前",
-          "source": "hi.chinanews.com.cn",
-          "url": "https://www.hi.chinanews.com.cn/hnnew/2026-09-29/746731.html"
-        },
-        {
           "title": "安徽高速一体化出行服务平台“皖美e行”正式上线",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "人民网－安徽频道",
           "url": "http://ah.people.com.cn/n2/2026/0929/c227767-41710421.html"
         },
         {
-          "title": "食品与生物工程学院与安徽佳禾检测科技有限公司共建大学生就业实习基地",
-          "time": "3小时前",
-          "source": "news.hfut.edu.cn",
-          "url": "https://news.hfut.edu.cn/info/1020/79175.htm"
+          "title": "安徽瑞远教育科技有限公司成立",
+          "time": "1小时前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886347921.html"
         },
         {
-          "title": "强冷空气来袭！安徽大风降温！",
+          "title": "中国能建安徽电建二公司EPC总承包的新疆伊吾产业园300兆瓦风电项目首批并网发电",
+          "time": "19分钟前",
+          "source": "国际新能源网",
+          "url": "https://newenergy.in-en.com/html/newenergy-2457456.shtml"
+        },
+        {
+          "title": "安徽池州：九华山云雾缥缈美如画",
           "time": "5小时前",
-          "source": "川观新闻",
-          "url": "https://cbgc.scol.com.cn/news/8007704"
+          "source": "hi.chinanews.com.cn",
+          "url": "https://www.hi.chinanews.com.cn/hnnew/2026-09-29/746731.html"
         },
         {
-          "title": "守护百姓用药安全 推动皖药传承创新 安徽多措并举促进中药高质量发展",
-          "time": "8小时前",
-          "source": "ah.anhuinews.com",
-          "url": "http://ah.anhuinews.com/szxw/202609/t20260929_9623847.html"
-        },
-        {
-          "title": "安徽：点“绿”成“金” 让生态“高颜值”变经济“高价值”",
-          "time": "2小时前",
-          "source": "finance.sina.com.cn",
-          "url": "https://finance.sina.com.cn/roll/2026-09-29/doc-initnfqm6164544.shtml"
+          "title": "“徽乒赛之夜”2026安徽省乒乓球联赛总决赛暨颁奖典礼举行",
+          "time": "6小时前",
+          "source": "央广网",
+          "url": "https://www.cnr.cn/ah/tp/20260929/t20260929_527828359.shtml"
         }
       ]
     },
     "福建省": {
-      "_intensity": 63,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 74,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "老区启新程 红土焕新貌——福建龙岩建设革命老区高质量发展示范区观察",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "新华网",
           "url": "https://www.news.cn/politics/20260929/904e7c2606a54f7bb0b240104912acf5/c.html"
         },
         {
           "title": "福建科研团队牵头推动全球茶产业提质升级- 社会",
-          "time": "41分钟前",
+          "time": "1小时前",
           "source": "东南网",
           "url": "http://fjnews.fjsen.com/2026-09/29/content_32261052.htm"
         },
@@ -674,45 +674,51 @@
         },
         {
           "title": "福建省第五届“个体工商户服务月”在福州启动 一批助企服务举措亮相",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "fj.chinanews.com.cn",
           "url": "https://www.fj.chinanews.com.cn/news/2026/2026-09-29/591453.html"
         },
         {
           "title": "福建省委宣传部授予省科技特派员群体“八闽楷模”称号",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "央视网",
           "url": "https://local.cctv.com/2026/09/29/ARTIy5m3KvSXXAspDsDPavl4260929.shtml"
         },
         {
           "title": "牢记嘱托感恩奋进 真抓实干为民造福在中国式现代化建设中奋勇争先",
-          "time": "9小时前",
+          "time": "10小时前",
           "source": "新福建",
           "url": "https://fjrb.fjdaily.com/pc/con/202609/29/content_567966.html"
         },
         {
-          "title": "福建一地正厅级主官履新",
-          "time": "17小时前",
-          "source": "人民网-福建频道",
-          "url": "http://fj.people.com.cn/n2/2026/0928/c181466-41710018.html"
-        },
-        {
           "title": "福建日报：三尺讲台育英才 一线科研拓新智 ——基础研究人才一线生长记",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "厦门大学新闻网",
           "url": "https://news.xmu.edu.cn/info/1025/535952.htm"
+        },
+        {
+          "title": "福建一地正厅级主官履新",
+          "time": "18小时前",
+          "source": "人民网-福建频道",
+          "url": "http://fj.people.com.cn/n2/2026/0928/c181466-41710018.html"
         }
       ]
     },
     "江西省": {
-      "_intensity": 55,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 59,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "瞰江西！一峰染尽秋色，一湖舟载诗行",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "央广网",
           "url": "https://www.cnr.cn/jx/tp/20260929/t20260929_527828361.shtml"
+        },
+        {
+          "title": "中节能江西公司首例“光储充一体化”项目并网发电",
+          "time": "19分钟前",
+          "source": "国际新能源网",
+          "url": "https://newenergy.in-en.com/html/newenergy-2457453.shtml"
         },
         {
           "title": "江西县域经济：点上出彩 面上成势",
@@ -722,15 +728,9 @@
         },
         {
           "title": "2026年第三批“中国好人榜”发布，江西9人上榜！",
-          "time": "4小时前",
-          "source": "新浪财经",
+          "time": "5小时前",
+          "source": "finance.sina.cn",
           "url": "http://finance.sina.cn/2026-09-28/detail-initmeau2829734.d.html?cre=tianyi&mod=wlocal&loc=7&r=0&rfunc=56&tj=cxvertical_wlocal&tr=1047&pos=333"
-        },
-        {
-          "title": "黑猫股份在江西成立化工销售公司",
-          "time": "3小时前",
-          "source": "东方财富",
-          "url": "https://finance.eastmoney.com/a/202609293886181548.html"
         },
         {
           "title": "江西企业闯全球，香港平台到底能帮上什么忙？",
@@ -740,31 +740,31 @@
         },
         {
           "title": "新法治报2026-09-29",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "大江网",
           "url": "https://jiangxi.jxnews.com.cn/system/2026/09/28/031257117.shtml"
         },
         {
-          "title": "修水武宁获评首批“江西省集体林业大县”",
-          "time": "3小时前",
-          "source": "凤凰网",
-          "url": "https://jx.ifeng.com/c/8woB4Pd22b6"
+          "title": "江西这项能力要进全国第一方阵，时间表定了，接下来怎么干？",
+          "time": "19分钟前",
+          "source": "搜狐网",
+          "url": "https://m.sohu.com/a/1082227195_121620820?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         },
         {
-          "title": "江西建成全国首个覆盖全省生态环境系统的省级无人机平台",
-          "time": "6小时前",
+          "title": "修水武宁获评首批“江西省集体林业大县”",
+          "time": "4小时前",
           "source": "凤凰网",
-          "url": "https://jx.ifeng.com/c/8wnH4xrZvnt"
+          "url": "https://jx.ifeng.com/c/8woB4Pd22b6"
         }
       ]
     },
     "山东省": {
-      "_intensity": 85,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 88,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "家单位新入选山东省级工业遗产",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "山东省工业和信息化厅",
           "url": "http://gxt.shandong.gov.cn/art/2026/9/29/art_15171_10366816.html"
         },
@@ -776,32 +776,32 @@
         },
         {
           "title": "山东科技大学举行高质量发展大会 多个平台揭牌",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "sd.chinanews.com.cn",
           "url": "https://www.sd.chinanews.com.cn/2/2026/0929/104239.html"
         },
         {
-          "title": "山东圣翰财贸职业学院建设智慧康养专业群",
-          "time": "2小时前",
-          "source": "经济参考报",
-          "url": "http://jjckb.xinhuanet.com/20260929/c78a948334e549e189d9a65f442ab5f1/c.html"
-        },
-        {
           "title": "鲁西“入网”，山东高铁补上关键一纵",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "新华网",
           "url": "http://sd.news.cn/20260929/704d8f96b8744091864ab4f02ee28990/c.html"
         },
         {
-          "title": "山东省人工智能学院正式成立，8所高校联合共建",
+          "title": "山东圣翰财贸职业学院建设智慧康养专业群",
           "time": "3小时前",
+          "source": "经济参考报",
+          "url": "http://jjckb.xinhuanet.com/20260929/c78a948334e549e189d9a65f442ab5f1/c.html"
+        },
+        {
+          "title": "山东省人工智能学院正式成立，8所高校联合共建",
+          "time": "4小时前",
           "source": "多知网",
           "url": "http://www.duozhi.com/industry/insight/2026092918857.shtml"
         },
         {
           "title": "漫漫说｜一字之道·和",
           "time": "5小时前",
-          "source": "齐鲁网",
+          "source": "news.iqilu.com",
           "url": "https://news.iqilu.com/shandong/yuanchuang/2026/0929/5948634.shtml"
         },
         {
@@ -814,116 +814,122 @@
     },
     "河南省": {
       "_intensity": 56,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "国庆假期河南高速免费通行！请查收这份来自交警的出行宝典",
-          "time": "5小时前",
-          "source": "henan.sina.cn",
+          "time": "6小时前",
+          "source": "手机新浪网",
           "url": "https://henan.sina.cn/news/m/2026-09-29/detail-initmzhm9334645.d.html?pos=75"
+        },
+        {
+          "title": "聚焦高质量发展｜河南：现代流通体系推动农产品快速融入全国市场",
+          "time": "5小时前",
+          "source": "新华网",
+          "url": "http://ha.news.cn/20260929/6d6b126b5a034e8c8ffacc0116734ba1/c.html"
         },
         {
           "title": "河南中秋假期4A级及以上景区接待游客360.6万人次",
           "time": "3小时前",
-          "source": "观点网",
+          "source": "guandian.cn",
           "url": "https://www.guandian.cn/article/20260929/608090.html"
         },
         {
           "title": "河南濮阳：三能育才强队伍 文化聚力铸检魂",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中国日报网",
           "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb28abe4b09a165c78d442.html"
         },
         {
-          "title": "聚焦高质量发展｜河南：现代流通体系推动农产品快速融入全国市场",
-          "time": "4小时前",
+          "title": "瞰见方城",
+          "time": "5小时前",
           "source": "新华网",
-          "url": "http://www.ha.xinhuanet.com/20260929/6d6b126b5a034e8c8ffacc0116734ba1/c.html"
+          "url": "http://www.ha.xinhuanet.com/20260929/796235b2b91a4cbc8d58c30a88304960/c.html"
         },
         {
           "title": "国庆假期河南高速哪天最堵？预测来了→",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "新浪新闻_手机新浪网",
           "url": "https://news.sina.com.cn/c/2026-09-29/doc-initnfqm2988783.shtml"
         },
         {
           "title": "省级认定再+1！振德医疗拿下河南先进级智能工厂",
-          "time": "1小时前",
+          "time": "2小时前",
           "source": "同花顺",
           "url": "http://stock.10jqka.com.cn/20260929/c680353615.shtml"
         },
         {
           "title": "“跟着孔子游河南”主题宣传推广活动在河南商丘启幕",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/cul/2026/09-29/10705397.shtml"
-        },
-        {
-          "title": "国庆假期河南高速哪天最堵？预测来了→",
-          "time": "10小时前",
-          "source": "川观新闻",
-          "url": "https://cbgc.scol.com.cn/news/8007324"
         }
       ]
     },
     "湖北省": {
-      "_intensity": 49,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 54,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "湖北省人民政府向第48届世界技能大赛中国代表团发出贺电",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "hubei.gov.cn",
           "url": "https://www.hubei.gov.cn/zwgk/hbyw/hbywqb/202609/t20260929_6024837.shtml"
         },
         {
+          "title": "湖北兴山：山体生态修复忙",
+          "time": "5小时前",
+          "source": "人民网-图片频道",
+          "url": "http://pic.people.com.cn/n1/2026/0929/c1016-40807379.html"
+        },
+        {
           "title": "国庆节期间湖北空气质量如何？最新预测→",
           "time": "3小时前",
-          "source": "湖北日报传媒集团",
+          "source": "news.hubeidaily.net",
           "url": "https://news.hubeidaily.net/pc/c_6027584.html"
         },
         {
           "title": "湖北神农架金丝猴种群稳定增长",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "forestry.gov.cn",
           "url": "https://www.forestry.gov.cn/c/www/dfdt/690189.jhtml"
         },
         {
-          "title": "2026年湖北省非遗国潮购物月暨民歌展演活动兴山启幕",
-          "time": "3小时前",
+          "title": "【瞰见】宜兴高铁，来了！",
+          "time": "10分钟前",
           "source": "hb.chinanews.com.cn",
-          "url": "http://www.hb.chinanews.com.cn/news/2026/0929/433672.html"
+          "url": "http://www.hb.chinanews.com.cn/news/2026/0929/433689.html"
         },
         {
           "title": "世赛夺金的21岁女生郭夏亭回湖北——她说：读职教能凭技能改变命运！",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "湖北文明网",
           "url": "http://www.hbwmw.gov.cn/c/2026/09/86860.shtml"
         },
         {
           "title": "“那么近那么美”被湖北人玩出圈：鼓励网友成为文旅大使 ｜ 九派时评",
-          "time": "2小时前",
-          "source": "新浪财经",
+          "time": "3小时前",
+          "source": "finance.sina.cn",
           "url": "https://finance.sina.cn/2026-09-29/detail-initnfqi9330643.d.html?vt=4"
         },
         {
           "title": "湖北宜化：融资净偿还690.9万元，融资余额8亿元",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "东方财富",
           "url": "https://finance.eastmoney.com/a/202609293886023527.html"
-        },
-        {
-          "title": "湖北生态工程职业技术学院在2026年世界职业院校技能大赛总决赛争夺赛中勇夺3金2铜",
-          "time": "3小时前",
-          "source": "hubei.eol.cn",
-          "url": "https://hubei.eol.cn/hubgd/202609/t20260929_2778742.shtml"
         }
       ]
     },
     "湖南省": {
-      "_intensity": 64,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 71,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
+        {
+          "title": "【每日一图@湖南】老厂区披上粉色纱裙，株洲这个文创园太会了-湖南频道",
+          "time": "2小时前",
+          "source": "红网",
+          "url": "https://hn.rednet.cn/content/646043/63/16328922.html"
+        },
         {
           "title": "这家行长“拟进一步使用”，湖南银行高管将迎变动",
           "time": "3小时前",
@@ -931,134 +937,134 @@
           "url": "https://finance.eastmoney.com/a/202609283885417129.html"
         },
         {
-          "title": "2308个充电车位，增长50%！湖南高速国庆假期满电出发-湖南频道",
-          "time": "4小时前",
-          "source": "红网",
-          "url": "https://hn.rednet.cn/content/646043/63/16327935.html"
-        },
-        {
           "title": "湖南“新”观察｜在湘商大会，感受湘商回归的吸引力",
-          "time": "4小时前",
-          "source": "新华网",
+          "time": "5小时前",
+          "source": "hn.news.cn",
           "url": "https://www.hn.news.cn/20260929/bf8e08950be046bbabad2727198658a9/c.html"
         },
         {
           "title": "湖南省长沙县：描绘“四色”文旅融合发展新图景",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "人民网",
           "url": "http://hn.people.com.cn/n2/2026/0929/c208814-41710409.html"
         },
         {
           "title": "2026年第四期“中国式现代化湖南法院大讲堂”开讲",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "hnzf.gov.cn",
           "url": "https://www.hnzf.gov.cn/content/646043/63/16328105.html"
         },
         {
           "title": "习近平就建设更高水平平安中国作出重要指示",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "湖南省人民政府",
           "url": "http://www.hunan.gov.cn/hnszf/hnyw/sy/tt1/202609/t20260929_34073917.html"
         },
         {
           "title": "两载援建路 一片为民情——湖南机场集团对口支援资兴市中洞村灾后重建纪实",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "华声在线",
           "url": "https://m.voc.com.cn/xhn/news/202609/33875534.html"
         },
         {
-          "title": "湖南省残疾人（学生）文化艺术展演在长沙成功举办",
-          "time": "19小时前",
-          "source": "央广网",
-          "url": "https://www.cnr.cn/hunan/jdt/20260928/t20260928_527827898.shtml"
+          "title": "32家企业串起产业链 湖南“东安吉他”远销欧美、东南亚",
+          "time": "4分钟前",
+          "source": "jwview.com",
+          "url": "https://www.jwview.com/jingwei/html/09-29/690860.shtml"
         }
       ]
     },
     "广东省": {
-      "_intensity": 59,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 64,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
-          "title": "聚焦大湾区丨“粤艇南下”预计10月首航 粤港澳游艇自由行将全面实现双向畅通",
-          "time": "9分钟前",
-          "source": "hmo.gov.cn",
-          "url": "https://www.hmo.gov.cn/2026/09/29/ARTIIf3Q9asarWwgSvZ1oEEK260929.shtml"
-        },
-        {
           "title": "未来五年广东油茶产业怎么干？这份行动方案划出了重点",
-          "time": "33分钟前",
+          "time": "1小时前",
           "source": "21财经",
           "url": "https://www.21jingji.com/article/20260929/herald/b6e237a80b029f1aa9477be0733247c9.html"
         },
         {
+          "title": "聚焦大湾区丨“粤艇南下”预计10月首航 粤港澳游艇自由行将全面实现双向畅通",
+          "time": "51分钟前",
+          "source": "hmo.gov.cn",
+          "url": "https://www.hmo.gov.cn/2026/09/29/ARTIIf3Q9asarWwgSvZ1oEEK260929.shtml"
+        },
+        {
           "title": "广东891项省级涉企审批事项达到全国最优水平",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/cj/2026/09-29/10705261.shtml"
         },
         {
+          "title": "中国人寿财险广东分公司：深耕乡村建设 办好惠民实事",
+          "time": "53分钟前",
+          "source": "广州日报新花城",
+          "url": "https://huacheng.gz-cmc.com/pages/2026/09/29/b429901f2d6e4057a753d57d4f50e75e.html"
+        },
+        {
           "title": "2026年广东省橄榄球冠军赛在深圳举办",
           "time": "5小时前",
-          "source": "新华网广东",
+          "source": "gd.news.cn",
           "url": "https://www.gd.news.cn/20260929/80395301fbb04be1bd537be838418dbe/c.html"
         },
         {
-          "title": "蓝天、白云、沙滩、海浪！难怪苏东坡来了也不想走｜打卡广东最美海岸线⑤",
-          "time": "3小时前",
-          "source": "广州日报新花城",
-          "url": "https://huacheng.gz-cmc.com/pages/2026/09/28/e822282ad2bc4f25bbccb9199f3ae681.html"
-        },
-        {
           "title": "守好“门前方寸地”，广东如何绘就共治新图景？",
-          "time": "4小时前",
-          "source": "mp.oeeee.com",
+          "time": "5小时前",
+          "source": "奥一网",
           "url": "https://m.mp.oeeee.com/a/BAAFRD0000202609281674201.html"
         },
         {
           "title": "广东省东莞市联升小学师生与小白杨哨所官兵的“薄荷膏情缘”感动人心——跨越山海的清凉与温暖",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "中华人民共和国国防部",
           "url": "http://www.mod.gov.cn/gfbw/gfdy/16490111.html"
         },
         {
-          "title": "广东一小学“自愿捐款”装空调",
-          "time": "4小时前",
-          "source": "川观新闻",
-          "url": "https://cbgc.scol.com.cn/news/8007952"
+          "title": "守护中秋国庆假期安全，广东部署开展安全生产暗查暗访工作",
+          "time": "1小时前",
+          "source": "finance.sina.cn",
+          "url": "https://finance.sina.cn/2026-09-29/detail-initnmwi6093070.d.html?vt=4&cid=76729&node_id=76729"
         }
       ]
     },
     "广西壮族自治区": {
-      "_intensity": 33,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 31,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "广西梧州：“夜经济”火热",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "人民网",
           "url": "http://society.people.com.cn/n1/2026/0929/c1008-40807335.html"
         },
         {
           "title": "古的AI丨八桂智游",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "广西新闻网",
           "url": "http://www.gxnews.com.cn/staticpages/20260929/newgx6abb3212-21999416.shtml"
         },
         {
-          "title": "AI 养牛能有多牛？广西石埠乳业人工智能打造科技牧场，领“鲜”未来",
+          "title": "广西钢铁集团成立新能源公司 含风力发电相关业务",
           "time": "2小时前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886329969.html"
+        },
+        {
+          "title": "AI 养牛能有多牛？广西石埠乳业人工智能打造科技牧场，领“鲜”未来",
+          "time": "3小时前",
           "source": "手机新浪网",
           "url": "https://k.sina.com.cn/article_1899621707_m7139ed4b03301gklk.html?from=tech"
         },
         {
           "title": "广西深耕涉外法治建设打造开放合作前沿窗口",
-          "time": "22小时前",
-          "source": "中国长安网",
+          "time": "23小时前",
+          "source": "chinapeace.gov.cn",
           "url": "http://www.chinapeace.gov.cn/chinapeace/c100056/2026-09/28/content_12858297.shtml"
         },
         {
           "title": "南宁海关缉私局“全调中心”开展广西反走私历史文化宣传活动服务（GXGL2026S-X436-Z）的成交结果公告",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/aseaninfo/2026/09-29/10705373.shtml"
         },
@@ -1070,33 +1076,27 @@
         },
         {
           "title": "9.73亿！中铁十五局联合体预中标广西200MW/800MWh构网型储能电站项目",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "碳索储能网",
           "url": "https://mcn.solarbe.com/news/20260929/50029810.html"
-        },
-        {
-          "title": "广西中秋文旅市场活力十足",
-          "time": "14小时前",
-          "source": "CDMX",
-          "url": "https://www.ctnews.com.cn/dongtai/content/2026-09/28/content_192598.html"
         }
       ]
     },
     "海南省": {
-      "_intensity": 50,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 53,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
-          "title": "海南“十五五”推动气象预警客观化、定量化、场景化",
-          "time": "4小时前",
-          "source": "chinanews.com.cn",
-          "url": "http://www.chinanews.com.cn/cj/2026/09-29/10705277.shtml"
+          "title": "海南中秋国庆假期文旅福利上线",
+          "time": "2小时前",
+          "source": "21财经",
+          "url": "https://www.21jingji.com/article/20260929/herald/372fadae95e932fc3a781f319402f77c.html"
         },
         {
-          "title": "海南省委书记冯飞在海口暗访检查国庆假期安全生产工作",
-          "time": "3小时前",
-          "source": "新京报",
-          "url": "https://www.bjnews.com.cn/detail/1790647785129855.html"
+          "title": "海南“十五五”推动气象预警客观化、定量化、场景化",
+          "time": "5小时前",
+          "source": "chinanews.com.cn",
+          "url": "http://www.chinanews.com.cn/cj/2026/09-29/10705277.shtml"
         },
         {
           "title": "招得进、留得住、送得出 海南外国语职业学院2026年招生就业“双丰收”",
@@ -1106,8 +1106,8 @@
         },
         {
           "title": "海南商业航天发射场二期完工并启动合练 主体工程用时612天",
-          "time": "34分钟前",
-          "source": "观点网",
+          "time": "1小时前",
+          "source": "guandian.cn",
           "url": "https://www.guandian.cn/article/20260929/608167.html"
         },
         {
@@ -1117,52 +1117,52 @@
           "url": "http://hi.people.com.cn/n2/2026/0929/c231190-41710106.html"
         },
         {
+          "title": "海南省委书记冯飞在海口暗访检查国庆假期安全生产工作",
+          "time": "4小时前",
+          "source": "新京报",
+          "url": "https://m.bjnews.com.cn/detail/1790647785129855.html"
+        },
+        {
           "title": "守护生态家底 海南汇聚青春力量",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "搜狐网",
           "url": "https://www.sohu.com/a/1082114005_123753?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         },
         {
           "title": "海南自贸港基金文化产业基金管理机构意向征集预公告",
-          "time": "2小时前",
-          "source": "新浪财经",
+          "time": "3小时前",
+          "source": "finance.sina.cn",
           "url": "https://finance.sina.cn/tech/2026-09-29/detail-initnfqh2555885.d.html?vt=4"
-        },
-        {
-          "title": "好物汇聚万宁！海南省第十一届旅游商品大赛好物市集开市#万宁 #媒体原创",
-          "time": "4小时前",
-          "source": "川观新闻",
-          "url": "https://cbgc.scol.com.cn/news/8007992"
         }
       ]
     },
     "重庆市": {
-      "_intensity": 64,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 67,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "重庆辖区开展国有企业与上市公司风险管理培训_重庆监管局",
-          "time": "5小时前",
+          "time": "3小时前",
           "source": "csrc.gov.cn",
           "url": "https://www.csrc.gov.cn/chongqing/c101075/c7661455/content.shtml"
         },
         {
           "title": "重庆潼南：推动传统化工“向新”“向强”",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "12371.gov.cn",
           "url": "https://m.12371.gov.cn/content/2026-09/29/content_516323.html"
         },
         {
-          "title": "2026·不夜重庆生活季收官 三个月拉动消费超62.3亿元",
-          "time": "3小时前",
-          "source": "东方财富",
-          "url": "https://finance.eastmoney.com/a/202609293886287586.html"
-        },
-        {
           "title": "国庆假期 重庆无人机灯光秀时间表来了“乖乖些”注意查收！（编辑：谭天）",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "川观新闻",
           "url": "https://cbgc.scol.com.cn/news/8007847"
+        },
+        {
+          "title": "今夜起较强冷空气影响我国 重庆东南部等地部分地区有中到大雨，局地有暴雨",
+          "time": "1小时前",
+          "source": "华龙网",
+          "url": "https://www.cqnews.net/web/content_1554479365861752832.html"
         },
         {
           "title": "缅怀先烈筑牢忠诚警魂 重庆警察学院开展烈士祭奠活动",
@@ -1171,52 +1171,46 @@
           "url": "http://news.cyol.com/gb/shenghuo/articles/2026-09/29/content_Pb0awls23m.html"
         },
         {
-          "title": "重庆首创奥莱七周年庆 多重福利点亮假日消费市场",
+          "title": "中秋节期间，重庆商品和服务销售额达211.6亿元",
           "time": "1小时前",
-          "source": "华龙网",
-          "url": "https://www.cqnews.net/web/content_1554195254978887680.html"
+          "source": "新浪新闻_手机新浪网",
+          "url": "https://news.sina.com.cn/zx/gj/2026-09-29/doc-initnfqc7829065.shtml"
         },
         {
           "title": "重庆科技大学藏着两个“宝贝”：地上“热采”稠油 地下探可燃冰",
-          "time": "4小时前",
-          "source": "新华网重庆",
+          "time": "5小时前",
+          "source": "cq.news.cn",
           "url": "https://cq.news.cn/20260929/5e4ccf5564194ce9adf9592c4dae430a/c.html"
         },
         {
           "title": "重庆海关2026年度机关在职职工健康体检服务项目中标公告",
-          "time": "48分钟前",
+          "time": "1小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/aseaninfo/2026/09-29/10705442.shtml"
         }
       ]
     },
     "四川省": {
-      "_intensity": 68,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 76,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "习近平给四川大学全体师生的回信",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "新华网",
           "url": "https://www.news.cn/politics/leaders/20260929/7b6e2591213e4bcebf8f7e519d3ec110/c.html"
         },
         {
           "title": "四川两名选手摘金夺银",
-          "time": "8小时前",
+          "time": "9小时前",
           "source": "四川日报",
           "url": "https://epaper.scdaily.cn/shtml/scrb/20260929/1090956.html"
         },
         {
           "title": "川大，你太能藏了！丨C视频",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "四川新闻",
           "url": "https://sichuan.scol.com.cn/ggxw/202609/83332689.html"
-        },
-        {
-          "title": "“文旅+百业、百业+文旅”，四川如何打开融合发展新空间？",
-          "time": "3小时前",
-          "source": "chinanews.com.cn",
-          "url": "https://www.chinanews.com.cn/cj/2026/09-29/10705350.shtml"
         },
         {
           "title": "2026四川省文化和旅游发展大会暨第十二届中国（四川）国际旅游投资大会举行",
@@ -1225,8 +1219,20 @@
           "url": "http://sc.people.com.cn/n2/2026/0929/c345167-41710096.html"
         },
         {
+          "title": "“文旅+百业、百业+文旅”，四川如何打开融合发展新空间？",
+          "time": "4小时前",
+          "source": "chinanews.com.cn",
+          "url": "https://www.chinanews.com.cn/cj/2026/09-29/10705350.shtml"
+        },
+        {
+          "title": "我校与成都市人民政府签署市校合作协议",
+          "time": "4小时前",
+          "source": "中国农业大学新闻网",
+          "url": "https://news.cau.edu.cn/zhxwnew/8230570c6ec54f618bb153c1d296c1c7.htm"
+        },
+        {
           "title": "走进四川省若尔盖县——胜利之光照亮茫茫草原",
-          "time": "6小时前",
+          "time": "7小时前",
           "source": "中华人民共和国国防部",
           "url": "http://www.mod.gov.cn/gfbw/gfjy_index/16490103.html"
         },
@@ -1235,94 +1241,82 @@
           "time": "16小时前",
           "source": "央广网",
           "url": "https://www.cnr.cn/scfw/scpd/yw201/20260928/t20260928_527828089.shtml"
-        },
-        {
-          "title": "（四川观察）“四川农业大学—温江区宠物经济产业联盟”揭牌成立",
-          "time": "3小时前",
-          "source": "四川农业大学新闻网",
-          "url": "https://news.sicau.edu.cn/info/1133/117007.htm"
         }
       ]
     },
     "贵州省": {
-      "_intensity": 80,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 87,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "2026多彩贵州·第十九届中国原生态国际摄影大展、首届多彩贵州大地艺术季在荔波开幕",
-          "time": "53分钟前",
+          "time": "1小时前",
           "source": "中国日报网",
           "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb4aa0e4b09a165c78d51c.html"
         },
         {
           "title": "贵州：桥见山河 业兴一方",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "人民网",
           "url": "http://gz.people.com.cn/n2/2026/0929/c222152-41710158.html"
         },
         {
           "title": "贵州石阡：田间趣味活动庆丰收",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "光明网",
           "url": "https://politics.gmw.cn/2026-09/29/content_39026145.htm"
         },
         {
           "title": "目击贵州各族群众送新兵入伍的温情瞬间——这一别，是家与国的托付",
-          "time": "7小时前",
+          "time": "8小时前",
           "source": "中国军网",
           "url": "http://www.81.cn/yw_208727/16490083.html"
         },
         {
           "title": "贵州龙里凌晨一交通事故致7人遇难 官方通报为酒驾",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "央广网",
           "url": "https://www.cnr.cn/gz/qfrd/20260929/t20260929_527828550.shtml"
         },
         {
           "title": "瞰贵州丨金秋田园美如画",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "新浪新闻_手机新浪网",
           "url": "https://news.sina.com.cn/zx/gj/2026-09-29/doc-initmzhk2569247.shtml"
         },
         {
-          "title": "贵州省龙里县发生一起交通事故致7人死亡",
-          "time": "4小时前",
-          "source": "川观新闻",
-          "url": "https://cbgc.scol.com.cn/news/8007876"
+          "title": "黄家忠任贵州省人力资源和社会保障厅党组书记",
+          "time": "40分钟前",
+          "source": "中国经济网",
+          "url": "http://district.ce.cn/newarea/sddy/202609/t20260929_3241891.shtml"
         },
         {
-          "title": "贵州省“票根经济”发放近百万张券，带动消费超七亿元",
-          "time": "4小时前",
-          "source": "国际在线",
-          "url": "https://gz.cri.cn/n/20260929/733d73b3-1e74-475c-8643-0f6cf6356e11.html"
+          "title": "贵州省龙里县发生一起交通事故致7人死亡",
+          "time": "5小时前",
+          "source": "川观新闻",
+          "url": "https://cbgc.scol.com.cn/news/8007876"
         }
       ]
     },
     "云南省": {
-      "_intensity": 48,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 52,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "听民声 防风险 护家园 云南生态环境风险防控工作取得新成效",
-          "time": "4小时前",
+          "time": "3小时前",
           "source": "新浪新闻_手机新浪网",
           "url": "https://news.sina.com.cn/zx/gj/2026-09-28/doc-initktnz9648201.shtml"
         },
         {
-          "title": "“秋丰送爽”2026云南文旅主题推介会在渝举行",
-          "time": "14小时前",
-          "source": "cq.chinanews.com.cn",
-          "url": "https://www.cq.chinanews.com.cn/news/2026/0928/39-53741.html"
-        },
-        {
           "title": "云南：新型工业化专项资金可支持节能降碳技改，采用补助、贴息、以奖代补多种扶持手段",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "gdshe.org",
           "url": "https://www.gdshe.org/article/28390.html"
         },
         {
           "title": "云南镇康县人大常委会推动“民生清单”变成群众“幸福账单”",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "新华网",
           "url": "http://www.yn.xinhuanet.com/20260929/54c3bc000bab447b9b6d62082d7ff64e/c.html"
         },
@@ -1333,20 +1327,26 @@
           "url": "https://futures.stockstar.com/IG2026092900018775.shtml"
         },
         {
-          "title": "云南能投：关于永宁风电场（四期）项目及大龙山风电场项目获得云南省发展和改革委员会核准批复的公告",
-          "time": "11小时前",
-          "source": "东方财富",
-          "url": "https://finance.eastmoney.com/a/202609283885383252.html"
+          "title": "老仓库里“焙”出新滋味 云南咖啡产业探路“生态圈思维”",
+          "time": "5小时前",
+          "source": "chinanews.com.cn",
+          "url": "https://www.chinanews.com.cn/cj/2026/09-29/10705231.shtml"
         },
         {
-          "title": "云南金秋砂糖橘提早上市，行情高开低走",
-          "time": "4小时前",
-          "source": "国际果蔬报道",
-          "url": "https://m.guojiguoshu.com/article/11325"
+          "title": "“秋丰送爽”2026云南文旅主题推介会在渝举行",
+          "time": "5小时前",
+          "source": "finance.sina.cn",
+          "url": "https://finance.sina.cn/2026-09-29/detail-initmzhm9337390.d.html?vt=4&wm=1029?q"
+        },
+        {
+          "title": "中国能建中电工程云南院中标勐翁光伏发电项目EPC总承包工程",
+          "time": "14分钟前",
+          "source": "国际太阳能光伏网",
+          "url": "https://solar.in-en.com/html/solar-2464429.shtml"
         },
         {
           "title": "彩云之南·万千气象｜旱地种出“好稻子” 山区粮田迎来新变化",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "央广网",
           "url": "https://www.cnr.cn/yn/dsq/20260929/t20260929_527828335.shtml"
         }
@@ -1354,67 +1354,79 @@
     },
     "西藏自治区": {
       "_intensity": 22,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "西藏自治区文化和旅游厅法律顾问服务项目比选结果公示",
-          "time": "13小时前",
+          "time": "14小时前",
           "source": "西藏自治区文化和旅游厅",
           "url": "https://wlt.xizang.gov.cn/xwzx_69/tzgg/202609/t20260928_560956.html"
         },
         {
           "title": "西藏举办“一体演讲”主题活动 讲述民族团结进步故事",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/gn/2026/09-29/10705263.shtml"
         },
         {
           "title": "【情牵藏南】巴桑罗布：《门隅水羊清册》是中国在门隅有效行使主权的铁证_萨班论坛",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中国西藏网",
           "url": "http://www.tibet.cn/cn/in/gysp/202609/t20260929_8053570.html"
         },
         {
           "title": "2026年首届西藏汽车文化节在拉萨启幕",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "xzxw.com",
           "url": "https://www.xzxw.com/xw/xzyw/2026-09/29/content_6961166.html"
         },
         {
           "title": "石榴花开 籽籽同心｜鼓槌落，狮子“活”",
-          "time": "9小时前",
+          "time": "10小时前",
           "source": "新浪新闻_手机新浪网",
           "url": "https://news.sina.com.cn/zx/gj/2026-09-28/doc-initkhxe2961224.shtml"
         },
         {
+          "title": "经党中央、国务院批准，督察组向西藏自治区党委、政府进行反馈",
+          "time": "2小时前",
+          "source": "搜狐网",
+          "url": "https://m.sohu.com/a/1082183626_180220?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+        },
+        {
           "title": "最新消息！事关西藏一市“三支一扶”人员",
-          "time": "17小时前",
+          "time": "18小时前",
           "source": "川观新闻",
           "url": "https://cbgc.scol.com.cn/news/8006346"
         },
         {
           "title": "兰州大学西藏研究院正式揭牌！",
           "time": "1小时前",
-          "source": "中国教育在线",
+          "source": "eol.cn",
           "url": "https://www.eol.cn/news/zjyw/202609/t20260929_2778803.shtml"
-        },
-        {
-          "title": "西藏矿业：项目核心目标为完善能源保障供给能力_公司新闻",
-          "time": "4小时前",
-          "source": "证券之星",
-          "url": "http://stock.stockstar.com/RB2026092900009094.shtml"
         }
       ]
     },
     "陕西省": {
-      "_intensity": 54,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 53,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "我校辅导员罗顺意荣获陕西省民族团结进步模范个人称号",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "西北农林科技大学",
           "url": "https://news.nwsuaf.edu.cn/xnxw/883cce9eb31b4d3695913189e89aaef4.htm"
+        },
+        {
+          "title": "2026陕西省第十二届全民健身操舞大赛在安康旬阳举行",
+          "time": "1小时前",
+          "source": "西部网",
+          "url": "http://news.cnwest.com/lianbo/a/2026/09/29/23443730.html"
+        },
+        {
+          "title": "第十四届陕西省阅读文化节在西安启幕",
+          "time": "3小时前",
+          "source": "chinanews.com.cn",
+          "url": "https://www.chinanews.com.cn/cul/2026/09-29/10705393.shtml"
         },
         {
           "title": "第十四届陕西省阅读文化节在西安启幕",
@@ -1423,20 +1435,8 @@
           "url": "https://www.sxdaily.com.cn/2026-09/29/content_20137011.html"
         },
         {
-          "title": "第十四届陕西省阅读文化节在西安启幕",
-          "time": "2小时前",
-          "source": "chinanews.com.cn",
-          "url": "https://www.chinanews.com.cn/cul/2026/09-29/10705393.shtml"
-        },
-        {
-          "title": "陕西一地宣布：禁止全市中小学、中职学生带手机进校",
-          "time": "2小时前",
-          "source": "东方财富",
-          "url": "https://finance.eastmoney.com/a/202609293886315563.html"
-        },
-        {
           "title": "十年禁渔成效凸显 陕西长江流域鱼类物种增至132种",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "China Daily",
           "url": "https://shx.chinadaily.com.cn/a/202609/29/WS6abb2e2be4b09a165c78d49a.html"
         },
@@ -1448,79 +1448,79 @@
         },
         {
           "title": "陕西公布首批“人工智能+”典型案例",
-          "time": "21分钟前",
+          "time": "1小时前",
           "source": "华商网",
           "url": "https://news.hsw.cn/system/2026/0929/1963494.shtml"
         },
         {
-          "title": "陕西省举办智能建造与新型建筑工业化试点项目观摩会",
-          "time": "19小时前",
-          "source": "中国科技网",
-          "url": "https://www.stdaily.com/web/gdxw/2026-09/28/content_589260.html"
+          "title": "陕西一地宣布：禁止全市中小学、中职学生带手机进校",
+          "time": "3小时前",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886315563.html"
         }
       ]
     },
     "甘肃省": {
-      "_intensity": 52,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 63,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
+          "title": "第九届马家窑文化节在甘肃临洮开幕",
+          "time": "1小时前",
+          "source": "中国日报网",
+          "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb4c47e4b09a165c78d52a.html"
+        },
+        {
           "title": "天马行空乐在武威_市州动态",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "甘肃省人民政府",
           "url": "http://gansu.gov.cn/gsszf/c100002/c100006/c100008/202609/174403757.shtml"
         },
         {
           "title": "艺术学院、威尔士学院“红军长征在甘肃——纪念红军长征胜利90周年绘画作品展”开幕",
-          "time": "4小时前",
-          "source": "news.lzu.edu.cn",
+          "time": "5小时前",
+          "source": "兰州大学新闻网",
           "url": "https://news.lzu.edu.cn/info/1055/1176235.htm"
         },
         {
           "title": "甘肃文旅集团披露中秋假期运营数据 天水和谐园游客量增415%",
           "time": "4小时前",
-          "source": "观点网",
+          "source": "guandian.cn",
           "url": "https://www.guandian.cn/article/20260929/608028.html"
         },
         {
           "title": "【经济观察】一条“生命线”的温度与力度——从企业发展看甘肃营商环境持续优化升级",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "新浪新闻_手机新浪网",
           "url": "https://news.sina.com.cn/zx/gj/2026-09-28/doc-initktpc3603716.shtml"
         },
         {
+          "title": "甘肃天水一天然气公司强制搭售波纹管被罚：进价每米6元，卖60元",
+          "time": "2小时前",
+          "source": "thepaper.cn",
+          "url": "https://www.thepaper.cn/newsDetail_forward_34170016"
+        },
+        {
+          "title": "视频丨赏月追秋 假期文旅有何新“密码”?",
+          "time": "3小时前",
+          "source": "中国甘肃网",
+          "url": "https://gansu.gscn.com.cn/system/2026/09/29/013562792.shtml"
+        },
+        {
           "title": "甘肃省第十四届人民代表大会第五次会议副秘书长名单",
           "time": "6小时前",
-          "source": "新浪财经",
+          "source": "finance.sina.cn",
           "url": "https://finance.sina.cn/2026-09-29/detail-initmuyp9423754.d.html?vt=4&cid=76729&node_id=76729"
-        },
-        {
-          "title": "一路映月 千里同圆——甘肃省公航旅集团圆满完成2026年中秋假期高速公路服务保障任务",
-          "time": "4小时前",
-          "source": "每日甘肃网",
-          "url": "https://gansu.gansudaily.com.cn/system/2026/09/29/031439571.shtml"
-        },
-        {
-          "title": "中秋假期兰州市社会治安大局平稳有序",
-          "time": "2小时前",
-          "source": "gsjb.com",
-          "url": "https://www.gsjb.com/system/2026/09/29/031439711.shtml"
-        },
-        {
-          "title": "甘肃河西五市到兰州推介文旅资源",
-          "time": "14小时前",
-          "source": "CDMX",
-          "url": "https://www.ctnews.com.cn/dongtai/content/2026-09/28/content_192595.html"
         }
       ]
     },
     "青海省": {
-      "_intensity": 52,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 51,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "青海证券业协会联合太平洋证券青海分公司走进西宁市中小学社会实践教育中心开展财商启蒙教育活动",
-          "time": "5小时前",
+          "time": "6小时前",
           "source": "csrc.gov.cn",
           "url": "https://www.csrc.gov.cn/qinghai/c101417/c7661577/content.shtml"
         },
@@ -1532,21 +1532,15 @@
         },
         {
           "title": "青海首个百兆瓦级塔式光热电站里程碑式“双突破”",
-          "time": "37分钟前",
+          "time": "1小时前",
           "source": "中国能源新闻网",
           "url": "https://www.cpnn.com.cn/news/dfny/202609/t20260929_1917986.html"
         },
         {
           "title": "把网络安全科普送到青海高原群众的身边",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中宏网",
           "url": "https://www.zhonghongwang.com/show-140-473710-1.html"
-        },
-        {
-          "title": "跨越海峡 血脉相连：34名台胞赴青海湟中谒祖寻根",
-          "time": "4小时前",
-          "source": "chinanews.com.cn",
-          "url": "https://www.chinanews.com.cn/tw/shipin/cns/2026/09-29/news1070480.shtml"
         },
         {
           "title": "青海海西：戈壁深处藏玉湖",
@@ -1555,34 +1549,40 @@
           "url": "http://qh.people.com.cn/n2/2026/0929/c378418-41710349.html"
         },
         {
-          "title": "【深化扫黑除恶专项斗争 青海在行动】高位统筹聚合力 纵深推进出重拳",
-          "time": "7小时前",
-          "source": "qinghai.gov.cn",
-          "url": "http://www.qinghai.gov.cn/zwgk/system/2026/09/29/030109258.shtml"
+          "title": "跨越海峡 血脉相连：34名台胞赴青海湟中谒祖寻根",
+          "time": "5小时前",
+          "source": "chinanews.com.cn",
+          "url": "https://www.chinanews.com.cn/tw/shipin/cns/2026/09-29/news1070480.shtml"
         },
         {
-          "title": "@广大网友，来和新任青海省委书记罗东川聊聊您的期盼",
-          "time": "4小时前",
-          "source": "人民网",
-          "url": "http://qh.people.com.cn/n2/2026/0929/c378418-41710543.html"
+          "title": "中秋假期青海安全形势总体平稳-政务公开",
+          "time": "7小时前",
+          "source": "qinghai.gov.cn",
+          "url": "http://www.qinghai.gov.cn/zwgk/system/2026/09/29/030109251.shtml"
+        },
+        {
+          "title": "【深化扫黑除恶专项斗争 青海在行动】高位统筹聚合力 纵深推进出重拳",
+          "time": "8小时前",
+          "source": "qinghai.gov.cn",
+          "url": "http://www.qinghai.gov.cn/zwgk/system/2026/09/29/030109258.shtml"
         }
       ]
     },
     "宁夏回族自治区": {
-      "_intensity": 11,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 12,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
+        {
+          "title": "宁夏银川：民族团结进步宣传周普法快闪让共同体意识浸润人心",
+          "time": "1小时前",
+          "source": "中国日报网",
+          "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb5062e4b09a165c78d539.html"
+        },
         {
           "title": "宁夏非遗的全球生意：掇绣从“炕头”走向世界",
           "time": "7小时前",
           "source": "21财经",
           "url": "https://www.21jingji.com/article/20260929/e52067dab90d1831c8892cb339538869.html"
-        },
-        {
-          "title": "【新闻话题】田野之上，歌声滚烫！",
-          "time": "1小时前",
-          "source": "新浪新闻_手机新浪网",
-          "url": "https://news.sina.com.cn/zx/gj/2026-09-29/doc-initnfqp2958958.shtml"
         },
         {
           "title": "文化中国行丨宁夏：解码史前聚落 溯源先民生活",
@@ -1591,28 +1591,28 @@
           "url": "https://www.news.cn/local/20260927/ebea2291a4c14de5aea7b429fe8bc07a/c.html"
         },
         {
-          "title": "宁夏这些地方上榜！2021—2025年度平安中国建设示范市、县名单公布",
-          "time": "9小时前",
-          "source": "新浪财经",
-          "url": "https://finance.sina.cn/2026-09-28/detail-initktny2955517.d.html?vt=4"
+          "title": "宁夏一地查处违规医保基金270万元，30名违规医师被记分！",
+          "time": "19分钟前",
+          "source": "搜狐网",
+          "url": "https://m.sohu.com/a/1082227090_253235?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         },
         {
-          "title": "宁夏一地查处违规医保基金270万元！30名违规医师被记分",
+          "title": "齐心共赴文明之约 同心浇灌文明之花",
           "time": "2小时前",
-          "source": "搜狐网",
-          "url": "https://m.sohu.com/a/1082162130_253235?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+          "source": "新浪新闻_手机新浪网",
+          "url": "https://news.sina.com.cn/zx/gj/2026-09-29/doc-initnfqm3037969.shtml"
         },
         {
           "title": "以全链条设计驱动高效运营，山东三院打造宁夏工人疗养院",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中华网",
           "url": "https://hea.china.com/articles/20260929/202609291962817.html"
         },
         {
-          "title": "宁夏利通区 十八大板块五十六项活动燃动国庆",
-          "time": "1天前",
-          "source": "中国日报网",
-          "url": "https://cn.chinadaily.com.cn/a/202609/28/WS6ab9cdb5e4b09a165c78ce2e.html"
+          "title": "贺兰山下多场景留客 文旅消费新活力释放",
+          "time": "4小时前",
+          "source": "finance.sina.cn",
+          "url": "https://finance.sina.cn/2026-09-29/detail-initmzhk2626368.d.html?vt=4&wm=1029?q"
         },
         {
           "title": "宁夏：精品线路联袂非遗展演 展现塞上风采",
@@ -1623,8 +1623,8 @@
       ]
     },
     "新疆维吾尔自治区": {
-      "_intensity": 51,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 57,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "“到新疆，方能知详” 走过天山南北，陈嘉庚曾孙找到了答案",
@@ -1633,57 +1633,57 @@
           "url": "https://www.whnews.cn/news/node/2026-09/29/content_-35613.htm"
         },
         {
+          "title": "新疆维吾尔自治区乌鲁木齐市天山区人民法院公告",
+          "time": "2小时前",
+          "source": "legaldaily.com.cn",
+          "url": "http://www.legaldaily.com.cn/Court_announcement/content/2026-09/28/content_9465840.html"
+        },
+        {
           "title": "扎根西藏阿里21年：一位新疆厨师的“第二故乡”",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "xj.chinanews.com.cn",
           "url": "http://www.xj.chinanews.com.cn/shipin/2026-09-29/detail-ihfksqpy3772218.shtml"
         },
         {
           "title": "新疆中电源电力安装有限公司获6年承装二级承修二级承试二级资质 承装（修、试）电力设施许可证电力设施相关业务资质敲定",
-          "time": "52分钟前",
-          "source": "新浪财经",
+          "time": "1小时前",
+          "source": "finance.sina.cn",
           "url": "https://finance.sina.cn/2026-09-29/detail-initnmwm2861137.d.html?vt=4&cid=79649&node_id=79649"
         },
         {
           "title": "新华社消息丨新疆大石峡水利枢纽工程首批机组并网发电",
-          "time": "1小时前",
+          "time": "2小时前",
           "source": "新华网",
           "url": "https://www.xinhuanet.com/politics/20260929/661e9862f177425cb880f2eae2204ef2/c.html"
         },
         {
           "title": "新疆经济看点丨新疆两款大型农机量产下线 填补多项技术空白",
-          "time": "57分钟前",
+          "time": "1小时前",
           "source": "aksxw.com",
           "url": "https://www.aksxw.com/sy/rdxw/xj/202609/t20260929_36601696.html"
         },
         {
-          "title": "传祺越7与新疆旅协达成战略合作，共建悦野出行新生态！",
-          "time": "4小时前",
-          "source": "手机新浪网",
-          "url": "https://k.sina.com.cn/article_6573165655_187ca8c57001017eqa.html?from=auto"
+          "title": "保时捷中国深耕中区市场：乌鲁木齐保时捷中心盛大启幕",
+          "time": "17分钟前",
+          "source": "新浪新闻_手机新浪网",
+          "url": "https://news.sina.com.cn/sx/2026-09-29/detail-initnmwi2961522.shtml"
         },
         {
           "title": "21天",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "央广网",
           "url": "https://www.cnr.cn/xjfw/xjfw_1/hydt/20260929/t20260929_527828537.shtml"
-        },
-        {
-          "title": "探访新疆昭苏县“马医院” 数智化养马加快马产业转型",
-          "time": "3小时前",
-          "source": "xj.chinanews.com.cn",
-          "url": "http://www.xj.chinanews.com.cn/shipin/2026-09-29/detail-ihfksqpy3772221.shtml"
         }
       ]
     },
     "台湾省": {
-      "_intensity": 52,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 54,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "赖清德主持台湾新无人机测试棚厂启用：推动台湾成为无人机民主供应链亚洲中心",
-          "time": "7小时前",
-          "source": "voachinese.com",
+          "time": "8小时前",
+          "source": "美国之音",
           "url": "https://www.baidu.com/s?wd=%E8%B5%96%E6%B8%85%E5%BE%B7%E4%B8%BB%E6%8C%81%E5%8F%B0%E6%B9%BE%E6%96%B0%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%B5%8B%E8%AF%95%E6%A3%9A%E5%8E%82%E5%90%AF%E7%94%A8%EF%BC%9A%E6%8E%A8%E5%8A%A8%E5%8F%B0%E6%B9%BE%E6%88%90%E4%B8%BA%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%B0%91%E4%B8%BB%E4%BE%9B%E5%BA%94%E9%93%BE%E4%BA%9A%E6%B4%B2%E4%B8%AD%E5%BF%83"
         },
         {
@@ -1693,28 +1693,28 @@
           "url": "https://www.baidu.com/s?wd=%E7%89%B9%E4%B9%A0%E8%B0%88%E7%BE%8E%E4%B8%AD%E4%BA%8C%E6%88%98%E7%9B%9F%E5%8F%8B%E4%B9%8B%E6%83%85%20%E5%8F%B0%E6%B9%BE%E7%A7%B0%E5%B9%B6%E8%82%A9%E4%BD%9C%E6%88%98%E7%9A%84%E6%98%AF%E4%B8%AD%E5%8D%8E%E6%B0%91%E5%9B%BD"
         },
         {
+          "title": "美国联邦众议院议长约翰逊预期美国将持续支持台湾",
+          "time": "9小时前",
+          "source": "RFI",
+          "url": "https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E8%81%94%E9%82%A6%E4%BC%97%E8%AE%AE%E9%99%A2%E8%AE%AE%E9%95%BF%E7%BA%A6%E7%BF%B0%E9%80%8A%E9%A2%84%E6%9C%9F%E7%BE%8E%E5%9B%BD%E5%B0%86%E6%8C%81%E7%BB%AD%E6%94%AF%E6%8C%81%E5%8F%B0%E6%B9%BE"
+        },
+        {
           "title": "台湾花莲县海域发生4.7级地震 震源深度23公里",
           "time": "5小时前",
           "source": "中国日报网",
           "url": "https://cn.chinadaily.com.cn/a/202609/29/WS6abb100de4b09a165c78d386.html"
         },
         {
-          "title": "要闻分析 - 中美峰会成果寥寥 台湾等敏感议题成未亮的牌？",
-          "time": "9小时前",
-          "source": "RFI",
-          "url": "https://www.baidu.com/s?wd=%E8%A6%81%E9%97%BB%E5%88%86%E6%9E%90%20-%20%E4%B8%AD%E7%BE%8E%E5%B3%B0%E4%BC%9A%E6%88%90%E6%9E%9C%E5%AF%A5%E5%AF%A5%20%E5%8F%B0%E6%B9%BE%E7%AD%89%E6%95%8F%E6%84%9F%E8%AE%AE%E9%A2%98%E6%88%90%E6%9C%AA%E4%BA%AE%E7%9A%84%E7%89%8C%EF%BC%9F"
-        },
-        {
           "title": "（台湾写真）烟火气、返乡潮中感受台湾中秋团圆",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "fj.chinanews.com.cn",
           "url": "https://www.fj.chinanews.com.cn/news/2026/2026-09-29/591477.html"
         },
         {
-          "title": "駐美官員接受美媒專訪 籲各界持續支持台灣",
-          "time": "1小时前",
-          "source": "大纪元",
-          "url": "https://www.epochtimes.com/gb/26/9/29/n14859673.htm"
+          "title": "两郡试馆：台湾士子的榕城十年与甲午之变- 福建日报数字报",
+          "time": "6小时前",
+          "source": "新福建",
+          "url": "https://fjrb.fjdaily.com/pc/con/202609/29/content_567732.html"
         },
         {
           "title": "走读蜀道，来一场跨越时空的文化对话",
@@ -1723,28 +1723,34 @@
           "url": "http://tw.people.com.cn/n1/2026/0929/c14657-40807428.html"
         },
         {
-          "title": "台海观澜 | 中美关系升温，台湾蓝营心寒、绿营心虚",
+          "title": "駐美官員接受美媒專訪 籲各界持續支持台灣",
           "time": "2小时前",
-          "source": "搜狐网",
-          "url": "https://m.sohu.com/a/1082164815_118622?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
+          "source": "epochtimes.com",
+          "url": "https://www.epochtimes.com/gb/26/9/29/n14859673.htm/amp"
         }
       ]
     },
     "香港特别行政区": {
-      "_intensity": 73,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 76,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
           "title": "驻布鲁塞尔经贸办举办商业研讨会促进香港与爱尔兰创科交流",
-          "time": "9分钟前",
+          "time": "51分钟前",
           "source": "hmo.gov.cn",
           "url": "https://www.hmo.gov.cn/2026/09/29/ARTIC9PSMtJC2aupoWSzu75S260929.shtml"
         },
         {
           "title": "全球金融变局下的香港机遇",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "财新",
           "url": "https://opinion.caixin.com/2026-09-29/102489474.html"
+        },
+        {
+          "title": "香港真的需要”五年规划”吗？",
+          "time": "3小时前",
+          "source": "文学城",
+          "url": "https://www.wenxuecity.com/news/2026/09/28/126789146.html"
         },
         {
           "title": "香港惠州社团联合总会成立30周年活动举行",
@@ -1754,8 +1760,8 @@
         },
         {
           "title": "国际刑警组织将于香港召开大会 英国律师警告中国可能借机“洗白”声誉",
-          "time": "12小时前",
-          "source": "voachinese.com",
+          "time": "13小时前",
+          "source": "美国之音",
           "url": "https://www.baidu.com/s?wd=%E5%9B%BD%E9%99%85%E5%88%91%E8%AD%A6%E7%BB%84%E7%BB%87%E5%B0%86%E4%BA%8E%E9%A6%99%E6%B8%AF%E5%8F%AC%E5%BC%80%E5%A4%A7%E4%BC%9A%20%E8%8B%B1%E5%9B%BD%E5%BE%8B%E5%B8%88%E8%AD%A6%E5%91%8A%E4%B8%AD%E5%9B%BD%E5%8F%AF%E8%83%BD%E5%80%9F%E6%9C%BA%E2%80%9C%E6%B4%97%E7%99%BD%E2%80%9D%E5%A3%B0%E8%AA%89"
         },
         {
@@ -1765,16 +1771,10 @@
           "url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/zwdt/content/post_13002225.html"
         },
         {
-          "title": "香港真的需要”五年规划”吗？",
-          "time": "3小时前",
-          "source": "文学城",
-          "url": "https://www.wenxuecity.com/news/2026/09/28/126789146.html"
-        },
-        {
-          "title": "汇丰：香港企业家AI投资力度领先全球",
-          "time": "19分钟前",
-          "source": "观点网",
-          "url": "https://www.guandian.cn/article/20260929/608173.html"
+          "title": "【调研快报】江苏神通接待富瑞金融集团香港有限公司等2家机构调研",
+          "time": "刚刚",
+          "source": "东方财富",
+          "url": "https://finance.eastmoney.com/a/202609293886421712.html"
         },
         {
           "title": "港交所推出展览庆祝香港现代化证券交易所成立40周年",
@@ -1785,56 +1785,56 @@
       ]
     },
     "澳门特别行政区": {
-      "_intensity": 32,
-      "_meta": "2026-09-29 14:13 · 自动抓取",
+      "_intensity": 38,
+      "_meta": "2026-09-29 14:55 · 自动抓取",
       "items": [
         {
-          "title": "第48届世界技能大赛澳门代表团收获佳绩",
-          "time": "6小时前",
-          "source": "人民日报",
-          "url": "http://paper.people.com.cn/rmrbhwb/pc/content/202609/29/content_30183685.html"
+          "title": "第48届世界技能大赛澳门代表团收获佳绩--大湾区频道",
+          "time": "4小时前",
+          "source": "人民网",
+          "url": "http://hm.people.com.cn/n1/2026/0929/c42272-40807431.html"
         },
         {
           "title": "琴澳合办“中医药健康保健系列培训”正式开班 提升两地中医药从业人员专业技术能力",
-          "time": "9分钟前",
+          "time": "51分钟前",
           "source": "hmo.gov.cn",
           "url": "https://www.hmo.gov.cn/2026/09/29/ARTIXoawCvinCqZdTMs4gSE5260929.shtml"
         },
         {
           "title": "澳门经财司司长：冀澳门青年精进技能、报效国家",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "chinanews.com.cn",
           "url": "https://www.chinanews.com.cn/dwq/2026/09-29/10705253.shtml"
         },
         {
           "title": "男子持刀抢劫后，靠“水下推进器”从澳门偷渡至内地，被警方当场抓获",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "观察者网",
           "url": "https://www.guancha.cn/ZhengZhi/2026_09_29_902594.shtml"
         },
         {
-          "title": "横琴澳门两地数字货币桥合作金额超6000万元",
-          "time": "6小时前",
-          "source": "新浪新闻_手机新浪网",
-          "url": "https://news.sina.com.cn/minsheng/2026-09-29/doc-initmuyp9411039.shtml"
+          "title": "政府部门作充分部署迎国庆长假访澳旅客– 澳门特别行政区政府入口网站",
+          "time": "31分钟前",
+          "source": "澳門特別行政區政府入口網站",
+          "url": "https://www.gov.mo/zh-hans/news/938973/"
         },
         {
-          "title": "跨部门协作部署国庆交通安排– 澳门特别行政区政府入口网站",
-          "time": "3小时前",
-          "source": "澳門特別行政區政府入口網站",
-          "url": "https://www.gov.mo/zh-hans/news/938919/"
+          "title": "36岁男子持刀抢劫2.1万港元后，靠“水下推进器”从澳门偷渡至内地，被警方当场抓获",
+          "time": "5小时前",
+          "source": "新浪军事",
+          "url": "https://mil.sina.cn/2026-09-29/detail-initmzhf7932224.d.html?vt=4"
+        },
+        {
+          "title": "横琴澳门两地数字货币桥合作金额超6000万元",
+          "time": "7小时前",
+          "source": "新浪新闻_手机新浪网",
+          "url": "https://news.sina.com.cn/minsheng/2026-09-29/doc-initmuyp9411039.shtml"
         },
         {
           "title": "一水一桥间，琴澳一体化迈向纵深——横琴粤澳深度合作区成立五周年发展观察",
           "time": "11小时前",
           "source": "光明网",
           "url": "https://news.gmw.cn/2026-09/29/content_39025915.htm"
-        },
-        {
-          "title": "澳门媒体人走进彩云之南感受发展脉动",
-          "time": "21小时前",
-          "source": "中央政府驻澳门联络办公室",
-          "url": "https://www.zlb.gov.cn/20260928/b8edde51296a4866ba0db060ab7b0b07/c.html"
         }
       ]
     }
