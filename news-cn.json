@@ -1,10 +1,10 @@
 {
-  "_generated": "2026-11-10T12:44:38+08:00",
+  "_generated": "2026-11-10T12:50:12+08:00",
   "_kind": "cn-provinces",
   "provinces": {
     "北京市": {
       "_intensity": 79,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "秋天 总要来一次北京吧",
@@ -31,6 +31,12 @@
           "url": "https://www.bjstb.gov.cn/bjtb/zwgk/gzdt98/1374017/index.html"
         },
         {
+          "title": "罚没的违建怎么处置，北京有了新方案",
+          "time": "29分钟前",
+          "source": "京报网",
+          "url": "https://xinwen.bjd.com.cn/content/s6af29bd7e4b039a8e2f36bf7.html"
+        },
+        {
           "title": "组图：北京延庆迎今冬初雪 长城田园尽显魅力",
           "time": "3小时前",
           "source": "人民网",
@@ -38,27 +44,21 @@
         },
         {
           "title": "[北京日报]一所哲学院的七十年，与一个时代同行",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "人大新闻网",
           "url": "https://news.ruc.edu.cn/2119950861094547458.html"
         },
         {
           "title": "11月中旬起，北京市级全量政务服务事项可在雄安新区直接办理",
-          "time": "27分钟前",
+          "time": "33分钟前",
           "source": "观点网",
           "url": "https://www.guandian.cn/article/20261110/625448.html"
-        },
-        {
-          "title": "北京供暖，正在变“聪明”！",
-          "time": "1小时前",
-          "source": "北京市人民政府门户网站",
-          "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202611/t20261110_4940043.html"
         }
       ]
     },
     "天津市": {
       "_intensity": 31,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "天津教育报：天南大携手承办，这一全国大会在津举行！",
@@ -112,7 +112,7 @@
     },
     "河北省": {
       "_intensity": 32,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "河北机场集团所辖秦皇岛、张家口、承德机场全力迎战今冬首雪",
@@ -128,7 +128,7 @@
         },
         {
           "title": "河北滦平：雪落金山岭 长城披银装",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "人民网",
           "url": "http://society.people.com.cn/n1/2026/1110/c1008-40831160.html"
         },
@@ -152,7 +152,7 @@
         },
         {
           "title": "河北承德：避暑山庄银装胜景醉游人",
-          "time": "20小时前",
+          "time": "21小时前",
           "source": "新华网",
           "url": "https://www.news.cn/local/20261109/9fce5fcef6b04f94a5a1f27a5af8e128/c.html"
         },
@@ -166,13 +166,19 @@
     },
     "山西省": {
       "_intensity": 24,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "新闻8点见丨山西太原火灾致14人遇难；美民主党拟调查马斯克",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "新京报",
           "url": "https://www.bjnews.com.cn/detail/1794266217129930.html"
+        },
+        {
+          "title": "山西五年内将完成元代以前木构古建“全覆盖抢救”",
+          "time": "6分钟前",
+          "source": "旅日侨网",
+          "url": "https://www.jpchinapress.com/static/content/SS/2026-11-10/1569694048602689788.html"
         },
         {
           "title": "区域经济丨山西出台“十五五”文旅规划聚力打造文旅支柱产业",
@@ -194,7 +200,7 @@
         },
         {
           "title": "十分Fashion！山西汾酒把“中国清香”玩成国际新潮流",
-          "time": "1小时前",
+          "time": "2小时前",
           "source": "中华网财经",
           "url": "https://finance.china.com/wine/13004693/20261110/49856579.html"
         },
@@ -209,22 +215,16 @@
           "time": "3小时前",
           "source": "21财经",
           "url": "https://www.21jingji.com/article/20261110/herald/bcbbddf41bab29494abfb88474d2d54f.html"
-        },
-        {
-          "title": "中国太原市一栋约40层高楼发生火灾 已致14人死亡 20多人受伤",
-          "time": "20小时前",
-          "source": "RFI",
-          "url": "https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E5%A4%AA%E5%8E%9F%E5%B8%82%E4%B8%80%E6%A0%8B%E7%BA%A640%E5%B1%82%E9%AB%98%E6%A5%BC%E5%8F%91%E7%94%9F%E7%81%AB%E7%81%BE%20%E5%B7%B2%E8%87%B414%E4%BA%BA%E6%AD%BB%E4%BA%A1%2020%E5%A4%9A%E4%BA%BA%E5%8F%97%E4%BC%A4"
         }
       ]
     },
     "内蒙古自治区": {
       "_intensity": 20,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "内蒙古呼和浩特：2026年全国城市联合招聘会内蒙古大学站举行",
-          "time": "38分钟前",
+          "time": "44分钟前",
           "source": "人民网",
           "url": "http://nm.people.com.cn/n2/2026/1110/c198624-41746803.html"
         },
@@ -273,8 +273,8 @@
       ]
     },
     "辽宁省": {
-      "_intensity": 17,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 16,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "辽宁省人民政府",
@@ -302,13 +302,13 @@
         },
         {
           "title": "大连英博主教练在辽宁日报发声",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "搜狐网",
           "url": "https://m.sohu.com/a/1099456000_162758?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         },
         {
           "title": "段继阳已任辽宁省政府党组成员、省政府秘书长",
-          "time": "14小时前",
+          "time": "15小时前",
           "source": "ThePaper.cn",
           "url": "https://www.thepaper.cn/newsDetail_forward_34440470"
         },
@@ -328,7 +328,7 @@
     },
     "吉林省": {
       "_intensity": 14,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "吉林大学韩喜平教授著作入选“国家社会科学 基金成果选编”丛书",
@@ -338,13 +338,13 @@
         },
         {
           "title": "吉林长春上演无人机灯光秀 庆祝人民空军成立77周年",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "人民网",
           "url": "http://jl.people.com.cn/n2/2026/1110/c349771-41746346.html"
         },
         {
           "title": "吉林省委举行新闻发布会介绍吉林省委十二届九次全会有关情况",
-          "time": "39分钟前",
+          "time": "44分钟前",
           "source": "凤凰网",
           "url": "https://i.ifeng.com/c/8xw5glAWwhk"
         },
@@ -382,7 +382,7 @@
     },
     "黑龙江省": {
       "_intensity": 8,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "关于“5G工厂”，政策点读带你了解！",
@@ -398,7 +398,7 @@
         },
         {
           "title": "中国气象局与交通运输部2026年11月09日联合发布全国主要公路气象预报",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中华人民共和国文化和旅游部",
           "url": "https://www.mct.gov.cn/ggfw/cxts/glqxyb/202611/t20261110_967602.htm"
         },
@@ -436,7 +436,7 @@
     },
     "上海市": {
       "_intensity": 92,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "“乐业上海优+”行动进行中！（闵行部分）",
@@ -452,7 +452,7 @@
         },
         {
           "title": "从上海到陕北，他们征程不止",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "党建网",
           "url": "http://www.dangjian.cn/xsml/2026/11/10/detail_202611107839887.html"
         },
@@ -490,7 +490,7 @@
     },
     "江苏省": {
       "_intensity": 38,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "瞭观察｜群众安全感连续7年超98%，江苏怎么做的？",
@@ -500,7 +500,7 @@
         },
         {
           "title": "江苏盱眙30间“梦想小屋”如期完工交付",
-          "time": "55分钟前",
+          "time": "1小时前",
           "source": "新华网江苏频道",
           "url": "http://js.news.cn/20261110/a87287a7d0bb49dd8bcb4ae55d8cd01b/c.html"
         },
@@ -536,7 +536,7 @@
         },
         {
           "title": "“你好！中国”水韵江苏文旅推介会在巴黎举办",
-          "time": "39分钟前",
+          "time": "45分钟前",
           "source": "搜狐网",
           "url": "https://m.sohu.com/a/1099546062_121443915?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         }
@@ -544,7 +544,7 @@
     },
     "浙江省": {
       "_intensity": 49,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "五中全会精神在基层丨浙江：以多元宣讲推动全会精神深入人心",
@@ -565,16 +565,16 @@
           "url": "https://wlt.hlj.gov.cn/wlt/c114167/202611/c00_31993368.shtml"
         },
         {
-          "title": "浙江：第二十届杭州文化创意产业博览会举行",
-          "time": "3小时前",
-          "source": "人民网-图片频道",
-          "url": "http://pic.people.com.cn/n1/2026/1110/c1016-40831189.html"
-        },
-        {
           "title": "不拼销量拼服务：浙江民企“以赛促练”折射高质量发展新逻辑",
           "time": "1小时前",
           "source": "China Daily",
           "url": "https://zj.chinadaily.com.cn/a/202611/10/WS6af291e6e4b0e14252fca289.html"
+        },
+        {
+          "title": "浙江：第二十届杭州文化创意产业博览会举行",
+          "time": "3小时前",
+          "source": "人民网-图片频道",
+          "url": "http://pic.people.com.cn/n1/2026/1110/c1016-40831189.html"
         },
         {
           "title": "五中全会精神在基层丨浙江杭州：科技赋能红色宣讲",
@@ -584,7 +584,7 @@
         },
         {
           "title": "官宣！浙江将筹办一所新大学",
-          "time": "55分钟前",
+          "time": "1小时前",
           "source": "潮新闻客户端",
           "url": "https://tidenews.com.cn/tmh_news.html?id=6af294e67e739a0001f373d7"
         },
@@ -597,8 +597,8 @@
       ]
     },
     "安徽省": {
-      "_intensity": 26,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 27,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "安徽师范大学来校调研",
@@ -620,13 +620,13 @@
         },
         {
           "title": "安徽池州：九华山初绽雾凇花",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "中国侨网",
           "url": "http://www.chinaqw.com/sp/2026/11-10/413850.shtml"
         },
         {
           "title": "安徽省纪委监委通报：涉嫌严重违纪违法，王刚被查",
-          "time": "35分钟前",
+          "time": "41分钟前",
           "source": "凤凰网安徽",
           "url": "https://ah.ifeng.com/c/8xw29OalQik"
         },
@@ -652,7 +652,7 @@
     },
     "福建省": {
       "_intensity": 19,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "【文明中国·看福建】古祠换新韵，古礼育新风",
@@ -686,13 +686,13 @@
         },
         {
           "title": "福建省委研究，3人拟提拔任用或进一步使用",
-          "time": "37分钟前",
+          "time": "43分钟前",
           "source": "新浪网",
           "url": "http://finance.sina.cn/2026-11-09/detail-iniycfmw6351097.d.html?cre=tianyi&mod=wlocal&loc=6&r=0&rfunc=2&tj=cxvertical_wlocal&tr=1047&pos=76"
         },
         {
           "title": "福建泉州天桥上三角梅盛放 网友：连天桥都“头戴簪花”",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "中国侨网",
           "url": "http://www.chinaqw.com/sp/2026/11-10/413851.shtml"
         },
@@ -705,8 +705,8 @@
       ]
     },
     "江西省": {
-      "_intensity": 23,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 24,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "江西首列消防主题地铁专列“洪消号”亮相",
@@ -716,13 +716,13 @@
         },
         {
           "title": "江西省第十七届运动会在萍乡圆满闭幕",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "潮新闻客户端",
           "url": "https://tidenews.com.cn/tmh_news.html?id=6af27963be449b00019f8e06"
         },
         {
           "title": "总投资4.2亿元！江西体育学院获批建设",
-          "time": "25分钟前",
+          "time": "31分钟前",
           "source": "凤凰网",
           "url": "https://jx.ifeng.com/c/8xw3WJBLIVr"
         },
@@ -740,19 +740,19 @@
         },
         {
           "title": "江西这个高速项目获批开工，途经这些地方......",
-          "time": "19分钟前",
+          "time": "4分钟前",
           "source": "新浪网",
-          "url": "http://finance.sina.cn/2026-11-09/detail-iniycrzw6552467.d.html?cre=tianyi&mod=wlocal&loc=6&r=0&rfunc=94&tj=cxvertical_wlocal&tr=1047&pos=333"
+          "url": "http://finance.sina.cn/2026-11-09/detail-iniycrzw6552467.d.html?cre=tianyi&mod=wlocal&loc=6&r=0&rfunc=3&tj=cxvertical_wlocal&tr=1047&pos=333"
         },
         {
           "title": "纸箱换礼 社保卡上门 江西邮政把绿色服务送到居民身边",
-          "time": "59分钟前",
+          "time": "1小时前",
           "source": "搜狐网",
           "url": "https://m.sohu.com/a/1099534293_362042?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         },
         {
           "title": "江西婺源：皇菊采摘正当时",
-          "time": "16小时前",
+          "time": "17小时前",
           "source": "新华网",
           "url": "https://www.news.cn/photo/20261109/4116df153ee845929b02656cd0e466ee/c.html"
         }
@@ -760,7 +760,7 @@
     },
     "山东省": {
       "_intensity": 58,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "大连文体旅集团旗下6景区面向山东游客免费开放100天",
@@ -794,7 +794,7 @@
         },
         {
           "title": "山东凝侨心、聚侨力 书写侨务工作奋进画卷",
-          "time": "55分钟前",
+          "time": "1小时前",
           "source": "搜狐网",
           "url": "https://m.sohu.com/a/1099537182_123753?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         },
@@ -806,7 +806,7 @@
         },
         {
           "title": "山东这家公司攻关17年，为轮胎轻量化提供国产方案_山东新闻",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "大众网",
           "url": "https://sd.dzwww.com/sdnews/202611/t20261110_18286812.htm"
         }
@@ -814,7 +814,7 @@
     },
     "河南省": {
       "_intensity": 37,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "2026年河南省材料大会在许昌举办",
@@ -842,7 +842,7 @@
         },
         {
           "title": "河南一号商圈再谋变",
-          "time": "39分钟前",
+          "time": "45分钟前",
           "source": "河南一百度",
           "url": "https://m.henan100.com/news/2026/1244459.shtml"
         },
@@ -854,21 +854,21 @@
         },
         {
           "title": "招标 | 河南周口商水张庄时昱200MW/800MWh独立储能电站项目招标",
-          "time": "32分钟前",
+          "time": "37分钟前",
           "source": "国际储能网",
           "url": "https://mchuneng.in-en.com/html/chunengy-59942.shtml"
         },
         {
           "title": "河南61岁大爷自学网购，花1万多元下单15吨红薯做粉条，还没做完已被订购一空",
-          "time": "36分钟前",
+          "time": "41分钟前",
           "source": "ThePaper.cn",
           "url": "https://www.thepaper.cn/newsDetail_forward_34443424"
         }
       ]
     },
     "湖北省": {
-      "_intensity": 33,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 32,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "图解：2026年11月9日湖北省政府常务会议",
@@ -889,10 +889,10 @@
           "url": "https://news.hubeidaily.net/pc/c_6154247.html"
         },
         {
-          "title": "一碗热干面，为何能从武汉街头卖到巴黎？",
-          "time": "3小时前",
-          "source": "武汉市商务局",
-          "url": "https://sw.wuhan.gov.cn/xwdt/mtbd/202611/t20261110_2877055.shtml"
+          "title": "从零部件到整星一站式检测，湖北省太空装备中试服务平台来了",
+          "time": "19小时前",
+          "source": "武汉市人民政府",
+          "url": "https://www.wuhan.gov.cn/sy/whyw/202611/t20261109_2876715.shtml"
         },
         {
           "title": "湖北省作协主席李修文：我看了很多AI短剧，我不写关起门喊“戏比天大”的人",
@@ -913,16 +913,16 @@
           "url": "https://hubei.eol.cn/hubgd/202611/t20261110_2792288.shtml"
         },
         {
-          "title": "我校老协乒乓球队在湖北省高校老协乒乓球赛中喜获佳绩",
-          "time": "4小时前",
-          "source": "武汉纺织大学",
-          "url": "https://news.wtu.edu.cn/info/1005/145887.htm"
+          "title": "喜讯！湖北3个案例入选全国现代化用电营商环境“三个一批”建设典型案例",
+          "time": "3小时前",
+          "source": "凤凰网",
+          "url": "https://news.ifeng.com/c/8xvse7B58PV"
         }
       ]
     },
     "湖南省": {
       "_intensity": 34,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "湖南女子学院举办“铸牢中华民族共同体意识”大讲堂",
@@ -976,7 +976,7 @@
     },
     "广东省": {
       "_intensity": 36,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "广东十五五自然资源规划：探索林业碳票与海洋碳汇核算，推进绿美广东生态建设",
@@ -1004,7 +1004,7 @@
         },
         {
           "title": "广东公示第七批省级重点建设现代产业学院名单，24个学院入选",
-          "time": "45分钟前",
+          "time": "51分钟前",
           "source": "广州日报新花城",
           "url": "https://huacheng.gz-cmc.com/pages/2026/11/09/1c9d022c30bc42fb99eb03df997c1283.html"
         },
@@ -1030,7 +1030,7 @@
     },
     "广西壮族自治区": {
       "_intensity": 17,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "今明天广西多地有雨南宁气温将创新低 后天雨势增强局地有暴雨",
@@ -1084,7 +1084,7 @@
     },
     "海南省": {
       "_intensity": 15,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "海南大学首届致远科技文化节开幕 四校区联动推出200多场活动",
@@ -1112,7 +1112,7 @@
         },
         {
           "title": "深圳政协原主席戴北方受贿案被海南检方提起公诉",
-          "time": "15分钟前",
+          "time": "20分钟前",
           "source": "观点网",
           "url": "https://www.guandian.cn/article/20261110/625452.html"
         },
@@ -1138,7 +1138,7 @@
     },
     "重庆市": {
       "_intensity": 38,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "重庆“最美职工”李海：一名骑手与一座城市的双向奔赴",
@@ -1184,15 +1184,15 @@
         },
         {
           "title": "重庆市渝北中学举行建校80周年高质量发展大会",
-          "time": "15分钟前",
+          "time": "21分钟前",
           "source": "搜狐网",
           "url": "https://m.sohu.com/a/1099558683_362042?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334"
         }
       ]
     },
     "四川省": {
-      "_intensity": 52,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 53,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "4.8万名河湖长巡河超千万次",
@@ -1202,7 +1202,7 @@
         },
         {
           "title": "四川宣汉：把实事办到群众心坎上丨央媒看四川",
-          "time": "4小时前",
+          "time": "5小时前",
           "source": "四川新闻",
           "url": "https://sichuan.scol.com.cn/ggxw/202611/83354245.html"
         },
@@ -1246,7 +1246,7 @@
     },
     "贵州省": {
       "_intensity": 23,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "《贵州省信息通信业“十五五”发展规划》正式发布",
@@ -1262,7 +1262,7 @@
         },
         {
           "title": "南方多地降温明显！云南贵州新疆有降水",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "潮新闻客户端",
           "url": "https://tidenews.com.cn/tmh_news.html?id=6af2795fbe449b00019f8dff"
         },
@@ -1286,7 +1286,7 @@
         },
         {
           "title": "贵州，一座天生的巨型运动场",
-          "time": "1小时前",
+          "time": "2小时前",
           "source": "央视网体育",
           "url": "https://sports.cctv.com/2026/11/10/VIDE2EydHBn4eqDOdIsrpaDO261110.shtml"
         },
@@ -1300,11 +1300,11 @@
     },
     "云南省": {
       "_intensity": 31,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "云南会泽念湖湿地迎来首批越冬黑颈鹤",
-          "time": "15分钟前",
+          "time": "21分钟前",
           "source": "新华网",
           "url": "https://www.news.cn/20261110/f1f0946199dc458ab4de51cdb5e9bd72/c.html"
         },
@@ -1334,7 +1334,7 @@
         },
         {
           "title": "南方多地降温明显！云南贵州新疆有降水",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "潮新闻客户端",
           "url": "https://tidenews.com.cn/tmh_news.html?id=6af2795fbe449b00019f8dff"
         },
@@ -1353,12 +1353,12 @@
       ]
     },
     "西藏自治区": {
-      "_intensity": 20,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 21,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "南京大学与西藏民族大学举行对口支援协议签约仪式",
-          "time": "34分钟前",
+          "time": "40分钟前",
           "source": "南京大学",
           "url": "https://www.nju.edu.cn/info/1055/487381.htm"
         },
@@ -1400,27 +1400,21 @@
         },
         {
           "title": "中国气象局与交通运输部2026年11月09日联合发布全国主要公路气象预报",
-          "time": "3小时前",
+          "time": "4小时前",
           "source": "中华人民共和国文化和旅游部",
           "url": "https://www.mct.gov.cn/ggfw/cxts/glqxyb/202611/t20261110_967602.htm"
         }
       ]
     },
     "陕西省": {
-      "_intensity": 34,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 33,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "陕西男子开挖掘机冲击政府大楼 被采取刑事强制措施",
           "time": "3小时前",
           "source": "联合早报",
           "url": "https://www.zaobao.com.sg/news/china/story20261110-9972741"
-        },
-        {
-          "title": "“开车跑山上去了”，陕西商南刑案嫌疑人曾驾车逃跑：目前未到案",
-          "time": "1小时前",
-          "source": "新京报",
-          "url": "https://m.bjnews.com.cn/detail/1793841637129470.html"
         },
         {
           "title": "陕西省政府最新人事任免",
@@ -1457,16 +1451,22 @@
           "time": "1天前",
           "source": "新华网",
           "url": "https://www.news.cn/20261109/d8f83a47c9d24f389a08aee5cc58823b/c.html"
+        },
+        {
+          "title": "陕西西咸新区警方通报“有人使用工程机械损毁建筑物”：无人员受伤，嫌疑人已被采取刑事强制措施",
+          "time": "5小时前",
+          "source": "欧洲头条",
+          "url": "https://www.xinouzhou.com/wenzhang/187560-shan-xi-xi-xian-xin-qu-jing-fang-tong-bao-you-ren-shi-yong-gong-cheng-ji-xie-sun-hui-jian-zhu-wu-wu-ren-yuan-shou-shang-xian-yi-ren-yi-bei-cai-qu-xing-shi-qiang-zhi-cuo-shi"
         }
       ]
     },
     "甘肃省": {
       "_intensity": 30,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "炳灵寺石窟艺术瑰宝亮相甘肃简牍博物馆",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "新华网",
           "url": "https://www.news.cn/shuhua/20261110/29e75d37afac440bbda3367d2349f279/c.html"
         },
@@ -1515,8 +1515,8 @@
       ]
     },
     "青海省": {
-      "_intensity": 38,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 39,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "守护“中华水塔”！青海林草“十五五”蓝图发布，把生态优势转化为发展胜势-政务公开",
@@ -1570,7 +1570,7 @@
     },
     "宁夏回族自治区": {
       "_intensity": 11,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "宁夏金凤区 取经“千万工程” 深耕基层一线",
@@ -1610,7 +1610,7 @@
         },
         {
           "title": "宁夏这届枸杞养生节政企研共话产业升级",
-          "time": "22小时前",
+          "time": "23小时前",
           "source": "中国科技网",
           "url": "https://www.stdaily.com/web/gdxw/2026-11/09/content_610712.html"
         },
@@ -1623,8 +1623,8 @@
       ]
     },
     "新疆维吾尔自治区": {
-      "_intensity": 41,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 42,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "新疆师范大学一行到华东师大调研交流",
@@ -1678,7 +1678,7 @@
     },
     "台湾省": {
       "_intensity": 37,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "台湾再接收3架全新制造F-16 Block 70战机",
@@ -1732,11 +1732,11 @@
     },
     "香港特别行政区": {
       "_intensity": 41,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "香港快运航空四度亮相进博会",
-          "time": "39分钟前",
+          "time": "45分钟前",
           "source": "凤凰网",
           "url": "https://hainan.ifeng.com/c/8xvk5Jd8QE7"
         },
@@ -1785,8 +1785,8 @@
       ]
     },
     "澳门特别行政区": {
-      "_intensity": 41,
-      "_meta": "2026-11-10 12:44 · 自动抓取",
+      "_intensity": 42,
+      "_meta": "2026-11-10 12:50 · 自动抓取",
       "items": [
         {
           "title": "《澳门大赛车》制片人刘长妹：每个人都在自己的赛道上创造传奇",
@@ -1796,7 +1796,7 @@
         },
         {
           "title": "​进博会上看澳门：一枚M唛，亮出大健康新名片",
-          "time": "2小时前",
+          "time": "3小时前",
           "source": "上观新闻",
           "url": "https://www.shobserver.cn/news/detail?id=1211007"
         },
@@ -1825,16 +1825,16 @@
           "url": "https://www.qzwb.com/gb/content/2026-11/10/content_9261335.htm"
         },
         {
+          "title": "APEC会议期间澳门范围上空禁止飞行活动– 澳门特别行政区政府入口网站",
+          "time": "13分钟前",
+          "source": "澳門特別行政區政府入口網站",
+          "url": "https://www.gov.mo/zh-hans/news/949814/"
+        },
+        {
           "title": "内地与澳门企业联合“走出去” 深化葡西基建及产业合作对接",
           "time": "17小时前",
           "source": "国务院港澳事务办公室",
           "url": "https://www.hmo.gov.cn/2026/11/09/ARTIKp10XRqhdRhrckIbVJo2261109.shtml"
-        },
-        {
-          "title": "马上评｜澳门，何以对话世界",
-          "time": "13小时前",
-          "source": "ThePaper.cn",
-          "url": "https://www.thepaper.cn/newsDetail_forward_34440593"
         }
       ]
     }
